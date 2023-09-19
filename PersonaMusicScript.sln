@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaMusicScript.Library", "PersonaMusicScript.Library\PersonaMusicScript.Library.csproj", "{851C2471-017C-415F-91FA-CD24A74237EF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{851C2471-017C-415F-91FA-CD24A74237EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{851C2471-017C-415F-91FA-CD24A74237EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{851C2471-017C-415F-91FA-CD24A74237EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{851C2471-017C-415F-91FA-CD24A74237EF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7D3FD23A-51C4-41C8-84AE-35BD23E78C5D}
+	EndGlobalSection
+EndGlobal
