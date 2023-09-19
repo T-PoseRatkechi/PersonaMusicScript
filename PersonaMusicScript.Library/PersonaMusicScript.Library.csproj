@@ -5,6 +5,14 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Source.g4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Antlr4 Include="Source.g4" />
+  </ItemGroup>
 	
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
