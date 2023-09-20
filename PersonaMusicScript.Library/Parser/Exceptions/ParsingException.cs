@@ -10,12 +10,12 @@ internal class ParsingException : Exception
     }
 
     public ParsingException(string message, ParserRuleContext context)
-        : base($"{message}\nSource: {GetOriginalText(context)}")
+        : base($"{message}\nLine {context.Start.Line}: {GetOriginalText(context)}")
     {
     }
 
     public ParsingException(string message, ParserRuleContext context, Exception innerException)
-        : base($"{message}\nSource: {GetOriginalText(context)}", innerException)
+        : base($"{message}\nLine {context.Start.Line}: {GetOriginalText(context)}\n{innerException.Message}", innerException)
     {
     }
 
