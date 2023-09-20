@@ -16,7 +16,7 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
 
     public override object VisitStringExpression([NotNull] SourceParser.StringExpressionContext context)
     {
-        return context.STRING().GetText();
+        return context.STRING().GetText().Trim('"');
     }
 
     public override object VisitIntExpression([NotNull] SourceParser.IntExpressionContext context)
