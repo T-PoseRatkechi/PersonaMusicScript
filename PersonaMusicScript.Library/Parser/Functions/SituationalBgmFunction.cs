@@ -42,6 +42,21 @@ internal class SituationalBgmFunction : IFunction<SituationalBgm>
         var advantageValue = this.expressionVisitor.Visit(advantageExp);
         var disadvantageValue = disadvantageExp != null ? this.expressionVisitor.Visit(disadvantageExp) : null;
 
+        if (normalValue is int normalSongId)
+        {
+            normalValue = new Song(normalSongId);
+        }
+
+        if (advantageValue is int advantageSongId)
+        {
+            advantageValue = new Song(advantageSongId);
+        }
+
+        if (disadvantageValue is int disadvantageSongId)
+        {
+            disadvantageValue = new Song(disadvantageSongId);
+        }
+
         if (normalValue is IMusic normalBgm
             && advantageValue is IMusic advantageBgm)
         {
