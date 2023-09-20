@@ -1,5 +1,5 @@
 ﻿using Antlr4.Runtime.Misc;
-using PersonaMusicScript.Library.Models;
+using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 

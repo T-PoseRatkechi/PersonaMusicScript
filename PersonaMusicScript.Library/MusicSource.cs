@@ -1,4 +1,4 @@
-﻿using PersonaMusicScript.Library.Models;
+﻿using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library;
 
