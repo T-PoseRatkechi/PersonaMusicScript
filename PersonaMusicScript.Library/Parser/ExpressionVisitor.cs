@@ -5,11 +5,13 @@ namespace PersonaMusicScript.Library.Parser;
 
 internal class ExpressionVisitor : SourceBaseVisitor<object>
 {
-    private readonly SourceVisitor source;
+    private readonly MusicSource source;
+    private readonly FunctionVisitor functionVisitor;
 
-    public ExpressionVisitor(SourceVisitor source)
+    public ExpressionVisitor(MusicSource source)
     {
         this.source = source;
+        this.functionVisitor = new(this);
     }
 
     public override object VisitStringExpression([NotNull] SourceParser.StringExpressionContext context)
@@ -38,6 +40,7 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
 
     public override object VisitFunction([NotNull] SourceParser.FunctionContext context)
     {
-        return base.VisitFunction(context);
+        var value = functionVisitor.Visit(context);
+        return value;
     }
 }
