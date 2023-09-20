@@ -4,6 +4,13 @@ public class SituationalBgm : IMusic
 {
     public SituationalBgm(IMusic normal, IMusic advantage, IMusic? disadvantage = null)
     {
+        if (normal is SituationalBgm
+            || advantage is SituationalBgm
+            || disadvantage is SituationalBgm)
+        {
+            throw new ArgumentException("Situational BGM can not use Situational BGM.");
+        }
+
         this.NormalBGM = normal;
         this.AdvantageBGM = advantage;
         this.DisadvantageBGM = disadvantage;
