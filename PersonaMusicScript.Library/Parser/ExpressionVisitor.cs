@@ -11,7 +11,7 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
     public ExpressionVisitor(MusicSource source)
     {
         this.source = source;
-        this.functionVisitor = new(this);
+        this.functionVisitor = new(source, this);
     }
 
     public override object VisitStringExpression([NotNull] SourceParser.StringExpressionContext context)
@@ -40,7 +40,6 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
 
     public override object VisitFunction([NotNull] SourceParser.FunctionContext context)
     {
-        var value = functionVisitor.Visit(context);
-        return value;
+        return functionVisitor.Visit(context);
     }
 }
