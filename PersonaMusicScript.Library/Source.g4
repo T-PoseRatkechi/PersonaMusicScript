@@ -1,7 +1,7 @@
 grammar Source;
 
 // Parser Rules
-sourceFile: statement* EOF;
+source: statement* EOF;
 
 statement: assignment
          | commandBlock
