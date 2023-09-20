@@ -18,9 +18,14 @@ internal class AssignmentVisitor : SourceBaseVisitor<bool>
     {
         var id = context.ID().GetText();
         var value = this.expressionVisitor.Visit(context.expression());
+        if (this.source.Constants.ContainsKey(id))
+        {
+            throw new ParsingException($"Constant with name \"{id}\" already exists.", context);
+        }
+
         if (!this.source.Constants.TryAdd(id, value))
         {
-            throw new ParsingException($"Failed to create constant \"{id}\" with value \"{value}\".", context);
+            throw new ParsingException($"Failed to create constant \"{id}\".", context);
         }
 
         return true;
