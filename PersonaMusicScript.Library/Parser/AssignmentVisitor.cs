@@ -5,10 +5,10 @@ namespace PersonaMusicScript.Library.Parser;
 
 internal class AssignmentVisitor : SourceBaseVisitor<bool>
 {
-    private readonly SourceVisitor source;
+    private readonly MusicSource source;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public AssignmentVisitor(SourceVisitor source, ExpressionVisitor expressionVisitor)
+    public AssignmentVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
     {
         this.source = source;
         this.expressionVisitor = expressionVisitor;
