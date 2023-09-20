@@ -53,13 +53,20 @@ internal class SituationalBgmFunction : IFunction<SituationalBgm>
                 throw new ParsingException("Invalid function arguments.", context);
             }
 
-            var situationalBgm = new SituationalBgm(normalBgm, advantageBgm, disadvantageBgm);
-            if (!this.source.SituationalBgms.Contains(situationalBgm))
+            try
             {
-                this.source.SituationalBgms.Add(situationalBgm);
-            }
+                var situationalBgm = new SituationalBgm(normalBgm, advantageBgm, disadvantageBgm);
+                if (!this.source.SituationalBgms.Contains(situationalBgm))
+                {
+                    this.source.SituationalBgms.Add(situationalBgm);
+                }
 
-            return situationalBgm;
+                return situationalBgm;
+            }
+            catch (Exception ex)
+            {
+                throw new ParsingException("Failed to create Situational BGM.", context, ex);
+            }
         }
         else
         {
