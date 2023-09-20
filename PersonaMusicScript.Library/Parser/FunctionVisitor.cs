@@ -1,27 +1,33 @@
 ﻿using Antlr4.Runtime.Misc;
-using PersonaMusicScript.Library.Parser.Models;
+using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Library.Parser.Functions;
 
 namespace PersonaMusicScript.Library.Parser;
 
-internal class FunctionVisitor : SourceBaseVisitor<Function>
+internal class FunctionVisitor : SourceBaseVisitor<object>
 {
-    private readonly ExpressionVisitor expressionVisitor;
+    private readonly Dictionary<string, Func<SourceParser.FunctionContext, object?>> functions = new();
 
-    public FunctionVisitor(ExpressionVisitor expressionVisitor)
+    public FunctionVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
     {
-        this.expressionVisitor = expressionVisitor;
+        this.AddFunction(new SongFunction(expressionVisitor));
+        this.AddFunction(new RandomSongFunction(source, expressionVisitor));
+        this.AddFunction(new SituationalBgmFunction(source, expressionVisitor));
     }
 
-    public override Function VisitFunction([NotNull] SourceParser.FunctionContext context)
+    public override object VisitFunction([NotNull] SourceParser.FunctionContext context)
     {
         var name = context.ID().GetText();
-        var args = new List<object>();
-        foreach (var argExp in context.exprList().expression())
+        if (this.functions.TryGetValue(name, out var func))
         {
-            var argValue = this.expressionVisitor.Visit(argExp);
-            args.Add(argValue);
+            return func.Invoke(context) ?? throw new ParsingException("Failed to invoke function.", context);
         }
 
-        return new(name, args.ToArray());
+        throw new ParsingException($"Unknown function \"{name}\".", context);
+    }
+
+    private void AddFunction<T>(IFunction<T> function)
+    {
+        this.functions.Add(function.Name, (context) => function.Invoke(context));
     }
 }
