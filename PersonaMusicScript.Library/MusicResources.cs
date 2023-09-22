@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using PersonaMusicScript.Library.Models;
+using System.Text.Json;
 
 namespace PersonaMusicScript.Library;
 
@@ -6,9 +7,9 @@ public class MusicResources
 {
     private static readonly Dictionary<string, GameConstants> Games = new()
     {
-        ["Persona 4 Golden PC x64"] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca"),
-        ["Persona 3 Portable PC"] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx"),
-        ["Persona 5 Royal PC"] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)",(id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", true),
+        ["Persona 4 Golden PC x64"] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30)),
+        ["Persona 3 Portable PC"] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26)),
+        ["Persona 5 Royal PC"] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), true),
     };
 
     public MusicResources(string game)
@@ -79,6 +80,9 @@ public class GameConstants
         int totalEncounters,
         string encoder,
         Func<int, string> getOutputPath,
+        IMusic defaultNormalMusic,
+        IMusic defaultAdvantageMusic,
+        IMusic defaultDisadvantageMusic,
         bool isBigEndian = false)
     {
         this.EncounterEntrySize = encounterSize;
@@ -86,6 +90,10 @@ public class GameConstants
         this.Encoder = encoder;
         this.GetOutputPath = getOutputPath;
         this.BigEndian = isBigEndian;
+        this.DefaultNormalMusic = defaultNormalMusic;
+        this.DefaultAdvantageMusic = defaultAdvantageMusic;
+        this.DefaultDisadvantageMusic = defaultDisadvantageMusic;
+
     }
 
     public bool BigEndian { get; }
@@ -97,4 +105,10 @@ public class GameConstants
     public string Encoder { get; }
 
     public Func<int, string> GetOutputPath { get; }
+
+    public IMusic DefaultNormalMusic { get; }
+
+    public IMusic DefaultAdvantageMusic { get; }
+
+    public IMusic DefaultDisadvantageMusic { get; }
 }
