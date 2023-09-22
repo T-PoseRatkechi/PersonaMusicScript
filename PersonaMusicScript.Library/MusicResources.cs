@@ -2,25 +2,35 @@
 
 namespace PersonaMusicScript.Library;
 
-internal class MusicResources
+public class MusicResources
 {
-    private readonly string resourcesDir;
+    private static readonly Dictionary<string, GameConstants> Games = new()
+    {
+        ["Persona 4 Golden PC x64"] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca"),
+        ["Persona 3 Portable PC"] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx"),
+        ["Persona 5 Royal PC"] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)",(id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", true),
+    };
 
     public MusicResources(string game)
     {
-        this.resourcesDir = Directory.CreateDirectory(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "resources", game)).FullName;
+        this.ResourcesDir = Directory.CreateDirectory(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "resources", game)).FullName;
 
         this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
+        this.Constants = Games[game];
     }
 
-    public Dictionary<string, int> Songs { get; set; }
+    public string ResourcesDir { get; }
+
+    public Dictionary<string, int> Songs { get; }
 
     public Dictionary<string, int[]> Collections { get; }
 
+    public GameConstants Constants { get; }
+
     private Dictionary<string, int> GetSongs()
     {
-        var songsFile = Path.Join(this.resourcesDir, "songs.json");
+        var songsFile = Path.Join(this.ResourcesDir, "songs.json");
         if (File.Exists(songsFile))
         {
             var loadedSongs = JsonSerializer.Deserialize<Dictionary<string, int>>(File.ReadAllText(songsFile))
@@ -34,7 +44,7 @@ internal class MusicResources
 
     private Dictionary<string, int[]> GetCollections()
     {
-        var collectionsDir = Directory.CreateDirectory(Path.Join(this.resourcesDir, "collections")).FullName;
+        var collectionsDir = Directory.CreateDirectory(Path.Join(this.ResourcesDir, "collections")).FullName;
         var collections = new Dictionary<string, int[]>(StringComparer.OrdinalIgnoreCase);
 
         if (Directory.Exists(collectionsDir))
@@ -60,4 +70,31 @@ internal class MusicResources
 
         return collections;
     }
+}
+
+public class GameConstants
+{
+    public GameConstants(
+        int encounterSize,
+        int totalEncounters,
+        string encoder,
+        Func<int, string> getOutputPath,
+        bool isBigEndian = false)
+    {
+        this.EncounterEntrySize = encounterSize;
+        this.TotalEncounters = totalEncounters;
+        this.Encoder = encoder;
+        this.GetOutputPath = getOutputPath;
+        this.BigEndian = isBigEndian;
+    }
+
+    public bool BigEndian { get; }
+
+    public int TotalEncounters { get; }
+
+    public int EncounterEntrySize { get; }
+
+    public string Encoder { get; }
+
+    public Func<int, string> GetOutputPath { get; }
 }
