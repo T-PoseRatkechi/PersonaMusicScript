@@ -5,10 +5,11 @@ public class BattleBgm : IMusic
     private readonly MusicSource source;
 
     public BattleBgm(
+        MusicResources resources,
         MusicSource source,
-        IMusic normal,
-        IMusic advantage,
-        IMusic? disadvantage = null)
+        IMusic? normal,
+        IMusic? advantage,
+        IMusic? disadvantage)
     {
         if (normal is BattleBgm
             || advantage is BattleBgm
@@ -18,9 +19,9 @@ public class BattleBgm : IMusic
         }
 
         this.source = source;
-        this.NormalBGM = normal;
-        this.AdvantageBGM = advantage;
-        this.DisadvantageBGM = disadvantage;
+        this.NormalBGM = normal ?? resources.Constants.DefaultNormalMusic;
+        this.AdvantageBGM = advantage ?? resources.Constants.DefaultAdvantageMusic;
+        this.DisadvantageBGM = disadvantage ?? resources.Constants.DefaultDisadvantageMusic;
         if (!source.BattleBgms.Contains(this))
         {
             source.BattleBgms.Add(this);
@@ -31,30 +32,21 @@ public class BattleBgm : IMusic
 
     public MusicType Type { get; } = MusicType.BattleBgm;
 
-    public IMusic? NormalBGM { get; set; }
+    public IMusic NormalBGM { get; set; }
 
-    public IMusic? AdvantageBGM { get; set; }
+    public IMusic AdvantageBGM { get; set; }
 
-    public IMusic? DisadvantageBGM { get; set; }
+    public IMusic DisadvantageBGM { get; set; }
 
     public override bool Equals(object? obj)
     {
         if (obj is BattleBgm other)
         {
             if (this.NormalBGM.Equals(other.NormalBGM)
-                && this.AdvantageBGM.Equals(other.AdvantageBGM))
+                && this.AdvantageBGM.Equals(other.AdvantageBGM)
+                && this.DisadvantageBGM.Equals(other.DisadvantageBGM))
             {
-                if (this.DisadvantageBGM == null && other.DisadvantageBGM == null)
-                {
-                    return true;
-                }
-
-                if (this.DisadvantageBGM != null
-                    && other.DisadvantageBGM != null
-                    && this.DisadvantageBGM.Equals(other.DisadvantageBGM))
-                {
-                    return true;
-                }
+                return true;
             }
         }
 

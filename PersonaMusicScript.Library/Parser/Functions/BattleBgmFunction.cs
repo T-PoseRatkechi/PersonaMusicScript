@@ -72,7 +72,7 @@ internal class BattleBgmFunction : IFunction<BattleBgm>
 
             try
             {
-                var battleBgm = new BattleBgm(this.source, normalBgm, advantageBgm, disadvantageBgm);
+                var battleBgm = new BattleBgm(this.resources, this.source, normalBgm, advantageBgm, disadvantageBgm);
                 return battleBgm;
             }
             catch (Exception ex)
