@@ -2,7 +2,13 @@
 
 public class SituationalBgm : IMusic
 {
-    public SituationalBgm(IMusic normal, IMusic advantage, IMusic? disadvantage = null)
+    private readonly MusicSource source;
+
+    public SituationalBgm(
+        MusicSource source,
+        IMusic normal,
+        IMusic advantage,
+        IMusic? disadvantage = null)
     {
         if (normal is SituationalBgm
             || advantage is SituationalBgm
@@ -11,14 +17,23 @@ public class SituationalBgm : IMusic
             throw new ArgumentException("Situational BGM can not use Situational BGM.");
         }
 
+        this.source = source;
         this.NormalBGM = normal;
         this.AdvantageBGM = advantage;
         this.DisadvantageBGM = disadvantage;
+        if (!source.SituationalBgms.Contains(this))
+        {
+            source.SituationalBgms.Add(this);
+        }
     }
 
-    public IMusic NormalBGM { get; set; }
+    public int Id => this.source.SituationalBgms.IndexOf(this);
 
-    public IMusic AdvantageBGM { get; set; }
+    public MusicType Type { get; } = MusicType.SituationalBgm;
+
+    public IMusic? NormalBGM { get; set; }
+
+    public IMusic? AdvantageBGM { get; set; }
 
     public IMusic? DisadvantageBGM { get; set; }
 
