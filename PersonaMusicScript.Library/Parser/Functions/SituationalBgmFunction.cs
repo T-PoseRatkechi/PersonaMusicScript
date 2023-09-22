@@ -70,7 +70,7 @@ internal class SituationalBgmFunction : IFunction<SituationalBgm>
 
             try
             {
-                var situationalBgm = new SituationalBgm(normalBgm, advantageBgm, disadvantageBgm);
+                var situationalBgm = new SituationalBgm(this.source, normalBgm, advantageBgm, disadvantageBgm);
                 if (!this.source.SituationalBgms.Contains(situationalBgm))
                 {
                     this.source.SituationalBgms.Add(situationalBgm);

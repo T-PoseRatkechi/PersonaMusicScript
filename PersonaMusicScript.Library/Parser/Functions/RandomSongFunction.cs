@@ -38,12 +38,7 @@ internal class RandomSongFunction : IFunction<RandomSong>
 
         if (minValue is int min && maxValue is int max)
         {
-            var randomSong = new RandomSong(min, max);
-            if (!this.source.RandomSongs.Contains(randomSong))
-            {
-                this.source.RandomSongs.Add(randomSong);
-            }
-
+            var randomSong = new RandomSong(this.source, min, max);
             return randomSong;
         }
         else

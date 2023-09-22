@@ -8,10 +8,10 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
     private readonly MusicSource source;
     private readonly FunctionVisitor functionVisitor;
 
-    public ExpressionVisitor(MusicSource source)
+    public ExpressionVisitor(MusicResources resources, MusicSource source)
     {
         this.source = source;
-        this.functionVisitor = new(source, this);
+        this.functionVisitor = new(resources, source, this);
     }
 
     public override object VisitStringExpression([NotNull] SourceParser.StringExpressionContext context)

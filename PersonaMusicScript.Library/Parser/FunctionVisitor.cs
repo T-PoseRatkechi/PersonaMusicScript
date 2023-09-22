@@ -8,9 +8,9 @@ internal class FunctionVisitor : SourceBaseVisitor<object>
 {
     private readonly Dictionary<string, Func<SourceParser.FunctionContext, object?>> functions = new();
 
-    public FunctionVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
+    public FunctionVisitor(MusicResources resources, MusicSource source, ExpressionVisitor expressionVisitor)
     {
-        this.AddFunction(new SongFunction(expressionVisitor));
+        this.AddFunction(new SongFunction(resources, expressionVisitor));
         this.AddFunction(new RandomSongFunction(source, expressionVisitor));
         this.AddFunction(new SituationalBgmFunction(source, expressionVisitor));
     }

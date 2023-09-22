@@ -6,10 +6,12 @@ namespace PersonaMusicScript.Library.Parser.Functions;
 
 internal class SongFunction : IFunction<Song>
 {
+    private readonly MusicResources resources;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public SongFunction(ExpressionVisitor expressionVisitor)
+    public SongFunction(MusicResources resources, ExpressionVisitor expressionVisitor)
     {
+        this.resources = resources;
         this.expressionVisitor = expressionVisitor;
     }
 
@@ -36,7 +38,7 @@ internal class SongFunction : IFunction<Song>
         
         if (argValue is string name)
         {
-            return new Song(name);
+            return new Song(this.resources, name);
         }
 
         throw new ParsingException("Invalid function argument.", context);
