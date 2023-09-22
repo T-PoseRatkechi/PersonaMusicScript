@@ -12,7 +12,7 @@ internal class FunctionVisitor : SourceBaseVisitor<object>
     {
         this.AddFunction(new SongFunction(resources, expressionVisitor));
         this.AddFunction(new RandomSongFunction(source, expressionVisitor));
-        this.AddFunction(new SituationalBgmFunction(source, expressionVisitor));
+        this.AddFunction(new BattleBgmFunction(source, expressionVisitor));
     }
 
     public override object VisitFunction([NotNull] SourceParser.FunctionContext context)

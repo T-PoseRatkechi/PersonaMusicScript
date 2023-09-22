@@ -21,9 +21,9 @@ internal static class MusicPreset
             {
                 AddRandomSong(songsUsed, randomSong, constant.Key);
             }
-            else if (constant.Value is SituationalBgm situationalBgm)
+            else if (constant.Value is BattleBgm battleBgm)
             {
-                AddBattleMusic(songsUsed, situationalBgm, constant.Key);
+                AddBattleBgm(songsUsed, battleBgm, constant.Key);
             }
         }
 
@@ -46,9 +46,9 @@ internal static class MusicPreset
             AddRandomSong(songsUsed, randomSong, $"random_song({randomSong.MinSongId}, {randomSong.MaxSongId})");
         }
 
-        foreach (var battleMusic in music.Source.SituationalBgms)
+        foreach (var battleBgm in music.Source.BattleBgms)
         {
-            AddBattleMusic(songsUsed, battleMusic, "battle_music");
+            AddBattleBgm(songsUsed, battleBgm, "battle_bgm");
         }
 
         // Add BGME as song tag.
@@ -92,9 +92,9 @@ internal static class MusicPreset
         }
     }
 
-    private static void AddBattleMusic(Dictionary<int, SongUse> songsUsed, SituationalBgm situationalBgm, string name)
+    private static void AddBattleBgm(Dictionary<int, SongUse> songsUsed, BattleBgm battleBgm, string name)
     {
-        var battleMusic = new IMusic?[] { situationalBgm.NormalBGM, situationalBgm.AdvantageBGM, situationalBgm.DisadvantageBGM };
+        var battleMusic = new IMusic?[] { battleBgm.NormalBGM, battleBgm.AdvantageBGM, battleBgm.DisadvantageBGM };
         foreach (var bgm in battleMusic)
         {
             if (bgm is Song battleSong)

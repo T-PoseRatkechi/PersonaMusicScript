@@ -7,7 +7,7 @@ public class MusicSource
 {
     public List<RandomSong> RandomSongs { get; } = new();
 
-    public List<SituationalBgm> SituationalBgms { get; } = new();
+    public List<BattleBgm> BattleBgms { get; } = new();
 
     public Dictionary<string, object> Constants { get; } = new();
 

@@ -4,20 +4,20 @@ using PersonaMusicScript.Library.Parser.Exceptions;
 
 namespace PersonaMusicScript.Library.Parser.Functions;
 
-internal class SituationalBgmFunction : IFunction<SituationalBgm>
+internal class BattleBgmFunction : IFunction<BattleBgm>
 {
     private readonly MusicSource source;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public SituationalBgmFunction(MusicSource source, ExpressionVisitor expressionVisitor)
+    public BattleBgmFunction(MusicSource source, ExpressionVisitor expressionVisitor)
     {
         this.source = source;
         this.expressionVisitor = expressionVisitor;
     }
 
-    public string Name { get; } = "situational_bgm";
+    public string Name { get; } = "battle_bgm";
 
-    public SituationalBgm Invoke([NotNull] SourceParser.FunctionContext context)
+    public BattleBgm Invoke([NotNull] SourceParser.FunctionContext context)
     {
         if (context.exprList() == null)
         {
@@ -70,17 +70,12 @@ internal class SituationalBgmFunction : IFunction<SituationalBgm>
 
             try
             {
-                var situationalBgm = new SituationalBgm(this.source, normalBgm, advantageBgm, disadvantageBgm);
-                if (!this.source.SituationalBgms.Contains(situationalBgm))
-                {
-                    this.source.SituationalBgms.Add(situationalBgm);
-                }
-
-                return situationalBgm;
+                var battleBgm = new BattleBgm(this.source, normalBgm, advantageBgm, disadvantageBgm);
+                return battleBgm;
             }
             catch (Exception ex)
             {
-                throw new ParsingException("Failed to create Situational BGM.", context, ex);
+                throw new ParsingException("Failed to create Battle BGM.", context, ex);
             }
         }
         else
