@@ -7,6 +7,22 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Adachi.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Ameno-sagiri.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami-no-Okami.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Kusumi-no-Okami.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Margaret.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Marie.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Namatame.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Chie.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Kanji.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Mitsuo.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Naoto.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Rise.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Teddie.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yosuke.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yukiko.enc" />
     <None Remove="Source.g4" />
   </ItemGroup>
 
