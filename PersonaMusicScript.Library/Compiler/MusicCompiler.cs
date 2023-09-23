@@ -111,6 +111,11 @@ public class MusicCompiler
             battleBgmsBytes.AddRange(disadvantageBytes);
         }
 
+        if (battleBgmsBytes.Count == 0)
+        {
+            battleBgmsBytes.Add(0x00);
+        }
+
         var battleBgmsString = BitConverter.ToString(battleBgmsBytes.ToArray()).Replace('-', ' ');
         var battleBgmsIndex = lines.FindIndex(x => x.StartsWith("var battleBgms"));
         if (battleBgmsIndex == -1)
