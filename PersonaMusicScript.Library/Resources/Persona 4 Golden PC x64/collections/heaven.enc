@@ -1,0 +1,342 @@
+//HEAVEN
+//================================================
+//Encounter Index:
+1
+//Encounter Units: StasisGiant, StasisGiant, StasisGiant, StasisGiant, StasisGiant, 
+
+//Encounter Index:
+29
+//Encounter Units: LuxuryHand, LuxuryHand, StasisGiant, 
+
+//Encounter Index:
+30
+//Encounter Units: LuxuryHand, LuxuryHand, ChaosCyclops, 
+
+//Encounter Index:
+31
+//Encounter Units: LuxuryHand, LuxuryHand, MinotaurIV, 
+
+//Encounter Index:
+32
+//Encounter Units: LuxuryHand, LuxuryHand, IntrepidKnight, 
+
+//Encounter Index:
+33
+//Encounter Units: LuxuryHand, LuxuryHand, LuxuryHand, 
+
+//Encounter Index:
+34
+//Encounter Units: LuxuryHand, LuxuryHand, LuxuryHand, LuxuryHand, LuxuryHand, 
+
+//Encounter Index:
+432
+//Encounter Units: PrimeMagus, PrimeMagus, PerpetualSand, PerpetualSand, 
+
+//Encounter Index:
+433
+//Encounter Units: PrimeMagus, PrimeMagus, FinickyPapillon, 
+
+//Encounter Index:
+434
+//Encounter Units: PrimeMagus, PrimeMagus, GrowthRelic, GrowthRelic, 
+
+//Encounter Index:
+435
+//Encounter Units: MythicalGigas, PerpetualSand, PerpetualSand, PerpetualSand, 
+
+//Encounter Index:
+436
+//Encounter Units: MythicalGigas, MythicalGigas, FinickyPapillon, FinickyPapillon, 
+
+//Encounter Index:
+437
+//Encounter Units: MythicalGigas, GrowthRelic, GrowthRelic, GrowthRelic, 
+
+//Encounter Index:
+438
+//Encounter Units: PerpetualSand, PerpetualSand, PerpetualSand, FinickyPapillon, FinickyPapillon, 
+
+//Encounter Index:
+439
+//Encounter Units: FinickyPapillon, FinickyPapillon, FinickyPapillon, GrowthRelic, GrowthRelic, 
+
+//Encounter Index:
+440
+//Encounter Units: GrowthRelic, GrowthRelic, PerpetualSand, PerpetualSand, PerpetualSand, 
+
+//Encounter Index:
+442
+//Encounter Units: PrimeMagus, DarkEagle, DarkEagle, 
+
+//Encounter Index:
+443
+//Encounter Units: PrimeMagus, PrimeMagus, ManiacalBook, ManiacalBook, 
+
+//Encounter Index:
+444
+//Encounter Units: MythicalGigas, DarkEagle, DarkEagle, DarkEagle, 
+
+//Encounter Index:
+445
+//Encounter Units: MythicalGigas, MythicalGigas, ManiacalBook, 
+
+//Encounter Index:
+446
+//Encounter Units: BraveWheel, BraveWheel, DarkEagle, 
+
+//Encounter Index:
+447
+//Encounter Units: BraveWheel, ManiacalBook, ManiacalBook, ManiacalBook, 
+
+//Encounter Index:
+448
+//Encounter Units: BraveWheel, PerpetualSand, PerpetualSand, FinickyPapillon, FinickyPapillon, 
+
+//Encounter Index:
+449
+//Encounter Units: BraveWheel, FinickyPapillon, FinickyPapillon, GrowthRelic, GrowthRelic, 
+
+//Encounter Index:
+450
+//Encounter Units: RashPanzer, DarkEagle, DarkEagle, 
+
+//Encounter Index:
+451
+//Encounter Units: RashPanzer, ManiacalBook, ManiacalBook, 
+
+//Encounter Index:
+452
+//Encounter Units: RashPanzer, GrowthRelic, GrowthRelic, PerpetualSand, PerpetualSand, 
+
+//Encounter Index:
+453
+//Encounter Units: RashPanzer, PerpetualSand, FinickyPapillon, FinickyPapillon, 
+
+//Encounter Index:
+455
+//Encounter Units: KillerDrive, KillerDrive, ApostateTower, 
+
+//Encounter Index:
+456
+//Encounter Units: KillerDrive, CarnalSnake, CarnalSnake, CarnalSnake, 
+
+//Encounter Index:
+457
+//Encounter Units: RegalMother, RegalMother, ApostateTower, ApostateTower, 
+
+//Encounter Index:
+458
+//Encounter Units: RegalMother, RegalMother, CarnalSnake, CarnalSnake, CarnalSnake, 
+
+//Encounter Index:
+459
+//Encounter Units: CurseDice, ApostateTower, ApostateTower, ApostateTower, 
+
+//Encounter Index:
+460
+//Encounter Units: CurseDice, CarnalSnake, CarnalSnake, CarnalSnake, 
+
+//Encounter Index:
+461
+//Encounter Units: KillerDrive, ApostateTower, DarkEagle, DarkEagle, 
+
+//Encounter Index:
+462
+//Encounter Units: KillerDrive, CarnalSnake, CarnalSnake, ManiacalBook, 
+
+//Encounter Index:
+463
+//Encounter Units: RegalMother, RegalMother, ApostateTower, RashPanzer, 
+
+//Encounter Index:
+464
+//Encounter Units: RegalMother, RegalMother, CarnalSnake, DarkEagle, DarkEagle, 
+
+//Encounter Index:
+465
+//Encounter Units: CurseDice, ApostateTower, ApostateTower, ManiacalBook, 
+
+//Encounter Index:
+466
+//Encounter Units: CurseDice, RashPanzer, BraveWheel, 
+
+//Encounter Index:
+468
+//Encounter Units: PhantomLord, DryDexy, DryDexy, DryDexy, 
+
+//Encounter Index:
+469
+//Encounter Units: PhantomLord, DevotedCupid, DevotedCupid, DevotedCupid, 
+
+//Encounter Index:
+470
+//Encounter Units: PhantomLord, LightBalance, LightBalance, 
+
+//Encounter Index:
+471
+//Encounter Units: RecklessOkina, DevotedCupid, DevotedCupid, DevotedCupid, DevotedCupid, 
+
+//Encounter Index:
+472
+//Encounter Units: RecklessOkina, RecklessOkina, AngryTable, AngryTable, 
+
+//Encounter Index:
+473
+//Encounter Units: RecklessOkina, RecklessOkina, LightBalance, LightBalance, 
+
+//Encounter Index:
+474
+//Encounter Units: DryDexy, DryDexy, DevotedCupid, DevotedCupid, DevotedCupid, 
+
+//Encounter Index:
+475
+//Encounter Units: DevotedCupid, DevotedCupid, AngryTable, AngryTable, 
+
+//Encounter Index:
+476
+//Encounter Units: AngryTable, AngryTable, AngryTable, DryDexy, 
+
+//Encounter Index:
+477
+//Encounter Units: LightBalance, LightBalance, LightBalance, 
+
+//Encounter Index:
+479
+//Encounter Units: ChaosCyclops, ChaosCyclops, RevelationPesce, RevelationPesce, 
+
+//Encounter Index:
+480
+//Encounter Units: ChaosCyclops, ChaosCyclops, PhantomLord, 
+
+//Encounter Index:
+481
+//Encounter Units: ChaosCyclops, DevotedCupid, DevotedCupid, AngryTable, 
+
+//Encounter Index:
+482
+//Encounter Units: GreenSigil, BlossomNyogo, BlossomNyogo, BlossomNyogo, 
+
+//Encounter Index:
+483
+//Encounter Units: GreenSigil, GreenSigil, RecklessOkina, 
+
+//Encounter Index:
+484
+//Encounter Units: GreenSigil, AngryTable, DryDexy, DryDexy, 
+
+//Encounter Index:
+485
+//Encounter Units: StasisGiant, StasisGiant, RevelationPesce, RevelationPesce, 
+
+//Encounter Index:
+486
+//Encounter Units: StasisGiant, StasisGiant, BlossomNyogo, BlossomNyogo, 
+
+//Encounter Index:
+487
+//Encounter Units: StasisGiant, DryDexy, DevotedCupid, DevotedCupid, 
+
+//Encounter Index:
+488
+//Encounter Units: RevelationPesce, RevelationPesce, RevelationPesce, BlossomNyogo, BlossomNyogo, 
+
+//Encounter Index:
+489
+//Encounter Units: PhantomLord, RecklessOkina, LightBalance, LightBalance, 
+
+//Encounter Index:
+490
+//Encounter Units: DevotedCupid, DevotedCupid, AngryTable, AngryTable, DryDexy, 
+
+//Encounter Index:
+492
+//Encounter Units: IntrepidKnight, IntrepidKnight, 
+
+//Encounter Index:
+493
+//Encounter Units: IntrepidKnight, NaturalDancer, NaturalDancer, 
+
+//Encounter Index:
+494
+//Encounter Units: JotunofBlood, JotunofBlood, JotunofBlood, 
+
+//Encounter Index:
+495
+//Encounter Units: JotunofBlood, JotunofBlood, ConvictionSword, 
+
+//Encounter Index:
+496
+//Encounter Units: HallowedTurret, HallowedTurret, 
+
+//Encounter Index:
+497
+//Encounter Units: HallowedTurret, ConvictionSword, ConvictionSword, 
+
+//Encounter Index:
+498
+//Encounter Units: HallowedTurret, NaturalDancer, NaturalDancer, 
+
+//Encounter Index:
+499
+//Encounter Units: MinotaurIV, MinotaurIV, 
+
+//Encounter Index:
+500
+//Encounter Units: MinotaurIV, ConvictionSword, ConvictionSword, ConvictionSword, 
+
+//Encounter Index:
+501
+//Encounter Units: ConvictionSword, StasisGiant, RevelationPesce, RevelationPesce, 
+
+//Encounter Index:
+502
+//Encounter Units: ConvictionSword, ConvictionSword, ChaosCyclops, BlossomNyogo, 
+
+//Encounter Index:
+503
+//Encounter Units: NaturalDancer, NaturalDancer, StasisGiant, BlossomNyogo, 
+
+//Encounter Index:
+504
+//Encounter Units: NaturalDancer, NaturalDancer, ChaosCyclops, RevelationPesce, 
+
+//Encounter Index:
+505
+//Encounter Units: IntrepidKnight, IntrepidKnight, HallowedTurret, 
+
+//Encounter Index:
+506
+//Encounter Units: MinotaurIV, MinotaurIV, HallowedTurret, 
+
+//Encounter Index:
+507
+//Encounter Units: RaindropCastle, RaindropCastle, RaindropCastle, 
+
+//Encounter Index:
+508
+//Encounter Units: RainWindMusha, 
+
+//Encounter Index:
+509
+//Encounter Units: RainWindMusha, RainWindMusha, 
+
+//Encounter Index:
+510
+//Encounter Units: RainWindMusha, RainWindMusha, RainWindMusha, RaindropCastle, 
+
+//Encounter Index:
+520
+//Encounter Units: Kuninosagiri, 
+
+//Encounter Index:
+525
+//Encounter Units: Margaret, 
+
+//Encounter Index:
+531
+//Encounter Units: LostOkina, 
+
+//Encounter Index:
+816
+//Encounter Units: WorldBalance315, 
+

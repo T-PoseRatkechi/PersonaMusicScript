@@ -1,0 +1,386 @@
+//MARUKYU STRIPTEASE
+//================================================
+//Encounter Index:
+177
+//Encounter Units: TreasureHand, 
+
+//Encounter Index:
+183
+//Encounter Units: MightyCyclops, 
+
+//Encounter Index:
+186
+//Encounter Units: MissGene, MissGene, 
+
+//Encounter Index:
+187
+//Encounter Units: MissGene, MissGene, MissGene, 
+
+//Encounter Index:
+188
+//Encounter Units: SoulDancer, SoulDancer, 
+
+//Encounter Index:
+189
+//Encounter Units: CreationRelic, CreationRelic, 
+
+//Encounter Index:
+190
+//Encounter Units: DeathSeeker, 
+
+//Encounter Index:
+191
+//Encounter Units: MissGene, MissGene, SoulDancer, 
+
+//Encounter Index:
+192
+//Encounter Units: SoulDancer, CreationRelic, CreationRelic, 
+
+//Encounter Index:
+193
+//Encounter Units: DeathSeeker, MissGene, MissGene, 
+
+//Encounter Index:
+194
+//Encounter Units: RainySister3, RainySister3, 
+
+//Encounter Index:
+195
+//Encounter Units: RainySister3, RainySister3, RainySister3, 
+
+//Encounter Index:
+197
+//Encounter Units: SoulDancer, SoulDancer, SoulDancer, 
+
+//Encounter Index:
+198
+//Encounter Units: PersistentFuzz, 
+
+//Encounter Index:
+199
+//Encounter Units: DeathSeeker, SoulDancer, 
+
+//Encounter Index:
+200
+//Encounter Units: DeathSeeker, CreationRelic, 
+
+//Encounter Index:
+201
+//Encounter Units: SoulDancer, SoulDancer, CreationRelic, 
+
+//Encounter Index:
+203
+//Encounter Units: PersistentFuzz, IdleBasalt, IdleBasalt, 
+
+//Encounter Index:
+204
+//Encounter Units: PersistentFuzz, IdleBasalt, IdleBasalt, IdleBasalt, 
+
+//Encounter Index:
+205
+//Encounter Units: PersistentFuzz, PersistentFuzz, SonicRaven, 
+
+//Encounter Index:
+206
+//Encounter Units: PersistentFuzz, PersistentFuzz, SonicRaven, SonicRaven, 
+
+//Encounter Index:
+208
+//Encounter Units: PersistentFuzz, PersistentFuzz, 
+
+//Encounter Index:
+209
+//Encounter Units: VenusEagle, VenusEagle, 
+
+//Encounter Index:
+210
+//Encounter Units: IdleBasalt, IdleBasalt, IdleBasalt, 
+
+//Encounter Index:
+211
+//Encounter Units: SonicRaven, SonicRaven, SonicRaven, 
+
+//Encounter Index:
+212
+//Encounter Units: DeathSeeker, DeathSeeker, 
+
+//Encounter Index:
+213
+//Encounter Units: SonicRaven, SonicRaven, IdleBasalt, 
+
+//Encounter Index:
+214
+//Encounter Units: IdleBasalt, IdleBasalt, CreationRelic, 
+
+//Encounter Index:
+215
+//Encounter Units: IdleBasalt, IdleBasalt, PersistentFuzz, 
+
+//Encounter Index:
+216
+//Encounter Units: IdleBasalt, IdleBasalt, VenusEagle, 
+
+//Encounter Index:
+217
+//Encounter Units: SonicRaven, SonicRaven, DeathSeeker, 
+
+//Encounter Index:
+218
+//Encounter Units: SonicRaven, SonicRaven, SoulDancer, SoulDancer, 
+
+//Encounter Index:
+219
+//Encounter Units: PersistentFuzz, VenusEagle, VenusEagle, 
+
+//Encounter Index:
+220
+//Encounter Units: PersistentFuzz, CreationRelic, CreationRelic, 
+
+//Encounter Index:
+221
+//Encounter Units: PersistentFuzz, MissGene, MissGene, MissGene, 
+
+//Encounter Index:
+222
+//Encounter Units: SoulDancer, SoulDancer, SoulDancer, SoulDancer, 
+
+//Encounter Index:
+223
+//Encounter Units: RainWheel, 
+
+//Encounter Index:
+224
+//Encounter Units: RainWheel, RainWheel, 
+
+//Encounter Index:
+226
+//Encounter Units: LiberatingIdol, LiberatingIdol, LargeBasalt, LargeBasalt, 
+
+//Encounter Index:
+227
+//Encounter Units: EnslavedBeast, SonicRaven, SonicRaven, SonicRaven, SonicRaven, 
+
+//Encounter Index:
+229
+//Encounter Units: LiberatingIdol, LiberatingIdol, 
+
+//Encounter Index:
+230
+//Encounter Units: ForgottenHablerie, ForgottenHablerie, ForgottenHablerie, 
+
+//Encounter Index:
+231
+//Encounter Units: EnslavedBeast, EnslavedBeast, 
+
+//Encounter Index:
+232
+//Encounter Units: SilverDice, SilverDice, 
+
+//Encounter Index:
+233
+//Encounter Units: BloomingBambino, BloomingBambino, 
+
+//Encounter Index:
+234
+//Encounter Units: LiberatingIdol, ForgottenHablerie, ForgottenHablerie, 
+
+//Encounter Index:
+235
+//Encounter Units: LiberatingIdol, EnslavedBeast, 
+
+//Encounter Index:
+236
+//Encounter Units: LiberatingIdol, SilverDice, 
+
+//Encounter Index:
+237
+//Encounter Units: KillingHand7, KillingHand7, BloomingBambino, 
+
+//Encounter Index:
+238
+//Encounter Units: VenusEagle, VenusEagle, EnslavedBeast, 
+
+//Encounter Index:
+239
+//Encounter Units: VenusEagle, VenusEagle, PersistentFuzz, 
+
+//Encounter Index:
+240
+//Encounter Units: ForgottenHablerie, ForgottenHablerie, PersistentFuzz, PersistentFuzz, 
+
+//Encounter Index:
+241
+//Encounter Units: ForgottenHablerie, ForgottenHablerie, BloomingBambino, 
+
+//Encounter Index:
+242
+//Encounter Units: LiberatingIdol, SonicRaven, SonicRaven, SonicRaven, 
+
+//Encounter Index:
+243
+//Encounter Units: RainLegMusha, 
+
+//Encounter Index:
+244
+//Encounter Units: RainLegMusha, RainLegMusha, 
+
+//Encounter Index:
+246
+//Encounter Units: LargeBasalt, LargeBasalt, LargeBasalt, 
+
+//Encounter Index:
+247
+//Encounter Units: AdamantBeetle, AdamantBeetle, 
+
+//Encounter Index:
+248
+//Encounter Units: BloomingBambino, BloomingBambino, BloomingBambino, 
+
+//Encounter Index:
+249
+//Encounter Units: LargeBasalt, LargeBasalt, KillingHand7, KillingHand7, 
+
+//Encounter Index:
+250
+//Encounter Units: LargeBasalt, LargeBasalt, LargeBasalt, LiberatingIdol, 
+
+//Encounter Index:
+251
+//Encounter Units: KillingHand7, EnslavedBeast, EnslavedBeast, 
+
+//Encounter Index:
+252
+//Encounter Units: KillingHand7, KillingHand7, AdamantBeetle, 
+
+//Encounter Index:
+253
+//Encounter Units: KillingHand7, KillingHand7, BloomingBambino, BloomingBambino, 
+
+//Encounter Index:
+254
+//Encounter Units: ForgottenHablerie, ForgottenHablerie, SilverDice, 
+
+//Encounter Index:
+255
+//Encounter Units: ForgottenHablerie, ForgottenHablerie, BloomingBambino, 
+
+//Encounter Index:
+256
+//Encounter Units: ForgottenHablerie, BloomingBambino, BloomingBambino, 
+
+//Encounter Index:
+257
+//Encounter Units: VenusEagle, VenusEagle, BloomingBambino, 
+
+//Encounter Index:
+258
+//Encounter Units: AdamantBeetle, LiberatingIdol, 
+
+//Encounter Index:
+259
+//Encounter Units: AdamantBeetle, EnslavedBeast, EnslavedBeast, 
+
+//Encounter Index:
+260
+//Encounter Units: ChampionKnight, 
+
+//Encounter Index:
+262
+//Encounter Units: MightyCyclops, BloomingBambino, BloomingBambino, 
+
+//Encounter Index:
+264
+//Encounter Units: SkyBalance, SkyBalance, 
+
+//Encounter Index:
+265
+//Encounter Units: ArcaneTurret, 
+
+//Encounter Index:
+266
+//Encounter Units: MightyCyclops, MightyCyclops, 
+
+//Encounter Index:
+267
+//Encounter Units: ChampionKnight, LiberatingIdol, LiberatingIdol, 
+
+//Encounter Index:
+268
+//Encounter Units: ChampionKnight, KillingHand7, 
+
+//Encounter Index:
+269
+//Encounter Units: ChampionKnight, AdamantBeetle, 
+
+//Encounter Index:
+270
+//Encounter Units: MightyCyclops, KillingHand7, KillingHand7, 
+
+//Encounter Index:
+271
+//Encounter Units: MightyCyclops, SilverDice, 
+
+//Encounter Index:
+272
+//Encounter Units: MightyCyclops, ForgottenHablerie, ForgottenHablerie, ForgottenHablerie, 
+
+//Encounter Index:
+273
+//Encounter Units: ArcaneTurret, SilverDice, 
+
+//Encounter Index:
+274
+//Encounter Units: ArcaneTurret, LiberatingIdol, 
+
+//Encounter Index:
+275
+//Encounter Units: ArcaneTurret, VenusEagle, VenusEagle, 
+
+//Encounter Index:
+276
+//Encounter Units: SkyBalance, AdamantBeetle, AdamantBeetle, 
+
+//Encounter Index:
+277
+//Encounter Units: SkyBalance, LiberatingIdol, 
+
+//Encounter Index:
+278
+//Encounter Units: BloomingBambino, BloomingBambino, ForgottenHablerie, ForgottenHablerie, 
+
+//Encounter Index:
+280
+//Encounter Units: ArcaneTurret, ArcaneTurret, 
+
+//Encounter Index:
+281
+//Encounter Units: ArcaneTurret, ChampionKnight, ChampionKnight, 
+
+//Encounter Index:
+283
+//Encounter Units: RainySister3, RainySister3, RainySister3, RainySister3, RainySister3, 
+
+//Encounter Index:
+284
+//Encounter Units: RainWheel, RainySister3, RainySister3, RainySister3, 
+
+//Encounter Index:
+285
+//Encounter Units: RainLegMusha, RainLegMusha, RainySister3, RainySister3, 
+
+//Encounter Index:
+516
+//Encounter Units: ShadowRise, 
+
+//Encounter Index:
+517
+//Encounter Units: ShadowTeddie, 
+
+//Encounter Index:
+528
+//Encounter Units: MomentaryChild, 
+
+//Encounter Index:
+813
+//Encounter Units: AmorousSnake312, 
+

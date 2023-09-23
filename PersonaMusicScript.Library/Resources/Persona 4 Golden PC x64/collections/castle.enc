@@ -1,0 +1,306 @@
+//YUKIKO'S CASTLE
+//================================================
+//Encounter Index:
+3
+//Encounter Units: MagicHand, MagicHand, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+16
+//Encounter Units: LyingHablerie17, 
+
+//Encounter Index:
+17
+//Encounter Units: LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+18
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+19
+//Encounter Units: CalmPesce, 
+
+//Encounter Index:
+20
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+21
+//Encounter Units: AvengerKnight71, 
+
+//Encounter Index:
+37
+//Encounter Units: LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+38
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+39
+//Encounter Units: LyingHablerie17, CalmPesce, 
+
+//Encounter Index:
+40
+//Encounter Units: CalmPesce, 
+
+//Encounter Index:
+41
+//Encounter Units: CalmPesce, CalmPesce, 
+
+//Encounter Index:
+42
+//Encounter Units: MagicHand, LyingHablerie17, 
+
+//Encounter Index:
+43
+//Encounter Units: MagicHand, CalmPesce, 
+
+//Encounter Index:
+44
+//Encounter Units: MagicHand, 
+
+//Encounter Index:
+46
+//Encounter Units: BlackRaven, BlackRaven, 
+
+//Encounter Index:
+47
+//Encounter Units: BlackRaven, BlackRaven, BlackRaven, 
+
+//Encounter Index:
+48
+//Encounter Units: TranceTwins, 
+
+//Encounter Index:
+49
+//Encounter Units: TranceTwins, LyingHablerie17, 
+
+//Encounter Index:
+50
+//Encounter Units: TranceTwins, CalmPesce, 
+
+//Encounter Index:
+51
+//Encounter Units: MagicHand, CalmPesce, CalmPesce, 
+
+//Encounter Index:
+53
+//Encounter Units: PositiveKing, 
+
+//Encounter Index:
+54
+//Encounter Units: LaughingTable, 
+
+//Encounter Index:
+55
+//Encounter Units: LaughingTable, MagicHand, 
+
+//Encounter Index:
+56
+//Encounter Units: BronzeDice, 
+
+//Encounter Index:
+57
+//Encounter Units: TranceTwins, TranceTwins, 
+
+//Encounter Index:
+58
+//Encounter Units: TranceTwins, BlackRaven, BlackRaven, 
+
+//Encounter Index:
+60
+//Encounter Units: PhantomMage, PhantomMage, 
+
+//Encounter Index:
+61
+//Encounter Units: PhantomMage, BronzeDice, 
+
+//Encounter Index:
+62
+//Encounter Units: BurningBeetle, 
+
+//Encounter Index:
+63
+//Encounter Units: BurningBeetle, PhantomMage, 
+
+//Encounter Index:
+64
+//Encounter Units: LaughingTable, LaughingTable, 
+
+//Encounter Index:
+65
+//Encounter Units: LaughingTable, BlackRaven, BlackRaven, 
+
+//Encounter Index:
+66
+//Encounter Units: BronzeDice, BronzeDice, 
+
+//Encounter Index:
+68
+//Encounter Units: MagicalMagus, 
+
+//Encounter Index:
+69
+//Encounter Units: MagicalMagus, HeatBalance, 
+
+//Encounter Index:
+70
+//Encounter Units: HeatBalance, TranceTwins, TranceTwins, 
+
+//Encounter Index:
+71
+//Encounter Units: HeatBalance, BurningBeetle, 
+
+//Encounter Index:
+72
+//Encounter Units: BurningBeetle, PhantomMage, 
+
+//Encounter Index:
+73
+//Encounter Units: BurningBeetle, LaughingTable, 
+
+//Encounter Index:
+74
+//Encounter Units: PositiveKing, PhantomMage, 
+
+//Encounter Index:
+76
+//Encounter Units: PositiveKing, PositiveKing, 
+
+//Encounter Index:
+77
+//Encounter Units: MagicalMagus, MagicalMagus, 
+
+//Encounter Index:
+78
+//Encounter Units: BurningBeetle, BurningBeetle, 
+
+//Encounter Index:
+79
+//Encounter Units: BurningBeetle, MagicalMagus, 
+
+//Encounter Index:
+80
+//Encounter Units: HeatBalance, HeatBalance, HeatBalance, 
+
+//Encounter Index:
+82
+//Encounter Units: HappinessHand, 
+
+//Encounter Index:
+83
+//Encounter Units: MagicalMagus, MagicalMagus, MagicalMagus, 
+
+//Encounter Index:
+84
+//Encounter Units: AvengerKnight71, BronzeDice, 
+
+//Encounter Index:
+85
+//Encounter Units: HappinessHand, HappinessHand, HappinessHand, 
+
+//Encounter Index:
+513
+//Encounter Units: ShadowChie, 
+
+//Encounter Index:
+514
+//Encounter Units: ShadowYukiko, 
+
+//Encounter Index:
+526
+//Encounter Units: ContrarianKing, 
+
+//Encounter Index:
+811
+//Encounter Units: AvengerKnight310, 
+
+//Encounter Index:
+848
+//Encounter Units: MagicHand, 
+
+//Encounter Index:
+849
+//Encounter Units: LyingHablerie17, 
+
+//Encounter Index:
+851
+//Encounter Units: MagicHand, MagicHand, 
+
+//Encounter Index:
+852
+//Encounter Units: LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+854
+//Encounter Units: MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+855
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+856
+//Encounter Units: PurpleSigil, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+857
+//Encounter Units: PurpleSigil, PurpleSigil, LyingHablerie17, 
+
+//Encounter Index:
+858
+//Encounter Units: PurpleSigil, PurpleSigil, PurpleSigil, 
+
+//Encounter Index:
+859
+//Encounter Units: MagicHand, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+860
+//Encounter Units: LyingHablerie17, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+861
+//Encounter Units: LyingHablerie17, LyingHablerie17, MagicHand, MagicHand, 
+
+//Encounter Index:
+862
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, MagicHand, 
+
+//Encounter Index:
+863
+//Encounter Units: PurpleSigil, LyingHablerie17, MagicHand, MagicHand, 
+
+//Encounter Index:
+864
+//Encounter Units: PurpleSigil, LyingHablerie17, LyingHablerie17, MagicHand, 
+
+//Encounter Index:
+865
+//Encounter Units: PurpleSigil, PurpleSigil, MagicHand, MagicHand, 
+
+//Encounter Index:
+866
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+
+//Encounter Index:
+867
+//Encounter Units: MagicHand, MagicHand, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+868
+//Encounter Units: LyingHablerie17, MagicHand, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+869
+//Encounter Units: LyingHablerie17, LyingHablerie17, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+870
+//Encounter Units: PurpleSigil, MagicHand, MagicHand, MagicHand, MagicHand, 
+
+//Encounter Index:
+871
+//Encounter Units: LyingHablerie17, LyingHablerie17, LyingHablerie17, LyingHablerie17, LyingHablerie17, 
+

@@ -1,0 +1,274 @@
+//VOID QUEST
+//================================================
+//Encounter Index:
+0
+//Encounter Units: StrengthBeetle, StrengthBeetle, StrengthBeetle, StrengthBeetle, StrengthBeetle, 
+
+//Encounter Index:
+287
+//Encounter Units: DependentBasalt, DependentBasalt, 
+
+//Encounter Index:
+288
+//Encounter Units: DependentBasalt, DependentBasalt, DependentBasalt, 
+
+//Encounter Index:
+289
+//Encounter Units: CorruptTower, 
+
+//Encounter Index:
+290
+//Encounter Units: CorruptTower, CorruptTower, 
+
+//Encounter Index:
+291
+//Encounter Units: JusticeSword, JusticeSword, 
+
+//Encounter Index:
+292
+//Encounter Units: JusticeSword, JusticeSword, JusticeSword, 
+
+//Encounter Index:
+293
+//Encounter Units: LustfulSnake, LustfulSnake, 
+
+//Encounter Index:
+294
+//Encounter Units: MadCyclops, MadCyclops, 
+
+//Encounter Index:
+295
+//Encounter Units: BlindCupid, BlindCupid, 
+
+//Encounter Index:
+296
+//Encounter Units: BlindCupid, BlindCupid, BlindCupid, 
+
+//Encounter Index:
+297
+//Encounter Units: SpuriousBook, SpuriousBook, SpuriousBook, 
+
+//Encounter Index:
+298
+//Encounter Units: AmentiRaven, AmentiRaven, 
+
+//Encounter Index:
+299
+//Encounter Units: AmentiRaven, AmentiRaven, AmentiRaven, 
+
+//Encounter Index:
+300
+//Encounter Units: FateSeeker, FateSeeker, 
+
+//Encounter Index:
+301
+//Encounter Units: RainyCastle, RainyCastle, 
+
+//Encounter Index:
+302
+//Encounter Units: RainyCastle, RainyCastle, RainyCastle, 
+
+//Encounter Index:
+304
+//Encounter Units: LustfulSnake, DependentBasalt, DependentBasalt, 
+
+//Encounter Index:
+305
+//Encounter Units: LustfulSnake, LustfulSnake, BlindCupid, 
+
+//Encounter Index:
+306
+//Encounter Units: MadCyclops, CorruptTower, 
+
+//Encounter Index:
+307
+//Encounter Units: MadCyclops, BlindCupid, BlindCupid, BlindCupid, 
+
+//Encounter Index:
+308
+//Encounter Units: AmentiRaven, AmentiRaven, CorruptTower, 
+
+//Encounter Index:
+309
+//Encounter Units: AmentiRaven, DependentBasalt, DependentBasalt, 
+
+//Encounter Index:
+310
+//Encounter Units: FateSeeker, DependentBasalt, 
+
+//Encounter Index:
+311
+//Encounter Units: FateSeeker, FateSeeker, BlindCupid, 
+
+//Encounter Index:
+312
+//Encounter Units: SpuriousBook, JusticeSword, CorruptTower, CorruptTower, 
+
+//Encounter Index:
+313
+//Encounter Units: SpuriousBook, MadCyclops, CorruptTower, 
+
+//Encounter Index:
+314
+//Encounter Units: SpuriousBook, LustfulSnake, AmentiRaven, 
+
+//Encounter Index:
+315
+//Encounter Units: RainySister85, RainySister85, RainySister85, RainySister85, 
+
+//Encounter Index:
+316
+//Encounter Units: RainEndMusha, 
+
+//Encounter Index:
+318
+//Encounter Units: BlueSigil, BlueSigil, 
+
+//Encounter Index:
+319
+//Encounter Units: WhimsicalPapillon, WhimsicalPapillon, WhimsicalPapillon, 
+
+//Encounter Index:
+320
+//Encounter Units: WhimsicalPapillon, WhimsicalPapillon, WhimsicalPapillon, WhimsicalPapillon, 
+
+//Encounter Index:
+321
+//Encounter Units: AnguishBasalt, AnguishBasalt, AnguishBasalt, 
+
+//Encounter Index:
+322
+//Encounter Units: AnguishBasalt, AnguishBasalt, AnguishBasalt, AnguishBasalt, 
+
+//Encounter Index:
+323
+//Encounter Units: StrengthBeetle, StrengthBeetle, 
+
+//Encounter Index:
+324
+//Encounter Units: AvariceBambino, AvariceBambino, 
+
+//Encounter Index:
+326
+//Encounter Units: AvariceBambino, AvariceBambino, AnguishBasalt, AnguishBasalt, 
+
+//Encounter Index:
+327
+//Encounter Units: AvariceBambino, StrengthBeetle, WhimsicalPapillon, 
+
+//Encounter Index:
+328
+//Encounter Units: LeadingIdol, BlueSigil, 
+
+//Encounter Index:
+329
+//Encounter Units: LeadingIdol, AlmightyHand, 
+
+//Encounter Index:
+330
+//Encounter Units: MonomaniacFuzz, MonomaniacFuzz, WhimsicalPapillon, WhimsicalPapillon, 
+
+//Encounter Index:
+331
+//Encounter Units: MonomaniacFuzz, AvariceBambino, AlmightyHand, 
+
+//Encounter Index:
+332
+//Encounter Units: AlmightyHand, StrengthBeetle, WhimsicalPapillon, WhimsicalPapillon, 
+
+//Encounter Index:
+333
+//Encounter Units: AlmightyHand, AnguishBasalt, WhimsicalPapillon, 
+
+//Encounter Index:
+334
+//Encounter Units: RainyPot, RainyPot, RainyPot, 
+
+//Encounter Index:
+335
+//Encounter Units: RainyBrother106, RainyBrother106, RainyBrother106, RainyBrother106, 
+
+//Encounter Index:
+337
+//Encounter Units: SteelMachine, 
+
+//Encounter Index:
+338
+//Encounter Units: ScarletTurret, 
+
+//Encounter Index:
+339
+//Encounter Units: BeastlyGigas, BeastlyGigas, 
+
+//Encounter Index:
+340
+//Encounter Units: ArdentDancer, ArdentDancer, ArdentDancer, 
+
+//Encounter Index:
+341
+//Encounter Units: MonomaniacFuzz, MonomaniacFuzz, ProtectiveLexy, ProtectiveLexy, 
+
+//Encounter Index:
+342
+//Encounter Units: BlueSigil, BlueSigil, AlmightyHand, 
+
+//Encounter Index:
+343
+//Encounter Units: ScarletTurret, LeadingIdol, 
+
+//Encounter Index:
+344
+//Encounter Units: BeastlyGigas, BeastlyGigas, BeastlyGigas, 
+
+//Encounter Index:
+345
+//Encounter Units: BeastlyGigas, BeastlyGigas, ProtectiveLexy, 
+
+//Encounter Index:
+346
+//Encounter Units: ArdentDancer, ArdentDancer, ProtectiveLexy, ProtectiveLexy, 
+
+//Encounter Index:
+347
+//Encounter Units: ArdentDancer, ArdentDancer, ProtectiveLexy, AlmightyHand, 
+
+//Encounter Index:
+348
+//Encounter Units: LeadingIdol, LeadingIdol, ProtectiveLexy, 
+
+//Encounter Index:
+349
+//Encounter Units: RainyCastle, RainEndMusha, RainEndMusha, 
+
+//Encounter Index:
+350
+//Encounter Units: RainyBrother106, RainyBrother106, RainySister85, RainySister85, RainyPot, 
+
+//Encounter Index:
+352
+//Encounter Units: ScarletTurret, ScarletTurret, 
+
+//Encounter Index:
+353
+//Encounter Units: BeastlyGigas, BeastlyGigas, BeastlyGigas, StrengthBeetle, StrengthBeetle, 
+
+//Encounter Index:
+354
+//Encounter Units: ScarletTurret, ScarletTurret, ProtectiveLexy, 
+
+//Encounter Index:
+355
+//Encounter Units: BeastlyGigas, BeastlyGigas, BeastlyGigas, StrengthBeetle, ProtectiveLexy, 
+
+//Encounter Index:
+518
+//Encounter Units: ShadowMitsuo, MitsuotheHero, 
+
+//Encounter Index:
+529
+//Encounter Units: EscapistSoldier, 
+
+//Encounter Index:
+814
+//Encounter Units: KillingHand313, 
+

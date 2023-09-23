@@ -1,0 +1,354 @@
+//HOLLOW FOREST
+//================================================
+//Encounter Index:
+534
+//Encounter Units: KusuminoOkami, 
+
+//Encounter Index:
+535
+//Encounter Units: Marie, 
+
+//Encounter Index:
+544
+//Encounter Units: CursedWomansPot, CursedWomansPot, 
+
+//Encounter Index:
+545
+//Encounter Units: CursedWomansPot, CursedWomansPot, CursedWomansPot, 
+
+//Encounter Index:
+546
+//Encounter Units: CursedWomansPot, CursedWomansPot, ReverentTable, ReverentTable, 
+
+//Encounter Index:
+547
+//Encounter Units: CursedWomansPot, CursedWomansPot, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+548
+//Encounter Units: CursedWomansPot, CursedWomansPot, GauntletHand, GauntletHand, 
+
+//Encounter Index:
+549
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, 
+
+//Encounter Index:
+550
+//Encounter Units: HarmoniousGiant, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+551
+//Encounter Units: HarmoniousGiant, GauntletHand, SuperstitiousOkina, 
+
+//Encounter Index:
+552
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, PrayingPapillon, 
+
+//Encounter Index:
+553
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, CursedWomansPot, CursedWomansPot, 
+
+//Encounter Index:
+554
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, LawlessFuzz, LawlessFuzz, 
+
+//Encounter Index:
+555
+//Encounter Units: CursedWomansPot, CursedWomansPot, CursedWomansPot, StonePanzer, 
+
+//Encounter Index:
+556
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, StupendousRelic, 
+
+//Encounter Index:
+557
+//Encounter Units: CursedWomansPot, CursedWomansPot, EmaciatedGarcy, 
+
+//Encounter Index:
+558
+//Encounter Units: HarmoniousGiant, HarmoniousGiant, ClearSkyMusha, 
+
+//Encounter Index:
+826
+//Encounter Units: EmaciatedGarcy, EmaciatedGarcy, 
+
+//Encounter Index:
+827
+//Encounter Units: EmaciatedGarcy, GauntletHand, GauntletHand, 
+
+//Encounter Index:
+828
+//Encounter Units: ClearSkyMusha, SnowfallMusha, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+829
+//Encounter Units: ClearSkyMusha, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+830
+//Encounter Units: ClearSkyMusha, SnowfallMusha, GauntletHand, GauntletHand, 
+
+//Encounter Index:
+831
+//Encounter Units: ClearSkyMusha, HarmoniousGiant, HarmoniousGiant, 
+
+//Encounter Index:
+832
+//Encounter Units: ExecutionSword, GauntletHand, GauntletHand, 
+
+//Encounter Index:
+833
+//Encounter Units: ExecutionSword, HarmoniousGiant, 
+
+//Encounter Index:
+834
+//Encounter Units: ExecutionSword, SnowfallMusha, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+836
+//Encounter Units: ClearSkyMusha, CalmMachine, PrayingPapillon, 
+
+//Encounter Index:
+837
+//Encounter Units: ClearSkyMusha, CalmMachine, StupendousRelic, 
+
+//Encounter Index:
+838
+//Encounter Units: ClearSkyMusha, ClearSkyMusha, PrayingPapillon, 
+
+//Encounter Index:
+839
+//Encounter Units: ClearSkyMusha, ClearSkyMusha, StupendousRelic, 
+
+//Encounter Index:
+840
+//Encounter Units: IndignantMachine, CalmMachine, 
+
+//Encounter Index:
+841
+//Encounter Units: IndignantMachine, PrayingPapillon, StupendousRelic, 
+
+//Encounter Index:
+842
+//Encounter Units: ExecutionSword, ExecutionSword, SnowfallMusha, PrayingPapillon, 
+
+//Encounter Index:
+843
+//Encounter Units: ExecutionSword, ExecutionSword, SnowfallMusha, StupendousRelic, 
+
+//Encounter Index:
+880
+//Encounter Units: LyingHablerie338, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+881
+//Encounter Units: LyingHablerie338, WheeledBambino, 
+
+//Encounter Index:
+882
+//Encounter Units: SpectralRaven, SpectralRaven, SpectralRaven, 
+
+//Encounter Index:
+883
+//Encounter Units: SpectralRaven, SpectralRaven, WheeledBambino, 
+
+//Encounter Index:
+884
+//Encounter Units: PrayingNyogo, PrayingNyogo, SpectralRaven, 
+
+//Encounter Index:
+885
+//Encounter Units: PrayingNyogo, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+887
+//Encounter Units: LyingHablerie338, PrayingNyogo, SpectralRaven, SpectralRaven, 
+
+//Encounter Index:
+888
+//Encounter Units: WheeledBambino, PrayingNyogo, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+889
+//Encounter Units: ReverentTable, ReverentTable, ReverentTable, 
+
+//Encounter Index:
+890
+//Encounter Units: ReverentTable, ReverentTable, PrayingNyogo, PrayingNyogo, 
+
+//Encounter Index:
+891
+//Encounter Units: ReverentTable, ReverentTable, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+892
+//Encounter Units: CalmMachine, 
+
+//Encounter Index:
+894
+//Encounter Units: IsolatedHand, 
+
+//Encounter Index:
+895
+//Encounter Units: IsolatedHand, IsolatedHand, 
+
+//Encounter Index:
+897
+//Encounter Units: SnowfallMusha, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+898
+//Encounter Units: SnowfallMusha, SnowfallMusha, ReverentTable, 
+
+//Encounter Index:
+899
+//Encounter Units: SnowfallMusha, SnowfallMusha, WheeledBambino, 
+
+//Encounter Index:
+900
+//Encounter Units: ReverentTable, ReverentTable, WheeledBambino, WheeledBambino, 
+
+//Encounter Index:
+901
+//Encounter Units: CalmMachine, ReverentTable, 
+
+//Encounter Index:
+902
+//Encounter Units: CalmMachine, WheeledBambino, 
+
+//Encounter Index:
+904
+//Encounter Units: SnowfallMusha, SnowfallMusha, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+905
+//Encounter Units: SnowfallMusha, SnowfallMusha, PrayingNyogo, PrayingNyogo, 
+
+//Encounter Index:
+906
+//Encounter Units: SnowfallMusha, SnowfallMusha, GauntletHand, 
+
+//Encounter Index:
+907
+//Encounter Units: GauntletHand, GauntletHand, SpectralRaven, SpectralRaven, 
+
+//Encounter Index:
+908
+//Encounter Units: GauntletHand, LyingHablerie338, PrayingNyogo, 
+
+//Encounter Index:
+909
+//Encounter Units: SuperstitiousOkina, LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+910
+//Encounter Units: SuperstitiousOkina, PrayingNyogo, PrayingNyogo, 
+
+//Encounter Index:
+911
+//Encounter Units: SuperstitiousOkina, SpectralRaven, SpectralRaven, SpectralRaven, 
+
+//Encounter Index:
+913
+//Encounter Units: SnowfallMusha, SnowfallMusha, SnowfallMusha, PrayingPapillon, 
+
+//Encounter Index:
+914
+//Encounter Units: SnowfallMusha, SnowfallMusha, GauntletHand, PrayingPapillon, 
+
+//Encounter Index:
+915
+//Encounter Units: SnowfallMusha, PrayingNyogo, PrayingPapillon, 
+
+//Encounter Index:
+916
+//Encounter Units: GauntletHand, GauntletHand, PrayingPapillon, 
+
+//Encounter Index:
+917
+//Encounter Units: GauntletHand, GauntletHand, GauntletHand, 
+
+//Encounter Index:
+918
+//Encounter Units: GauntletHand, GauntletHand, PrayingNyogo, SuperstitiousOkina, 
+
+//Encounter Index:
+919
+//Encounter Units: GauntletHand, PrayingNyogo, PrayingNyogo, SuperstitiousOkina, 
+
+//Encounter Index:
+921
+//Encounter Units: LawlessFuzz, LawlessFuzz, StonePanzer, 
+
+//Encounter Index:
+922
+//Encounter Units: LawlessFuzz, LawlessFuzz, ReverentTable, ReverentTable, 
+
+//Encounter Index:
+923
+//Encounter Units: StonePanzer, PrayingNyogo, PrayingNyogo, 
+
+//Encounter Index:
+924
+//Encounter Units: GauntletHand, LawlessFuzz, LawlessFuzz, 
+
+//Encounter Index:
+925
+//Encounter Units: GauntletHand, GauntletHand, StonePanzer, 
+
+//Encounter Index:
+926
+//Encounter Units: StonePanzer, StonePanzer, 
+
+//Encounter Index:
+927
+//Encounter Units: LawlessFuzz, LawlessFuzz, LawlessFuzz, 
+
+//Encounter Index:
+929
+//Encounter Units: EmaciatedGarcy, 
+
+//Encounter Index:
+930
+//Encounter Units: EmaciatedGarcy, SnowfallMusha, 
+
+//Encounter Index:
+931
+//Encounter Units: EmaciatedGarcy, LawlessFuzz, 
+
+//Encounter Index:
+932
+//Encounter Units: StupendousRelic, SnowfallMusha, SnowfallMusha, SnowfallMusha, 
+
+//Encounter Index:
+933
+//Encounter Units: StupendousRelic, StonePanzer, StonePanzer, 
+
+//Encounter Index:
+934
+//Encounter Units: StupendousRelic, CalmMachine, CalmMachine, PrayingPapillon, 
+
+//Encounter Index:
+935
+//Encounter Units: LawlessFuzz, LawlessFuzz, PrayingPapillon, 
+
+//Encounter Index:
+936
+//Encounter Units: LawlessFuzz, StonePanzer, StonePanzer, 
+
+//Encounter Index:
+938
+//Encounter Units: GorgeousKing, 
+
+//Encounter Index:
+939
+//Encounter Units: HeavensGiant, 
+
+//Encounter Index:
+940
+//Encounter Units: LyingHablerie338, LyingHablerie338, 
+
+//Encounter Index:
+941
+//Encounter Units: CalmMachine, 
+

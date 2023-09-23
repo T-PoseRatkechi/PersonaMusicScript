@@ -1,0 +1,414 @@
+//YOMOTSU HIRASAKA
+//================================================
+//Encounter Index:
+523
+//Encounter Units: Izanami, 
+
+//Encounter Index:
+533
+//Encounter Units: IzanaminoOkami, 
+
+//Encounter Index:
+656
+//Encounter Units: DivineMother, DivineMother, WrathfulBook, 
+
+//Encounter Index:
+657
+//Encounter Units: DivineMother, PurePapillon, PurePapillon, PurePapillon, 
+
+//Encounter Index:
+658
+//Encounter Units: DivineMother, EternalSand, EternalSand, 
+
+//Encounter Index:
+659
+//Encounter Units: CrazyTwins, CrazyTwins, WrathfulBook, 
+
+//Encounter Index:
+660
+//Encounter Units: CrazyTwins, CrazyTwins, PurePapillon, PurePapillon, 
+
+//Encounter Index:
+661
+//Encounter Units: CrazyTwins, CrazyTwins, EternalSand, 
+
+//Encounter Index:
+662
+//Encounter Units: EmperorBeetle, WrathfulBook, WrathfulBook, 
+
+//Encounter Index:
+663
+//Encounter Units: EmperorBeetle, PurePapillon, PurePapillon, PurePapillon, 
+
+//Encounter Index:
+664
+//Encounter Units: EmperorBeetle, EternalSand, EternalSand, 
+
+//Encounter Index:
+665
+//Encounter Units: WrathfulBook, PurePapillon, PurePapillon, EternalSand, EternalSand, 
+
+//Encounter Index:
+666
+//Encounter Units: WrathfulBook, WrathfulBook, PurePapillon, PurePapillon, EternalSand, 
+
+//Encounter Index:
+668
+//Encounter Units: SilentNyogo, SilentNyogo, SilentNyogo, DivineMother, 
+
+//Encounter Index:
+669
+//Encounter Units: SilentNyogo, SilentNyogo, MistressPot, WrathfulBook, 
+
+//Encounter Index:
+670
+//Encounter Units: SilentNyogo, SilentNyogo, MistressPot, PurePapillon, 
+
+//Encounter Index:
+671
+//Encounter Units: SilentNyogo, SilentNyogo, WrathfulBook, PurePapillon, PurePapillon, 
+
+//Encounter Index:
+672
+//Encounter Units: PrimitiveIdol, PrimitiveIdol, CrazyTwins, CrazyTwins, 
+
+//Encounter Index:
+673
+//Encounter Units: PrimitiveIdol, MistressPot, PurePapillon, PurePapillon, 
+
+//Encounter Index:
+674
+//Encounter Units: PrimitiveIdol, PrimitiveIdol, MistressPot, WrathfulBook, 
+
+//Encounter Index:
+675
+//Encounter Units: PrimitiveIdol, PurePapillon, PurePapillon, EternalSand, EternalSand, 
+
+//Encounter Index:
+676
+//Encounter Units: PhantomHero, PhantomHero, EmperorBeetle, EmperorBeetle, 
+
+//Encounter Index:
+677
+//Encounter Units: PhantomHero, MistressPot, WrathfulBook, WrathfulBook, 
+
+//Encounter Index:
+678
+//Encounter Units: PhantomHero, PhantomHero, MistressPot, EternalSand, EternalSand, 
+
+//Encounter Index:
+679
+//Encounter Units: PhantomHero, PhantomHero, WrathfulBook, WrathfulBook, EternalSand, 
+
+//Encounter Index:
+681
+//Encounter Units: GrandMagus, EmperorBeetle, EmperorBeetle, 
+
+//Encounter Index:
+682
+//Encounter Units: GrandMagus, CrazyTwins, CrazyTwins, 
+
+//Encounter Index:
+683
+//Encounter Units: GrandMagus, MistressPot, DivineMother, 
+
+//Encounter Index:
+684
+//Encounter Units: GrandMagus, PurePapillon, PurePapillon, SilentNyogo, 
+
+//Encounter Index:
+685
+//Encounter Units: GrandMagus, WrathfulBook, WrathfulBook, EternalSand, 
+
+//Encounter Index:
+686
+//Encounter Units: GrudgeTower, GrudgeTower, GrudgeTower, EmperorBeetle, CrazyTwins, 
+
+//Encounter Index:
+687
+//Encounter Units: GrudgeTower, GrudgeTower, PrimitiveIdol, DivineMother, 
+
+//Encounter Index:
+688
+//Encounter Units: GrudgeTower, GrudgeTower, GrudgeTower, PhantomHero, SilentNyogo, 
+
+//Encounter Index:
+689
+//Encounter Units: PrimitiveIdol, PrimitiveIdol, PhantomHero, EternalSand, EternalSand, 
+
+//Encounter Index:
+690
+//Encounter Units: PrimitiveIdol, PhantomHero, PhantomHero, WrathfulBook, 
+
+//Encounter Index:
+692
+//Encounter Units: DoomSword, DoomSword, GraciousCupid, GraciousCupid, GraciousCupid, 
+
+//Encounter Index:
+693
+//Encounter Units: DoomSword, DoomSword, EternalEagle, EternalEagle, 
+
+//Encounter Index:
+694
+//Encounter Units: AcheronSeeker, AcheronSeeker, GraciousCupid, GraciousCupid, 
+
+//Encounter Index:
+695
+//Encounter Units: AcheronSeeker, EternalEagle, EternalEagle, EternalEagle, 
+
+//Encounter Index:
+696
+//Encounter Units: JotunofGrief, GraciousCupid, GraciousCupid, GraciousCupid, 
+
+//Encounter Index:
+697
+//Encounter Units: JotunofGrief, EternalEagle, EternalEagle, 
+
+//Encounter Index:
+698
+//Encounter Units: BerserkTurret, GraciousCupid, GraciousCupid, GraciousCupid, GraciousCupid, 
+
+//Encounter Index:
+699
+//Encounter Units: BerserkTurret, BerserkTurret, EternalEagle, EternalEagle, 
+
+//Encounter Index:
+700
+//Encounter Units: GrandMagus, GrandMagus, GrudgeTower, GrudgeTower, GrudgeTower, 
+
+//Encounter Index:
+701
+//Encounter Units: GrandMagus, GrandMagus, DoomSword, DoomSword, 
+
+//Encounter Index:
+702
+//Encounter Units: GrudgeTower, GrudgeTower, AcheronSeeker, AcheronSeeker, 
+
+//Encounter Index:
+703
+//Encounter Units: GrudgeTower, GrudgeTower, GrudgeTower, JotunofGrief, 
+
+//Encounter Index:
+705
+//Encounter Units: RampageDrive, RampageDrive, MoonOkina, 
+
+//Encounter Index:
+706
+//Encounter Units: RampageDrive, NextGene, NextGene, JotunofGrief, 
+
+//Encounter Index:
+707
+//Encounter Units: RampageDrive, NextGene, DoomSword, DoomSword, 
+
+//Encounter Index:
+708
+//Encounter Units: RampageDrive, GraciousCupid, GraciousCupid, EternalEagle, EternalEagle, 
+
+//Encounter Index:
+709
+//Encounter Units: PtarmiganPanzer, MoonOkina, MoonOkina, 
+
+//Encounter Index:
+710
+//Encounter Units: PtarmiganPanzer, NextGene, JotunofGrief, JotunofGrief, 
+
+//Encounter Index:
+711
+//Encounter Units: PtarmiganPanzer, JotunofGrief, DoomSword, 
+
+//Encounter Index:
+712
+//Encounter Units: PtarmiganPanzer, GraciousCupid, GraciousCupid, GraciousCupid, EternalEagle, 
+
+//Encounter Index:
+713
+//Encounter Units: MoonOkina, MoonOkina, BerserkTurret, DoomSword, 
+
+//Encounter Index:
+714
+//Encounter Units: MoonOkina, MoonOkina, JotunofGrief, AcheronSeeker, 
+
+//Encounter Index:
+715
+//Encounter Units: NextGene, NextGene, NextGene, BerserkTurret, AcheronSeeker, 
+
+//Encounter Index:
+716
+//Encounter Units: NextGene, NextGene, NextGene, JotunofGrief, DoomSword, 
+
+//Encounter Index:
+718
+//Encounter Units: BrilliantKing, StoicSnake, StoicSnake, 
+
+//Encounter Index:
+719
+//Encounter Units: BrilliantKing, SuccessfulJunecy, SuccessfulJunecy, 
+
+//Encounter Index:
+720
+//Encounter Units: BrilliantKing, RampageDrive, 
+
+//Encounter Index:
+721
+//Encounter Units: BrilliantKing, PtarmiganPanzer, 
+
+//Encounter Index:
+722
+//Encounter Units: RebelliousCyclops, RebelliousCyclops, StoicSnake, StoicSnake, 
+
+//Encounter Index:
+723
+//Encounter Units: RebelliousCyclops, RebelliousCyclops, SuccessfulJunecy, SuccessfulJunecy, 
+
+//Encounter Index:
+724
+//Encounter Units: RebelliousCyclops, RebelliousCyclops, MoonOkina, NextGene, NextGene, 
+
+//Encounter Index:
+725
+//Encounter Units: StoicSnake, StoicSnake, SuccessfulJunecy, RampageDrive, 
+
+//Encounter Index:
+726
+//Encounter Units: StoicSnake, SuccessfulJunecy, SuccessfulJunecy, PtarmiganPanzer, 
+
+//Encounter Index:
+728
+//Encounter Units: HeartlessMachine, ReckoningDice, 
+
+//Encounter Index:
+729
+//Encounter Units: HeartlessMachine, StoicSnake, StoicSnake, 
+
+//Encounter Index:
+730
+//Encounter Units: HeartlessMachine, SuccessfulJunecy, SuccessfulJunecy, 
+
+//Encounter Index:
+731
+//Encounter Units: VoidGiant, VoidGiant, BrilliantKing, 
+
+//Encounter Index:
+732
+//Encounter Units: VoidGiant, VoidGiant, RebelliousCyclops, 
+
+//Encounter Index:
+733
+//Encounter Units: VoidGiant, VoidGiant, StoicSnake, SuccessfulJunecy, 
+
+//Encounter Index:
+734
+//Encounter Units: NeoMinotaur239, BrilliantKing, 
+
+//Encounter Index:
+735
+//Encounter Units: NeoMinotaur239, RebelliousCyclops, RebelliousCyclops, 
+
+//Encounter Index:
+736
+//Encounter Units: NeoMinotaur239, SuccessfulJunecy, ReckoningDice, 
+
+//Encounter Index:
+737
+//Encounter Units: ElDoradoBeast, BrilliantKing, 
+
+//Encounter Index:
+738
+//Encounter Units: ElDoradoBeast, ElDoradoBeast, StoicSnake, StoicSnake, 
+
+//Encounter Index:
+739
+//Encounter Units: ElDoradoBeast, ElDoradoBeast, ReckoningDice, SuccessfulJunecy, 
+
+//Encounter Index:
+741
+//Encounter Units: VoidGiant, RebelliousCyclops, BerserkTurret, 
+
+//Encounter Index:
+742
+//Encounter Units: VoidGiant, PtarmiganPanzer, JotunofGrief, 
+
+//Encounter Index:
+743
+//Encounter Units: VoidGiant, RampageDrive, AcheronSeeker, 
+
+//Encounter Index:
+744
+//Encounter Units: NeoMinotaur239, RebelliousCyclops, BerserkTurret, 
+
+//Encounter Index:
+745
+//Encounter Units: NeoMinotaur239, PtarmiganPanzer, JotunofGrief, 
+
+//Encounter Index:
+746
+//Encounter Units: NeoMinotaur239, RampageDrive, AcheronSeeker, 
+
+//Encounter Index:
+747
+//Encounter Units: ElDoradoBeast, RebelliousCyclops, BerserkTurret, 
+
+//Encounter Index:
+748
+//Encounter Units: ElDoradoBeast, PtarmiganPanzer, JotunofGrief, 
+
+//Encounter Index:
+749
+//Encounter Units: ElDoradoBeast, RampageDrive, AcheronSeeker, 
+
+//Encounter Index:
+750
+//Encounter Units: HeartlessMachine, ReckoningDice, SuccessfulJunecy, 
+
+//Encounter Index:
+751
+//Encounter Units: HeartlessMachine, ReckoningDice, BerserkTurret, 
+
+//Encounter Index:
+752
+//Encounter Units: HeartlessMachine, DoomSword, BerserkTurret, 
+
+//Encounter Index:
+754
+//Encounter Units: GrandMagus, GrandMagus, EmperorBeetle, EmperorBeetle, 
+
+//Encounter Index:
+755
+//Encounter Units: GrandMagus, GrandMagus, MistressPot, 
+
+//Encounter Index:
+756
+//Encounter Units: NeoMinotaur239, GraciousCupid, GraciousCupid, GraciousCupid, 
+
+//Encounter Index:
+757
+//Encounter Units: ElDoradoBeast, ElDoradoBeast, ReckoningDice, 
+
+//Encounter Index:
+758
+//Encounter Units: VoidGiant, VoidGiant, ElDoradoBeast, ElDoradoBeast, 
+
+//Encounter Index:
+759
+//Encounter Units: ReckoningDice, ReckoningDice, ReckoningDice, 
+
+//Encounter Index:
+760
+//Encounter Units: HeartlessMachine, HeartlessMachine, ReckoningDice, 
+
+//Encounter Index:
+761
+//Encounter Units: NeoMinotaur239, NeoMinotaur239, VoidGiant, 
+
+//Encounter Index:
+762
+//Encounter Units: ReckoningDice, ReckoningDice, ReckoningDice, 
+
+//Encounter Index:
+819
+//Encounter Units: NeoMinotaur318, 
+
+//Encounter Index:
+820
+//Encounter Units: SleepingTable319, 
+
