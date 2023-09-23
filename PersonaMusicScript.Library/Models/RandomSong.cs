@@ -8,7 +8,7 @@ public class RandomSong : IMusic
     {
         this.source = source;
         this.MinSongId = min;
-        this.MaxSongId = max;
+        this.MaxSongId = max + 1;
         if (!source.RandomSongs.Contains(this))
         {
             source.RandomSongs.Add(this);
