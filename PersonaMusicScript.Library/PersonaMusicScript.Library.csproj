@@ -22,7 +22,6 @@
     
   <ItemGroup>
     <Folder Include="Libraries\" />
-    <Folder Include="Resources\Persona 4 Golden PC x64\collections\" />
   </ItemGroup>
     
   <ItemGroup>
