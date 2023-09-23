@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
@@ -13,10 +13,27 @@
   <ItemGroup>
     <Antlr4 Include="Source.g4" />
   </ItemGroup>
-	
+    
   <ItemGroup>
     <PackageReference Include="Antlr4.Runtime.Standard" Version="4.13.1" />
     <PackageReference Include="Antlr4BuildTasks" Version="12.2.0" />
+    <PackageReference Include="protobuf-net" Version="3.2.26" />
   </ItemGroup>
-
+    
+  <ItemGroup>
+    <Folder Include="Libraries\" />
+    <Folder Include="Resources\Persona 4 Golden PC x64\collections\" />
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Reference Include="Phos.MusicManager.Library">
+      <HintPath>Libraries\Phos.MusicManager.Library.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Content Include="Resources\**">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
 </Project>
