@@ -65,7 +65,7 @@ public class Music
 
         foreach (var command in commands)
         {
-            var musicType = (command.Value as IMusic)?.Type ?? throw new Exception("Invalid music type.");
+            var musicType = this.GetMusicType(command.Value);
             var musicId = this.GetMusicId(command.Value);
             if (command.Name == "music")
             {
@@ -105,6 +105,20 @@ public class Music
         }
 
         return encounter;
+    }
+
+    private MusicType GetMusicType(object value)
+    {
+        if (value is int)
+        {
+            return MusicType.Song;
+        }
+        else if (value is IMusic music)
+        {
+            return music.Type;
+        }
+
+        throw new Exception("Invalid music type.");
     }
 
     private int GetMusicId(object value)
