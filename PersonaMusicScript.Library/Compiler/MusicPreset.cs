@@ -51,12 +51,6 @@ internal static class MusicPreset
             AddBattleBgm(songsUsed, battleBgm, "battle_bgm");
         }
 
-        // Add BGME as song tag.
-        foreach (var songUsed in songsUsed)
-        {
-            songUsed.Value.UsedBy.Insert(0, "BGME");
-        }
-
         var tracks = songsUsed.Select(x => new PresetAudioTrack()
         {
             Name = $"Song ID: {x.Key}",

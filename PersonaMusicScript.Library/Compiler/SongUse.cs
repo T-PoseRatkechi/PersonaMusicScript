@@ -9,5 +9,5 @@ public class SongUse
 
     public int AudioId { get; }
 
-    public List<string> UsedBy { get; } = new List<string>();
+    public HashSet<string> UsedBy { get; } = new HashSet<string>();
 }
