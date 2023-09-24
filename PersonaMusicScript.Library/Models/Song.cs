@@ -10,8 +10,10 @@ internal class Song : IMusic
         {
             this.Id = id;
         }
-
-        throw new ArgumentException($"Song with name \"{name}\" not found.");
+        else
+        {
+            throw new ArgumentException($"Song with name \"{name}\" not found.");
+        }
     }
 
     public MusicType Type { get; } = MusicType.Song;
