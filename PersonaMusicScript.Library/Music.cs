@@ -5,18 +5,23 @@ namespace PersonaMusicScript.Library;
 
 public class Music
 {
-    public Music(MusicSource source, MusicResources resources)
+    public Music(string game, MusicSource source, MusicResources resources)
     {
+        this.Game = game;
         this.Source = source;
         this.Resources = resources;
         this.ProcessMusic();
     }
+
+    public string Game { get;}
 
     public MusicSource Source { get; }
 
     public MusicResources Resources { get; }
 
     public List<EncounterEntry> Encounters { get; } = new();
+
+    public Dictionary<string, EventFrame> Events { get; } = new();
 
     private void ProcessMusic()
     {
@@ -50,7 +55,27 @@ public class Music
                 }
                 else
                 {
-                    throw new Exception($"Invalid command block arg \"{block.Arg}\".");
+                    throw new Exception($"Invalid encounter block arg \"{block.Arg}\".");
+                }
+            }
+            else if (block.Type == CommandBlockType.Event)
+            {
+                var eventFile = block.Arg as string ?? throw new ArgumentException($"Invalid event block arg \"{block.Arg}\".");
+                foreach (var command in block.Commands)
+                {
+                    var frame = ushort.Parse(command.Name.Split('_')[1]);
+                    var musicId = GetMusicId(command.Value);
+
+                    if (this.Events.TryGetValue(eventFile, out var eventFrame))
+                    {
+                        eventFrame.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicId });
+                    }
+                    else
+                    {
+                        var newEvent = new EventFrame(eventFile);
+                        newEvent.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicId });
+                        this.Events.Add(eventFile, newEvent);
+                    }
                 }
             }
         }

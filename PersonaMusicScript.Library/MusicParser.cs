@@ -6,10 +6,12 @@ namespace PersonaMusicScript.Library;
 
 public class MusicParser
 {
+    private readonly string game;
     private readonly MusicResources resources;
 
     public MusicParser(string game)
     {
+        this.game = game;
         this.resources = new(game);
     }
 
@@ -23,12 +25,12 @@ public class MusicParser
         var visitor = new SourceVisitor(this.resources);
         var sourceCtx = sourceParser.source();
         var musicSource = visitor.Visit(sourceCtx);
-        var music = new Music(musicSource, this.resources);
+        var music = new Music(this.game, musicSource, this.resources);
 
         var outputFolder = outputDir ?? Path.Join(AppDomain.CurrentDomain.BaseDirectory, "output");
         Directory.CreateDirectory(outputFolder);
 
-        var musicCompiler = new MusicCompiler(this.resources, musicSource);
+        var musicCompiler = new MusicCompiler();
         musicCompiler.Compile(music, outputFolder);
 
         var outputPresetFile = Path.Join(outputFolder, "BGME.project");
