@@ -3,4 +3,5 @@
 public enum CommandBlockType
 {
     Encounter,
+    Event,
 }
