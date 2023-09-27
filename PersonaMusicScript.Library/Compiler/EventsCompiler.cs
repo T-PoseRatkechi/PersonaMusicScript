@@ -7,7 +7,7 @@ namespace PersonaMusicScript.Library.Compiler;
 
 public class EventsCompiler : IMusicCompiler
 {
-    public void Compile(Music music, string outputDir)
+    public void Compile(Music music, List<string> patch, string outputDir)
     {
         foreach (var eventFrame in music.Events)
         {

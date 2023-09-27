@@ -2,5 +2,5 @@
 
 public interface IMusicCompiler
 {
-    void Compile(Music music, string outputDir);
+    void Compile(Music music, List<string> patch, string outputDir);
 }
