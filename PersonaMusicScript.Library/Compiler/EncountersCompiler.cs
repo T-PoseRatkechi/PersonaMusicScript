@@ -2,14 +2,7 @@
 
 public class EncountersCompiler : IMusicCompiler
 {
-    private static readonly Dictionary<string, string> gamePatchFiles = new()
-    {
-        [Game.P4G_PC] = "BGME_P4G64_Release.expatch",
-        [Game.P3P_PC] = "BGME_P3P_Release.expatch",
-        [Game.P5R_PC] = "BGME_P5R_Release.expatch",
-    };
-
-    public void Compile(Music music, string outputDir)
+    public void Compile(Music music, List<string> patch, string outputDir)
     {
         var encountFile = Path.Join(music.Resources.ResourcesDir, "ENCOUNT.TBL");
         if (!File.Exists(encountFile))
@@ -43,14 +36,11 @@ public class EncountersCompiler : IMusicCompiler
             writer.Write(encounter.Music);
         }
 
-        BuildPatch(music, outputDir);
+        BuildPatch(music, patch);
     }
 
-    private static void BuildPatch(Music music, string outputDir)
+    private static void BuildPatch(Music music, List<string> patch)
     {
-        var patchFile = Path.Join(music.Resources.ResourcesDir, gamePatchFiles[music.Game]);
-        var lines = File.ReadLines(patchFile).ToList();
-
         // Create random songs data var.
         var randomSongsBytes = new List<byte>();
         foreach (var randomSong in music.Source.RandomSongs)
@@ -61,14 +51,19 @@ public class EncountersCompiler : IMusicCompiler
             randomSongsBytes.AddRange(maxBytes);
         }
 
-        var randomSongsString = BitConverter.ToString(randomSongsBytes.ToArray()).Replace('-', ' ');
-        var randomSongsIndex = lines.FindIndex(x => x.StartsWith("var randomSongs"));
+        if (randomSongsBytes.Count == 0)
+        {
+            randomSongsBytes.Add(0x00);
+        }
+
+        var randomSongsString = Convert.ToHexString(randomSongsBytes.ToArray());
+        var randomSongsIndex = patch.FindIndex(x => x.StartsWith("var randomSongs"));
         if (randomSongsIndex == -1)
         {
             throw new Exception("var randomSongs not found in patch.");
         }
 
-        lines[randomSongsIndex] = $"var randomSongs({randomSongsBytes.Count}) = bytes({randomSongsString})";
+        patch[randomSongsIndex] = $"var randomSongs({randomSongsBytes.Count}) = bytes({randomSongsString})";
 
         // Create battle music data var.
         var battleBgmsBytes = new List<byte>();
@@ -112,15 +107,12 @@ public class EncountersCompiler : IMusicCompiler
         }
 
         var battleBgmsString = BitConverter.ToString(battleBgmsBytes.ToArray()).Replace('-', ' ');
-        var battleBgmsIndex = lines.FindIndex(x => x.StartsWith("var battleBgms"));
+        var battleBgmsIndex = patch.FindIndex(x => x.StartsWith("var battleBgms"));
         if (battleBgmsIndex == -1)
         {
             throw new Exception("var battleBgms not found in patch.");
         }
 
-        lines[battleBgmsIndex] = $"var battleBgms({battleBgmsBytes.Count}) = bytes({battleBgmsString})";
-
-        var outputFile = Path.Join(outputDir, Path.GetFileName(patchFile));
-        File.WriteAllLines(outputFile, lines);
+        patch[battleBgmsIndex] = $"var battleBgms({battleBgmsBytes.Count}) = bytes({battleBgmsString})";
     }
 }
