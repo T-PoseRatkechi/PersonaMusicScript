@@ -16,7 +16,7 @@ public class TvFloorsCompiler : IMusicCompiler
             throw new Exception("Failed to find var tvBgms");
         }
 
-        var tvBgmBytes = Convert.ToHexString(tvMusic.SelectMany(BitConverter.GetBytes).ToArray());
-        patch[tvBgmsIndex] = $"var tvBgms({tvBgmBytes.Length}) = bytes({tvBgmBytes})";
+        var tvBgmBytes = tvMusic.SelectMany(BitConverter.GetBytes).ToArray();
+        patch[tvBgmsIndex] = $"var tvBgms({tvBgmBytes.Length}) = bytes({Convert.ToHexString(tvBgmBytes)})";
     }
 }
