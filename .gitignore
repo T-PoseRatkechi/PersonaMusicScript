@@ -364,3 +364,4 @@ FodyWeavers.xsd
 
 # ANTLR generated files
 /PersonaMusicScript.Library/.antlr
+/PersonaMusicScript.CLI/Properties/launchSettings.json

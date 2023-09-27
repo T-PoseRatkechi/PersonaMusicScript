@@ -20,21 +20,18 @@ public class Program
 
         [Option('i', "input", Required = true, HelpText = "Input music script file.")]
         public string InputFile { get; set; } = string.Empty;
-
-        [Option('o', "output", Required = false, HelpText = "Output folder.")]
-        public string? OutputFolder { get; set; }
     }
 
     public static void Main(string[] args)
     {
-        Console.WriteLine("Hello, World!");
+        Console.WriteLine("Persona Music Script by T-Pose Ratkechi");
+        Console.WriteLine("Credits\nTupelov: Libellus Library\nPixelguin: Collection fixes and testing\nSierra: Original TV Floor BGM idea");
 
         Parser.Default.ParseArguments<Options>(args)
             .WithParsed(o =>
             {
                 var game = o.Game;
                 var inputFile = o.InputFile;
-                var outputFolder = o.OutputFolder;
 
                 Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
@@ -42,7 +39,7 @@ public class Program
                 {
                     var gameName = gameNames[game];
                     var parser = new MusicParser(gameName);
-                    var music = parser.Parse(inputFile, outputFolder);
+                    var music = parser.Parse(inputFile);
                 }
                 catch (Exception ex)
                 {
