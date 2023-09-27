@@ -7,9 +7,16 @@ public class MusicResources
 {
     private static readonly Dictionary<string, GameConstants> Games = new()
     {
-        [Game.P4G_PC] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30)),
-        [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26)),
-        [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), true),
+        [Game.P4G_PC] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30), new Song(35)),
+        [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26), new Song(1)),
+        [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), new Song(1), true),
+    };
+
+    private static readonly Dictionary<string, string> gamePatchFiles = new()
+    {
+        [Game.P4G_PC] = "BGME_P4G64_Release.expatch",
+        [Game.P3P_PC] = "BGME_P3P_Release.expatch",
+        [Game.P5R_PC] = "BGME_P5R_Release.expatch",
     };
 
     public MusicResources(string game)
@@ -19,15 +26,35 @@ public class MusicResources
         this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
         this.Constants = Games[game];
+        this.PatchFile = Path.Join(this.ResourcesDir, gamePatchFiles[game]);
+        this.TvFloorsMusic = this.GetTvFloorsMusic();
     }
 
     public string ResourcesDir { get; }
+
+    public string PatchFile { get; }
 
     public Dictionary<string, int> Songs { get; }
 
     public Dictionary<string, int[]> Collections { get; }
 
     public GameConstants Constants { get; }
+
+    public List<ushort> TvFloorsMusic { get; set; }
+
+    private List<ushort> GetTvFloorsMusic()
+    {
+        var music = new List<ushort>();
+        var musicFile = Path.Join(this.ResourcesDir, "tv.music");
+        using var reader = new BinaryReader(File.OpenRead(musicFile));
+        var numEntries = reader.ReadInt32();
+        for (int i = 0; i < numEntries; i++)
+        {
+            music.Add(reader.ReadUInt16());
+        }
+
+        return music;
+    }
 
     private Dictionary<string, int> GetSongs()
     {
@@ -83,6 +110,7 @@ public class GameConstants
         IMusic defaultNormalMusic,
         IMusic defaultAdvantageMusic,
         IMusic defaultDisadvantageMusic,
+        IMusic defaultVictoryMusic,
         bool isBigEndian = false)
     {
         this.EncounterEntrySize = encounterSize;
@@ -93,7 +121,7 @@ public class GameConstants
         this.DefaultNormalMusic = defaultNormalMusic;
         this.DefaultAdvantageMusic = defaultAdvantageMusic;
         this.DefaultDisadvantageMusic = defaultDisadvantageMusic;
-
+        this.DefaultVictoryMusic = defaultVictoryMusic;
     }
 
     public bool BigEndian { get; }
@@ -111,4 +139,6 @@ public class GameConstants
     public IMusic DefaultAdvantageMusic { get; }
 
     public IMusic DefaultDisadvantageMusic { get; }
+
+    public IMusic DefaultVictoryMusic { get; }
 }
