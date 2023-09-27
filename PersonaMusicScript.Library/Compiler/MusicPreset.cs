@@ -40,6 +40,23 @@ internal static class MusicPreset
             songsUsed[songId].UsedBy.Add($"Victory BGM");
         }
 
+        // Add songs used by events.
+        foreach (var eventBgm in music.Events)
+        {
+            foreach (var frameBgm in eventBgm.Value.FrameBgms)
+            {
+                songsUsed.TryAdd(frameBgm.Bgm, new SongUse(frameBgm.Bgm));
+                songsUsed[frameBgm.Bgm].UsedBy.Add($"{eventBgm.Key}: {frameBgm.StartFrame}");
+            }
+        }
+
+        // Add songs used by floors.
+        foreach (var floor in music.Floors)
+        {
+            songsUsed.TryAdd(floor.Music, new SongUse(floor.Music));
+            songsUsed[floor.Music].UsedBy.Add($"Floor {floor.Id}: {floor.Music}");
+        }
+
         // Add remaining music.
         foreach (var randomSong in music.Source.RandomSongs)
         {
