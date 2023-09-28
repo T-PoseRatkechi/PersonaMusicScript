@@ -363,5 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 # ANTLR generated files
-/PersonaMusicScript.Library/.antlr
-/PersonaMusicScript.CLI/Properties/launchSettings.json
+src/PersonaMusicScript.Library/.antlr
+src/PersonaMusicScript.CLI/Properties/launchSettings.json
