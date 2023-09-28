@@ -1,0 +1,89 @@
+const RANDOM_SONG_SIZE = 4
+const BATTLE_BGM_SIZE = 8
+var bgmName(8) = "200.ADX"
+var stringFormat(9) = "%02d.ADX"
+var randomSongs(4) = bytes(1c 00 1f 00)
+var battleBgms(8) = bytes(00 00 1e 00 4d 00 1f 00)
+var tvBgms(2) = bytes(00 00)
+var battleCtxBgmType(1) = bytes(00)
+[patch BGME - Encounter BGM Patch]
+pattern = 0F B7 4C 02 16
+movzx ecx, word [rdx + rax + 0x16]
+movzx r9, word [rdx + rax + 4]
+label setupMusic
+mov r10, {battleCtxBgmType}
+cmp byte [r10], 0
+je setupSong
+movzx r9, byte [r10]
+mov byte [r10], 0
+label setupSong
+cmp r9, 0
+je original
+cmp r9, 3
+jl randomSong
+push rax
+push rdx
+mov rax, rcx
+mov r9, {BATTLE_BGM_SIZE}
+mul r9
+mov r9, {battleBgms}
+add r9, rax
+mov rax, r12
+movzx r10, word [r9]
+cmp rax, 2
+je configReady
+shr r10, 2
+cmp rax, 1
+je configReady
+shr r10, 2
+label configReady
+and r10, 3
+mov r12, {battleCtxBgmType}
+mov [r12], r10b
+mov r12, 2
+mul r12
+movzx r10, word [r9 + rax + 2]
+mov rcx, r10
+pop rdx
+pop rax
+jmp setupMusic
+label randomSong
+cmp r9, 2
+jl playSong
+push rax
+push rdx
+mov rax, {RANDOM_SONG_SIZE}
+mul ecx
+mov r12, {randomSongs}
+add r12, rax
+mov r10w, [r12 + 2]
+mov r12w, [r12]
+sub r10w, r12w
+mov rax, 0x140816D60
+mov rax, [rax]
+xor rdx, rdx
+div r10w
+add r12w, dx
+movzx ecx, r12w
+pop rdx
+pop rax
+label playSong
+mov r9, 0x1465B0855
+jmp r9
+label original
+[patch BGME - Advantage Flag]
+pattern = F6 40 0C 40 0F 84 ?? 00 00 00
+order = before
+movzx r12, byte [rax + 0x1a]
+[patch BGME - Universal BGM Unlock]
+pattern = 4E 8B 84 C3 28 4C 81 00
+mov rdx, {stringFormat}
+mov rcx, {bgmName}
+mov r8, rax
+mov r10, 0x140030EB0
+call r10
+mov rdx, 0x14066A2E8
+lea rdx, [rdx]
+mov rcx, 0x142F812F0
+lea rcx, [rcx]
+mov r8, {bgmName}

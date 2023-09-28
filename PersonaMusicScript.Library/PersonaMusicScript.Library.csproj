@@ -38,6 +38,7 @@
     
   <ItemGroup>
     <Folder Include="Libraries\" />
+    <Folder Include="Resources\Persona 3 Portable PC\" />
   </ItemGroup>
     
   <ItemGroup>
