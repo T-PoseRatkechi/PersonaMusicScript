@@ -8,7 +8,7 @@ public class MusicResources
     private static readonly Dictionary<string, GameConstants> Games = new()
     {
         [Game.P4G_PC] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30), new Song(35)),
-        [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26), new Song(1)),
+        [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26), new Song(60)),
         [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), new Song(1), true),
     };
 
@@ -46,11 +46,14 @@ public class MusicResources
     {
         var music = new List<ushort>();
         var musicFile = Path.Join(this.ResourcesDir, "tv.music");
-        using var reader = new BinaryReader(File.OpenRead(musicFile));
-        var numEntries = reader.ReadInt32();
-        for (int i = 0; i < numEntries; i++)
+        if (File.Exists(musicFile))
         {
-            music.Add(reader.ReadUInt16());
+            using var reader = new BinaryReader(File.OpenRead(musicFile));
+            var numEntries = reader.ReadInt32();
+            for (int i = 0; i < numEntries; i++)
+            {
+                music.Add(reader.ReadUInt16());
+            }
         }
 
         return music;
