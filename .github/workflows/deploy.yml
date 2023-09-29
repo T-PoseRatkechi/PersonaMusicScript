@@ -7,9 +7,6 @@ on:
 jobs:
   build_site:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./sveltekit
     steps:
       - name: Checkout
         uses: actions/checkout@v3
