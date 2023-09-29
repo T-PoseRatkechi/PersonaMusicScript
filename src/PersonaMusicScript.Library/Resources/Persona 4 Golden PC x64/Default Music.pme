@@ -1,0 +1,81 @@
+const randomBattlesBgm = battle_bgm(song("Time to Make History"), song("Reach Out to the Truth"))
+
+encounter["all"]:
+	music = randomBattlesBgm
+end
+
+encounter["Reapers"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Spooky Fog Man"]:
+	music = song("Borderline of Madness (2nd loop)")
+end
+
+encounter["Shadow Yosuke"]:
+	music = song("Reach Out To The Truth -First Battle-")
+end
+
+encounter["Shadow Chie"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Yukiko"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Kanji"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Rise"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Teddie"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Mitsuo"]:
+	music = song("Shin Mitsuo Tensei")
+end
+
+encounter["Shadow Naoto"]:
+	music = song("I'll Face Myself -Battle-")
+end
+
+encounter["Shadow Namatame"]:
+	music = song("A New World Fool")
+end
+
+encounter["Shadow Adachi"]:
+	music = song("A New World Fool")
+end
+
+encounter["Ame-no-Sagiri"]:
+	music = song("The Almighty")
+end
+
+encounter["Izanami"]:
+	music = song("The Fog")
+end
+
+encounter["Izanami-no-Okami"]:
+	music = song("The Genesis")
+end
+
+encounter["Marie"]:
+	music = song("I'll Face Myself -Battle- (Reincarnation)")
+end
+
+encounter["Kusum-no-Okami"]:
+	music = song("I'll Face Myself -Battle- (Reincarnation) 2")
+end
+
+encounter["Minibosses"]:
+	music = song("Reach Out To The Truth -First Battle-")
+end
+
+encounter["Optional Bosses"]:
+	music = song("I'll Face Myself -Battle-")
+end
