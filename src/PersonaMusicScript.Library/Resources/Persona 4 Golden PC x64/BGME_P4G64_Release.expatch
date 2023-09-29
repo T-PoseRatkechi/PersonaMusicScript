@@ -15,7 +15,7 @@ var shellPositionPtr(8) = 0
 var shellOriginalData(4) = 0
 var victoryPositionPtr(8) = 0
 var victoryPositionData(4) = 0
-var currentPass(1) = 0;
+var currentPass(1) = 0
 [patch BGME - Encounter BGM Patch]
 pattern = 0F B7 4C D0 16
 label start
