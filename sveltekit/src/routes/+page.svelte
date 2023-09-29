@@ -1,5 +1,4 @@
 <script lang="ts">
-	import 'milligram';
 	import { base } from '$app/paths';
 </script>
 
