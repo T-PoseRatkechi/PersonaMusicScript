@@ -25,7 +25,14 @@ public class MusicParser
         var musicSource = visitor.Visit(sourceCtx);
         var music = new Music(musicSource, this.resources);
 
-        var outputFolder = Path.Join(AppDomain.CurrentDomain.BaseDirectory, "output");
+        var fileName = Path.GetFileNameWithoutExtension(inputFile) ?? "BGME";
+        var inputFolder = Path.GetDirectoryName(Path.GetFullPath(inputFile)) ?? AppDomain.CurrentDomain.BaseDirectory;
+        var outputFolder = Path.Join(inputFolder, fileName);
+        if (outputFolder.Length < "BGME".Length)
+        {
+            throw new Exception($"Output folder path shorter than expected. Path: {outputFolder}");
+        }
+
         if (Directory.Exists(outputFolder))
         {
             Directory.Delete(outputFolder, true);
@@ -36,8 +43,7 @@ public class MusicParser
         var musicCompiler = new MusicCompiler();
         musicCompiler.Compile(music, outputFolder);
 
-        var presetName = Path.GetFileNameWithoutExtension(inputFile) ?? "BGME";
-        var outputPresetFile = Path.Join(outputFolder, $"{presetName}.project");
+        var outputPresetFile = Path.Join(outputFolder, $"{fileName}.project");
         MusicPreset.Create(music, outputPresetFile);
         return music;
     }
