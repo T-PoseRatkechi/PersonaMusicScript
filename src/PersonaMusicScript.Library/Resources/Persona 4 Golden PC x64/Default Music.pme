@@ -52,7 +52,7 @@ encounter["Adachi"]:
 	music = song("A New World Fool")
 end
 
-encounter["Ame-no-Sagiri"]:
+encounter["Ameno-Sagiri"]:
 	music = song("The Almighty")
 end
 
