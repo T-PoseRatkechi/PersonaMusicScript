@@ -1,5 +1,6 @@
 ﻿using PersonaMusicScript.Library.Models;
 using PersonaMusicScript.Library.Parser.Models;
+using System.Runtime.CompilerServices;
 
 namespace PersonaMusicScript.Library.CommandBlocks;
 
@@ -11,8 +12,7 @@ public class EncounterBlock : ICommandBlock
     {
         if (block.Arg is int encounterId)
         {
-            var encounter = CreateEncounter(music, encounterId, block.Commands);
-            music.Encounters.Add(encounter);
+            SetEncounterMusic(music, encounterId, block.Commands);
         }
         else if (block.Arg is string collectionName)
         {
@@ -20,16 +20,14 @@ public class EncounterBlock : ICommandBlock
             {
                 foreach (var id in ids)
                 {
-                    var encounter = CreateEncounter(music, id, block.Commands);
-                    music.Encounters.Add(encounter);
+                    SetEncounterMusic(music, id, block.Commands);
                 }
             }
             else if (collectionName.ToLower() == "all")
             {
                 for (int i = 0; i < music.Resources.Constants.TotalEncounters; i++)
                 {
-                    var encounter = CreateEncounter(music, i, block.Commands);
-                    music.Encounters.Add(encounter);
+                    SetEncounterMusic(music, i, block.Commands);
                 }
             }
             else
@@ -43,9 +41,14 @@ public class EncounterBlock : ICommandBlock
         }
     }
 
-    private static EncounterEntry CreateEncounter(Music music, int encounterId, IEnumerable<Command> commands)
+    private static void SetEncounterMusic(Music music, int encounterId, IEnumerable<Command> commands)
     {
-        var encounter = new EncounterEntry(encounterId);
+        if (!music.Encounters.TryGetValue(encounterId, out var encounter))
+        {
+            encounter = new(encounterId);
+            music.Encounters.Add(encounterId, encounter);
+        }
+
         IMusic? normalBgm = null;
         IMusic? advantageBgm = null;
         IMusic? disadvantageBgm = null;
@@ -115,7 +118,5 @@ public class EncounterBlock : ICommandBlock
             encounter.Field04_2 = MusicType.BattleBgm;
             encounter.Field06 = (ushort)battleBgm.Id;
         }
-
-        return encounter;
     }
 }

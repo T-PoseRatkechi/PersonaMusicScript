@@ -28,13 +28,13 @@ internal static class MusicPreset
         }
 
         // Add songs used by encounters.
-        foreach (var songId in music.Encounters.Where(x => x.Field04_1 == MusicType.Song).Select(x => x.Music).Distinct())
+        foreach (var songId in music.Encounters.Where(x => x.Value.Field04_1 == MusicType.Song).Select(x => x.Value.Music).Distinct())
         {
             songsUsed.TryAdd(songId, new SongUse(songId));
             songsUsed[songId].UsedBy.Add($"Battle BGM");
         }
 
-        foreach (var songId in music.Encounters.Where(x => x.Field04_2 == MusicType.Song).Select(x => x.Field06).Distinct())
+        foreach (var songId in music.Encounters.Where(x => x.Value.Field04_2 == MusicType.Song).Select(x => x.Value.Field06).Distinct())
         {
             songsUsed.TryAdd(songId, new SongUse(songId));
             songsUsed[songId].UsedBy.Add($"Victory BGM");

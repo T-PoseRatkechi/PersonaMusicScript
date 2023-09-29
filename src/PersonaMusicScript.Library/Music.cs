@@ -24,7 +24,7 @@ public class Music
 
     public MusicResources Resources { get; }
 
-    public List<EncounterEntry> Encounters { get; } = new();
+    public Dictionary<int, EncounterEntry> Encounters { get; } = new();
 
     public Dictionary<string, EventFrame> Events { get; } = new();
 

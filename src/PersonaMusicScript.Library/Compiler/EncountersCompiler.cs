@@ -15,8 +15,9 @@ public class EncountersCompiler : IMusicCompiler
 
         var encountEntrySize = music.Resources.Constants.EncounterEntrySize;
         using var writer = new BinaryWriter(File.OpenWrite(outputEncountFile));
-        foreach (var encounter in music.Encounters)
+        foreach (var entry in music.Encounters)
         {
+            var encounter = entry.Value;
             writer.Seek(encounter.Index * encountEntrySize + 4, SeekOrigin.Begin);
 
             // Skip flags.
