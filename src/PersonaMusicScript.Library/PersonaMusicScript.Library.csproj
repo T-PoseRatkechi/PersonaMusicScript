@@ -7,6 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Chidori.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Elizabeth.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Full Moon Bosses.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Jin.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Margaret.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Minibosses.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Nyx Avatar.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Nyx.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Strega.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Takaya and Jin.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Takaya.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\The Reaper.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Theodore.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Velvet Room Attendants.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Adachi.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Ameno-sagiri.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami-no-Okami.enc" />
@@ -38,7 +52,6 @@
     
   <ItemGroup>
     <Folder Include="Libraries\" />
-    <Folder Include="Resources\Persona 3 Portable PC\" />
   </ItemGroup>
     
   <ItemGroup>
