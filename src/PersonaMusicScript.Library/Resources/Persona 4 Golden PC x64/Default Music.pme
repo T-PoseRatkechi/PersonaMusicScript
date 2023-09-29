@@ -44,11 +44,11 @@ encounter["Shadow Naoto"]:
 	music = song("I'll Face Myself -Battle-")
 end
 
-encounter["Shadow Namatame"]:
+encounter["Namatame"]:
 	music = song("A New World Fool")
 end
 
-encounter["Shadow Adachi"]:
+encounter["Adachi"]:
 	music = song("A New World Fool")
 end
 
