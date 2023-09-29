@@ -68,7 +68,7 @@ encounter["Marie"]:
 	music = song("I'll Face Myself -Battle- (Reincarnation)")
 end
 
-encounter["Kusum-no-Okami"]:
+encounter["Kusumi-no-Okami"]:
 	music = song("I'll Face Myself -Battle- (Reincarnation) 2")
 end
 

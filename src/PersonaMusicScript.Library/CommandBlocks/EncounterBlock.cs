@@ -32,6 +32,10 @@ public class EncounterBlock : ICommandBlock
                     music.Encounters.Add(encounter);
                 }
             }
+            else
+            {
+                throw new Exception($"Unknown collection name \"{collectionName}\".");
+            }
         }
         else
         {

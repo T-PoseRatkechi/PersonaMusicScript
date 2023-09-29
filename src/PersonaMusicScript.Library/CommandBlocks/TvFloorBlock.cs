@@ -29,6 +29,10 @@ public class TvFloorBlock : ICommandBlock
                     CreateFloorBgm(music, i, block.Commands);
                 }
             }
+            else
+            {
+                throw new Exception($"Unknown collection name \"{collectionName}\".");
+            }
         }
         else
         {
