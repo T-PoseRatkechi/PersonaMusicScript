@@ -127,6 +127,8 @@ pop rdx
 pop rax
 jmp start
 label encounterPass
+pop rdx
+pop rax
 mov r12, {currentPass}
 mov byte [r12], 0
 add r9, {SHELL_POSITION_ID} * 4
