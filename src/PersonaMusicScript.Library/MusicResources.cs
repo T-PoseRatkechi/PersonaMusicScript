@@ -28,6 +28,7 @@ public class MusicResources
         this.Constants = Games[game];
         this.PatchFile = Path.Join(this.ResourcesDir, gamePatchFiles[game]);
         this.TvFloorsMusic = this.GetTvFloorsMusic();
+        this.DefaultEncounterMusic = this.GetEncounterMusic();
     }
 
     public string ResourcesDir { get; }
@@ -41,6 +42,8 @@ public class MusicResources
     public GameConstants Constants { get; }
 
     public List<ushort> TvFloorsMusic { get; set; }
+
+    public Dictionary<int, ushort> DefaultEncounterMusic { get; set; }
 
     private List<ushort> GetTvFloorsMusic()
     {
@@ -100,6 +103,22 @@ public class MusicResources
         }
 
         return collections;
+    }
+
+    private Dictionary<int, ushort> GetEncounterMusic()
+    {
+        var encounterMusic = new Dictionary<int, ushort>();
+        var encountFile = Path.Join(this.ResourcesDir, "ENCOUNT.TBL");
+        using var reader = new BinaryReader(File.OpenRead(encountFile));
+
+        var musicOffset = 22;
+        for (int i = 0; i < this.Constants.TotalEncounters; i++)
+        {
+            reader.BaseStream.Seek(i * this.Constants.EncounterEntrySize + 4 + musicOffset, SeekOrigin.Begin);
+            encounterMusic.Add(i, reader.ReadUInt16());
+        }
+
+        return encounterMusic;
     }
 }
 

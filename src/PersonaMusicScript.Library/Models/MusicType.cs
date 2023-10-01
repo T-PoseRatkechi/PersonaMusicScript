@@ -2,7 +2,8 @@
 
 public enum MusicType : byte
 {
-    Song = 1,
+    BgmeOff = 0,
+    Song,
     RandomSong,
     BattleBgm,
 }

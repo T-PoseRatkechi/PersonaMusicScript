@@ -59,6 +59,16 @@ public class EncounterBlock : ICommandBlock
 
         foreach (var command in commands)
         {
+            // Handle special values.
+            if (command.Name == "music"
+                && command.Value is string valueString
+                && valueString == "default")
+            {
+                encounter.Field04_1 = MusicType.BgmeOff;
+                encounter.Music = music.Resources.DefaultEncounterMusic[encounter.Index];
+                continue;
+            }
+
             var musicType = CommandUtils.GetMusicType(command.Value);
             var musicValue = CommandUtils.GetMusic(command.Value);
 
