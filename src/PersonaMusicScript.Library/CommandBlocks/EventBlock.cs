@@ -13,16 +13,16 @@ public class EventBlock : ICommandBlock
         foreach (var command in block.Commands)
         {
             var frame = ushort.Parse(command.Name.Split('_')[1]);
-            var musicId = CommandUtils.GetMusicId(command.Value);
+            var musicValue = CommandUtils.GetMusic(command.Value);
 
             if (music.Events.TryGetValue(eventFile, out var eventFrame))
             {
-                eventFrame.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicId });
+                eventFrame.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicValue.Id });
             }
             else
             {
                 var newEvent = new EventFrame(eventFile);
-                newEvent.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicId });
+                newEvent.FrameBgms.Add(new() { StartFrame = frame, Bgm = (ushort)musicValue.Id });
                 music.Events.Add(eventFile, newEvent);
             }
         }

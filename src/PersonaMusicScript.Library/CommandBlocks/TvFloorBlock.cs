@@ -54,8 +54,8 @@ public class TvFloorBlock : ICommandBlock
                 throw new Exception($"Invalid tv floor music type.");
             }
 
-            var musicId = CommandUtils.GetMusicId(command.Value);
-            music.Floors.Add(new(floorId, (ushort)musicId));
+            var musicValue = CommandUtils.GetMusic(command.Value);
+            music.Floors.Add(new(floorId, (ushort)musicValue.Id));
         }
     }
 }

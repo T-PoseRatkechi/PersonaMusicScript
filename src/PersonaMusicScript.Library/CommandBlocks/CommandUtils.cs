@@ -18,15 +18,15 @@ public static class CommandUtils
         throw new Exception("Invalid music type.");
     }
 
-    public static int GetMusicId(object value)
+    public static IMusic GetMusic(object value)
     {
-        if (value is int songId)
+        if (value is IMusic music)
         {
-            return songId;
+            return music;
         }
-        else if (value is IMusic music)
+        else if (value is int songId)
         {
-            return music.Id;
+            return new Song(songId);
         }
         else
         {

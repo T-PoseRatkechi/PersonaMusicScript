@@ -60,35 +60,35 @@ public class EncounterBlock : ICommandBlock
         foreach (var command in commands)
         {
             var musicType = CommandUtils.GetMusicType(command.Value);
-            var musicId = CommandUtils.GetMusicId(command.Value);
+            var musicValue = CommandUtils.GetMusic(command.Value);
 
             switch (command.Name)
             {
                 case "music":
                     encounter.Field04_1 = musicType;
-                    encounter.Music = (ushort)musicId;
+                    encounter.Music = (ushort)musicValue.Id;
                     break;
                 case "victory_music":
                     encounter.Field04_2 = musicType;
-                    encounter.Field06 = (ushort)musicId;
+                    encounter.Field06 = (ushort)musicValue.Id;
                     break;
                 case "normal_bgm":
-                    normalBgm = command.Value as IMusic;
+                    normalBgm = musicValue;
                     break;
                 case "advantage_bgm":
-                    advantageBgm = command.Value as IMusic;
+                    advantageBgm = musicValue;
                     break;
                 case "disadvantage_bgm":
-                    disadvantageBgm = command.Value as IMusic;
+                    disadvantageBgm = musicValue;
                     break;
                 case "victory_normal_bgm":
-                    victoryNormalBgm = command.Value as IMusic;
+                    victoryNormalBgm = musicValue;
                     break;
                 case "victory_advantage_bgm":
-                    victoryAdvantageBgm = command.Value as IMusic;
+                    victoryAdvantageBgm = musicValue;
                     break;
                 case "victory_disadvantage_bgm":
-                    victoryDisadvantageBgm = command.Value as IMusic;
+                    victoryDisadvantageBgm = musicValue;
                     break;
                 default:
                     throw new Exception($"Unknown command \"{command.Name}\".");
