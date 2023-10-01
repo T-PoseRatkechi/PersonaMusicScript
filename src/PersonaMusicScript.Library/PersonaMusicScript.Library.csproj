@@ -37,6 +37,7 @@
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Teddie.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yosuke.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yukiko.enc" />
+    <None Remove="Resources\Persona 4 Golden PC x64\collections\Special Battles.enc" />
     <None Remove="Source.g4" />
   </ItemGroup>
 
