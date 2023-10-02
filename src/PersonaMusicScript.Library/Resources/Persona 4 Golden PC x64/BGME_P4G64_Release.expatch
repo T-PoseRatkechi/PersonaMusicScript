@@ -16,6 +16,10 @@ var shellOriginalData(4) = 0
 var victoryPositionPtr(8) = 0
 var victoryPositionData(4) = 0
 var currentPass(1) = 0
+[patch BGME - Disable Field04 and Field06]
+pattern = 43 0F B7 44 C1 04
+order = after
+mov eax, 0
 [patch BGME - Encounter BGM Patch]
 pattern = 0F B7 4C D0 16
 label start
