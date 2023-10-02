@@ -34,5 +34,5 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
         with:
-          files: PersonaMusicScript.zip
+          files: ./src/PersonaMusicScript.zip
           fail_on_unmatched_files: true
