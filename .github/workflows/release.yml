@@ -31,8 +31,8 @@ jobs:
         run: Compress-Archive -Path ./PersonaMusicScript -DestinationPath ./PersonaMusicScript.zip
       - name: Test dir
         run: dir
-#      - name: Release
-#        uses: softprops/action-gh-release@v0.1.15
-#        with:
-#          files: ./PersonaMusicScript.zip
-#          fail_on_unmatched_files: true
+      - name: Release
+        uses: softprops/action-gh-release@v0.1.15
+        with:
+          files: PersonaMusicScript.zip
+          fail_on_unmatched_files: true
