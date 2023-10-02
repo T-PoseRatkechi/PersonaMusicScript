@@ -28,7 +28,7 @@ jobs:
         run: dotnet publish ./PersonaMusicScript.CLI -c Release -o ./PersonaMusicScript
 
       - name: Zip folder
-        run: Compress-Archive -Path ./PersonaMusicScript -DestinationPath PersonaMusicScript.zip
+        run: Compress-Archive -Path ./PersonaMusicScript -DestinationPath ./PersonaMusicScript.zip
 
       - name: Release
         uses: softprops/action-gh-release@v0.1.15
