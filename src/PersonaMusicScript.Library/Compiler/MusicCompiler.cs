@@ -2,21 +2,14 @@
 
 public class MusicCompiler
 {
-    private readonly EncountersCompiler encounters;
-    private readonly EventsCompiler events;
-    private readonly TvFloorsCompiler tv;
-
-    public MusicCompiler()
-    {
-        this.encounters = new();
-        this.events = new();
-        this.tv = new();
-    }
+    private readonly EncounterMusicCompiler encounterMusic = new();
+    private readonly EventsCompiler events = new();
+    private readonly TvFloorsCompiler tv = new();
 
     public void Compile(Music music, string outputDir)
     {
         var patch = new List<string>(File.ReadAllLines(music.Resources.PatchFile));
-        this.encounters.Compile(music, patch, outputDir);
+        this.encounterMusic.Compile(music, patch, outputDir);
         this.events.Compile(music, patch, outputDir);
         this.tv.Compile(music, patch, outputDir);
 
