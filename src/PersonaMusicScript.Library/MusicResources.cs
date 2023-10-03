@@ -43,7 +43,7 @@ public class MusicResources
 
     public List<ushort> TvFloorsMusic { get; set; }
 
-    public Dictionary<int, ushort> DefaultEncounterMusic { get; set; }
+    public ushort[] DefaultEncounterMusic { get; set; }
 
     private List<ushort> GetTvFloorsMusic()
     {
@@ -105,20 +105,19 @@ public class MusicResources
         return collections;
     }
 
-    private Dictionary<int, ushort> GetEncounterMusic()
+    private ushort[] GetEncounterMusic()
     {
-        var encounterMusic = new Dictionary<int, ushort>();
-        var encountFile = Path.Join(this.ResourcesDir, "ENCOUNT.TBL");
+        var encounterMusic = new List<ushort>();
+        var encountFile = Path.Join(this.ResourcesDir, "encount.music");
         using var reader = new BinaryReader(File.OpenRead(encountFile));
 
-        var musicOffset = 22;
-        for (int i = 0; i < this.Constants.TotalEncounters; i++)
+        var numEntires = reader.ReadUInt32();
+        for (int i = 0; i < numEntires; i++)
         {
-            reader.BaseStream.Seek(i * this.Constants.EncounterEntrySize + 4 + musicOffset, SeekOrigin.Begin);
-            encounterMusic.Add(i, reader.ReadUInt16());
+            encounterMusic.Add(reader.ReadUInt16());
         }
 
-        return encounterMusic;
+        return encounterMusic.ToArray();
     }
 }
 
