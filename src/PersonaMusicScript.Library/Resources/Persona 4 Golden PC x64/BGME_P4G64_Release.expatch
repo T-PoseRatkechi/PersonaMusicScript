@@ -5,9 +5,10 @@ const SHELL_POSITION_ID = 80
 const SHELL_SONG_ID_2 = 61
 const SHELL_POSITION_ID_2 = 82
 const VICTORY_POSITION_ID = 35
-var randomSongs(4) = bytes(1c 00 1f 00)
-var battleBgms(8) = bytes(00 00 1e 00 4d 00 1f 00)
+//var randomSongs(4) = bytes(1c 00 1f 00)
+//var battleBgms(8) = bytes(00 00 1e 00 4d 00 1f 00)
 var tvBgms(358) = bytes(37 00 37 00 37 00 37 00 37 00 37 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 38 00 37 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 39 00 37 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 3A 00 37 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 3B 00 37 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 3C 00 37 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 3D 00 37 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 3E 00 37 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 3F 00 1C 00 37 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00 1C 00)
+//var encounterMusic(8) = bytes(00000000)
 var currentSongPosition(4) = 0
 var songSwitchFlag(1) = 0
 var battleCtxBgmType(1) = bytes(00)
@@ -16,20 +17,18 @@ var shellOriginalData(4) = 0
 var victoryPositionPtr(8) = 0
 var victoryPositionData(4) = 0
 var currentPass(1) = 0
-[patch BGME - Disable Field04 and Field06]
-pattern = 43 0F B7 44 C1 04
-order = after
-mov eax, 0
 [patch BGME - Encounter BGM Patch]
 pattern = 0F B7 4C D0 16
+mov rax, {encounterMusic}
+mov rdx, rcx
 label start
 mov r12, {currentPass}
 cmp byte [r12], 0
-movzx ecx, word ptr rax+rdx*0x8+0x6
-movzx r12, byte [rax + rdx * 0x8 + 5]
+movzx ecx, word [rax + rdx * 0x8 + 2]
+movzx r12, byte [rax + rdx * 0x8 + 1]
 je victoryMusicPass
-movzx ecx, word ptr rax+rdx*0x8+0x16
-movzx r12, byte [rax + rdx * 0x8 + 4]
+movzx ecx, word [rax + rdx * 0x8 + 4]
+movzx r12, byte [rax + rdx * 0x8]
 label victoryMusicPass
 label setupMusic
 mov r13, {battleCtxBgmType}
