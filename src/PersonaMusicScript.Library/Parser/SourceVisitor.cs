@@ -1,23 +1,35 @@
 ﻿using Antlr4.Runtime.Misc;
 using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Library.Parser.Functions;
+using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 
 internal class SourceVisitor : SourceBaseVisitor<MusicSource>
 {
+    private readonly FunctionTable functions = new();
+    private readonly ConstantTable constants = new();
     private readonly MusicResources resources;
+    private readonly MusicSource source;
 
-    public SourceVisitor(MusicResources resources)
+    public SourceVisitor(MusicResources resources, MusicSource? source = null)
     {
+        this.source = source ?? new();
         this.resources = resources;
     }
 
     public override MusicSource VisitSource([NotNull] SourceParser.SourceContext context)
     {
-        var source = new MusicSource();
+        var functionVisitor = new FunctionVisitor(this.functions);
+        var expressionVisitor = new ExpressionVisitor(this.constants, functionVisitor);
+        var assignmentVisitor = new AssignmentVisitor(this.constants, expressionVisitor);
+        var commandBlockVisitor = new CommandBlockVisitor(this.resources, this.source, expressionVisitor);
+        var statementVisitor = new StatementVisitor(assignmentVisitor, commandBlockVisitor);
 
-        var expressionVisitor = new ExpressionVisitor(this.resources, source);
-        var statementVisitor = new StatementVisitor(source, expressionVisitor);
+        this.functions.Add(new BattleBgmFunction(expressionVisitor));
+        this.functions.Add(new SongFunction(this.resources, expressionVisitor));
+        this.functions.Add(new RandomSongFunction(expressionVisitor));
+
         foreach (var statement in context.statement())
         {
             if (!statementVisitor.Visit(statement))
@@ -26,6 +38,6 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
             }
         }
 
-        return source;
+        return this.source;
     }
 }
