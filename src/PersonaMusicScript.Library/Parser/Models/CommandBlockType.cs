@@ -4,5 +4,6 @@ public enum CommandBlockType
 {
     Encounter,
     Event,
-    TV_Floor,
+    Floor,
+    World,
 }
