@@ -19,9 +19,16 @@ public class MusicResources
         [Game.P5R_PC] = "BGME_P5R_Release.expatch",
     };
 
-    public MusicResources(string game)
+    public MusicResources(string game, string? resourcesDir = null)
     {
-        this.ResourcesDir = Directory.CreateDirectory(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "resources", game)).FullName;
+        if (string.IsNullOrEmpty(resourcesDir))
+        {
+            this.ResourcesDir = Directory.CreateDirectory(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "resources", game)).FullName;
+        }
+        else
+        {
+            this.ResourcesDir = Directory.CreateDirectory(Path.Join(resourcesDir, game)).FullName;
+        }
 
         this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
