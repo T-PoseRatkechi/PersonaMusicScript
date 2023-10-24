@@ -56,12 +56,12 @@ public class TvFloorBlock : ICommandBlock
                 throw new Exception($"Invalid tv floor command \"{command.Name}\".");
             }
 
-            if (command.Value is not int && command.Value is not Song)
+            var musicValue = CommandUtils.GetMusic(command.Value);
+            if (musicValue.Type == MusicType.BattleBgm)
             {
-                throw new Exception($"Invalid tv floor music type.");
+                throw new Exception($"Floors not use Battle BGM.");
             }
 
-            var musicValue = CommandUtils.GetMusic(command.Value);
             if (source.Floors.ContainsKey(floorId))
             {
                 source.Floors[floorId] = musicValue;
