@@ -6,14 +6,10 @@ namespace PersonaMusicScript.Library.Parser.Functions;
 
 internal class BattleBgmFunction : IFunction<BattleBgm>
 {
-    private readonly MusicResources resources;
-    private readonly MusicSource source;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public BattleBgmFunction(MusicResources resources, MusicSource source, ExpressionVisitor expressionVisitor)
+    public BattleBgmFunction(ExpressionVisitor expressionVisitor)
     {
-        this.resources = resources;
-        this.source = source;
         this.expressionVisitor = expressionVisitor;
     }
 
@@ -42,7 +38,7 @@ internal class BattleBgmFunction : IFunction<BattleBgm>
 
         var normalValue = this.expressionVisitor.Visit(normalExp);
         var advantageValue = this.expressionVisitor.Visit(advantageExp);
-        var disadvantageValue = disadvantageExp != null ? this.expressionVisitor.Visit(disadvantageExp) : this.resources.Constants.DefaultDisadvantageMusic;
+        var disadvantageValue = disadvantageExp != null ? this.expressionVisitor.Visit(disadvantageExp) : null;
 
         if (normalValue is int normalSongId)
         {
@@ -72,7 +68,7 @@ internal class BattleBgmFunction : IFunction<BattleBgm>
 
             try
             {
-                var battleBgm = new BattleBgm(this.resources, this.source, normalBgm, advantageBgm, disadvantageBgm);
+                var battleBgm = new BattleBgm(normalBgm, advantageBgm, disadvantageBgm);
                 return battleBgm;
             }
             catch (Exception ex)

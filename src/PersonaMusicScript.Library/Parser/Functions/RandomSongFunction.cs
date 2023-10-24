@@ -6,12 +6,10 @@ namespace PersonaMusicScript.Library.Parser.Functions;
 
 internal class RandomSongFunction : IFunction<RandomSong>
 {
-    private readonly MusicSource source;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public RandomSongFunction(MusicSource source, ExpressionVisitor expressionVisitor)
+    public RandomSongFunction(ExpressionVisitor expressionVisitor)
     {
-        this.source = source;
         this.expressionVisitor = expressionVisitor;
     }
 
@@ -38,7 +36,7 @@ internal class RandomSongFunction : IFunction<RandomSong>
 
         if (minValue is int min && maxValue is int max)
         {
-            var randomSong = new RandomSong(this.source, min, max);
+            var randomSong = new RandomSong(min, max);
             return randomSong;
         }
         else
