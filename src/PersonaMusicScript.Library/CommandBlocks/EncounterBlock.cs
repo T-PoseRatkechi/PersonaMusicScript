@@ -1,38 +1,43 @@
 ﻿using PersonaMusicScript.Library.Models;
 using PersonaMusicScript.Library.Parser.Models;
-using System.Runtime.CompilerServices;
-
 namespace PersonaMusicScript.Library.CommandBlocks;
 
 public class EncounterBlock : ICommandBlock
 {
+    private readonly MusicResources resources;
+
+    public EncounterBlock(MusicResources resources)
+    {
+        this.resources = resources;
+    }
+
     public CommandBlockType Type { get; } = CommandBlockType.Encounter;
 
-    public void Process(Music music, CommandBlock block)
+    public void Process(MusicSource source, CommandBlock block)
     {
         if (block.Arg is int encounterId)
         {
-            SetEncounterMusic(music, encounterId, block.Commands);
+            SetEncounterMusic(source, encounterId, block.Commands);
         }
-        else if (block.Arg is string collectionName)
+        else if (block.Arg is string collection)
         {
-            if (music.Resources.Collections.TryGetValue(collectionName, out var ids))
+            if (this.resources.Collections.TryGetValue(collection, out var ids))
             {
                 foreach (var id in ids)
                 {
-                    SetEncounterMusic(music, id, block.Commands);
+                    SetEncounterMusic(source, id, block.Commands);
                 }
             }
-            else if (collectionName.ToLower() == "all")
+            else if (collection.ToLower() == "all")
             {
-                for (int i = 0; i < music.Resources.Constants.TotalEncounters; i++)
+                for (int i = 0; i < this.resources.Constants.TotalEncounters; i++)
                 {
-                    SetEncounterMusic(music, i, block.Commands);
+                    SetEncounterMusic(source, i, block.Commands);
                 }
             }
             else
             {
-                throw new Exception($"Unknown collection name \"{collectionName}\".");
+                throw new Exception($"Unknown collection name \"{collection}\".");
             }
         }
         else
@@ -41,12 +46,13 @@ public class EncounterBlock : ICommandBlock
         }
     }
 
-    private static void SetEncounterMusic(Music music, int encounterId, IEnumerable<Command> commands)
+    public static void SetEncounterMusic(MusicSource source, int encounterId, IEnumerable<Command> commands)
     {
-        if (!music.Encounters.TryGetValue(encounterId, out var encounter))
+        // Use existing encounter or create and add new one.
+        if (!source.Encounters.TryGetValue(encounterId, out var encounter))
         {
-            encounter = new(encounterId);
-            music.Encounters.Add(encounterId, encounter);
+            encounter = new();
+            source.Encounters.Add(encounterId, encounter);
         }
 
         IMusic? normalBgm = null;
@@ -64,8 +70,7 @@ public class EncounterBlock : ICommandBlock
                 && command.Value is string valueString
                 && valueString == "default")
             {
-                encounter.Field04_1 = MusicType.BgmeOff;
-                encounter.Music = music.Resources.DefaultEncounterMusic[encounter.Index];
+                encounter.BattleMusic = null;
                 continue;
             }
 
@@ -75,12 +80,10 @@ public class EncounterBlock : ICommandBlock
             switch (command.Name)
             {
                 case "music":
-                    encounter.Field04_1 = musicType;
-                    encounter.Music = (ushort)musicValue.Id;
+                    encounter.BattleMusic = musicValue;
                     break;
                 case "victory_music":
-                    encounter.Field04_2 = musicType;
-                    encounter.Field06 = (ushort)musicValue.Id;
+                    encounter.VictoryMusic = musicValue;
                     break;
                 case "normal_bgm":
                     normalBgm = musicValue;
@@ -102,31 +105,24 @@ public class EncounterBlock : ICommandBlock
                     break;
                 default:
                     throw new Exception($"Unknown command \"{command.Name}\".");
-
             }
-        }
 
-        if (normalBgm != null
-            || advantageBgm != null
-            || disadvantageBgm != null)
-        {
-            var battleBgm = new BattleBgm(music.Resources, music.Source, normalBgm, advantageBgm, disadvantageBgm);
-            encounter.Field04_1 = MusicType.BattleBgm;
-            encounter.Music = (ushort)battleBgm.Id;
-        }
+            if (normalBgm != null
+                || advantageBgm != null
+                || disadvantageBgm != null)
+            {
+                encounter.BattleMusic = new BattleBgm(normalBgm, advantageBgm, disadvantageBgm);
+            }
 
-        if (victoryNormalBgm != null
-            || victoryAdvantageBgm != null
-            || victoryDisadvantageBgm != null)
-        {
-            var battleBgm = new BattleBgm(
-                music.Resources,
-                music.Source,
-                victoryNormalBgm ?? music.Resources.Constants.DefaultVictoryMusic,
-                victoryAdvantageBgm ?? music.Resources.Constants.DefaultVictoryMusic,
-                victoryDisadvantageBgm ?? music.Resources.Constants.DefaultVictoryMusic);
-            encounter.Field04_2 = MusicType.BattleBgm;
-            encounter.Field06 = (ushort)battleBgm.Id;
+            if (victoryNormalBgm != null
+                || victoryAdvantageBgm != null
+                || victoryDisadvantageBgm != null)
+            {
+                encounter.VictoryMusic = new BattleBgm(
+                    victoryNormalBgm,
+                    victoryAdvantageBgm,
+                    victoryDisadvantageBgm);
+            }
         }
     }
 }

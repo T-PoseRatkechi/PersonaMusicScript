@@ -5,28 +5,35 @@ namespace PersonaMusicScript.Library.CommandBlocks;
 
 public class TvFloorBlock : ICommandBlock
 {
-    public CommandBlockType Type { get; } = CommandBlockType.TV_Floor;
+    private readonly MusicResources resources;
 
-    public void Process(Music music, CommandBlock block)
+    public TvFloorBlock(MusicResources resources)
+    {
+        this.resources = resources;
+    }
+
+    public CommandBlockType Type { get; } = CommandBlockType.Floor;
+
+    public void Process(MusicSource source, CommandBlock block)
     {
         if (block.Arg is int floorId)
         {
-            CreateFloorBgm(music, floorId, block.Commands);
+            AddFloorBgm(source, floorId, block.Commands);
         }
         else if (block.Arg is string collectionName)
         {
-            if (music.Resources.Collections.TryGetValue(collectionName, out var ids))
+            if (this.resources.Collections.TryGetValue(collectionName, out var ids))
             {
                 foreach (var id in ids)
                 {
-                    CreateFloorBgm(music, id, block.Commands);
+                    AddFloorBgm(source, id, block.Commands);
                 }
             }
             else if (collectionName.ToLower() == "all")
             {
-                for (int i = 0; i < music.Resources.TvFloorsMusic.Count; i++)
+                for (int i = 0; i < this.resources.TvFloorsMusic.Count; i++)
                 {
-                    CreateFloorBgm(music, i, block.Commands);
+                    AddFloorBgm(source, i, block.Commands);
                 }
             }
             else
@@ -40,7 +47,7 @@ public class TvFloorBlock : ICommandBlock
         }
     }
 
-    private static void CreateFloorBgm(Music music, int floorId, IEnumerable<Command> commands)
+    private static void AddFloorBgm(MusicSource source, int floorId, IEnumerable<Command> commands)
     {
         foreach (var command in commands)
         {
@@ -55,7 +62,14 @@ public class TvFloorBlock : ICommandBlock
             }
 
             var musicValue = CommandUtils.GetMusic(command.Value);
-            music.Floors.Add(new(floorId, (ushort)musicValue.Id));
+            if (source.Floors.ContainsKey(floorId))
+            {
+                source.Floors[floorId] = musicValue;
+            }
+            else
+            {
+                source.Floors.Add(floorId, musicValue);
+            }
         }
     }
 }

@@ -6,5 +6,5 @@ public interface ICommandBlock
 {
     CommandBlockType Type { get; }
 
-    void Process(Music music, CommandBlock block);
+    void Process(MusicSource source, CommandBlock block);
 }
