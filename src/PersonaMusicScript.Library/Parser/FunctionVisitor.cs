@@ -1,18 +1,16 @@
 ﻿using Antlr4.Runtime.Misc;
 using PersonaMusicScript.Library.Parser.Exceptions;
-using PersonaMusicScript.Library.Parser.Functions;
+using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 
 internal class FunctionVisitor : SourceBaseVisitor<object>
 {
-    private readonly Dictionary<string, Func<SourceParser.FunctionContext, object?>> functions = new();
+    private readonly FunctionTable functions;
 
-    public FunctionVisitor(MusicResources resources, MusicSource source, ExpressionVisitor expressionVisitor)
+    public FunctionVisitor(FunctionTable functions)
     {
-        this.AddFunction(new SongFunction(resources, expressionVisitor));
-        this.AddFunction(new RandomSongFunction(source, expressionVisitor));
-        this.AddFunction(new BattleBgmFunction(resources, source, expressionVisitor));
+        this.functions = functions;
     }
 
     public override object VisitFunction([NotNull] SourceParser.FunctionContext context)
@@ -24,10 +22,5 @@ internal class FunctionVisitor : SourceBaseVisitor<object>
         }
 
         throw new ParsingException($"Unknown function \"{name}\".", context);
-    }
-
-    private void AddFunction<T>(IFunction<T> function)
-    {
-        this.functions.Add(function.Name, (context) => function.Invoke(context));
     }
 }

@@ -5,32 +5,30 @@ namespace PersonaMusicScript.Library.Parser;
 
 internal class StatementVisitor : SourceBaseVisitor<bool>
 {
-    private readonly MusicSource source;
     private readonly AssignmentVisitor assignmentVisitor;
     private readonly CommandBlockVisitor commandBlockVisitor;
 
-    public StatementVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
+    public StatementVisitor(AssignmentVisitor assignmentVisitor, CommandBlockVisitor commandBlockVisitor)
     {
-        this.source = source;
-        this.assignmentVisitor = new(source, expressionVisitor);
-        this.commandBlockVisitor = new(expressionVisitor);
+        this.assignmentVisitor = assignmentVisitor;
+        this.commandBlockVisitor = commandBlockVisitor;
     }
 
     public override bool VisitStatement([NotNull] SourceParser.StatementContext context)
     {
-        if (context.assignment() != null)
+        if (context.assignment() is SourceParser.AssignmentContext assignment)
         {
-            if (!this.assignmentVisitor.Visit(context.assignment()))
+            if (!this.assignmentVisitor.Visit(assignment))
             {
-                throw new ParsingException("Failed to assign constant.", context.assignment());
+                throw new ParsingException("Failed to assign constant.", assignment);
             }
         }
-
-        if (context.commandBlock() != null)
+        else if (context.commandBlock() is SourceParser.CommandBlockContext commandBlock)
         {
-            var block = this.commandBlockVisitor.Visit(context)
-                ?? throw new ParsingException("Failed to parse command block.", context.commandBlock());
-            this.source.Blocks.Add(block);
+            if (!this.commandBlockVisitor.Visit(commandBlock))
+            {
+                throw new ParsingException("Failed to parse command block.", commandBlock);
+            }
         }
 
         return true;

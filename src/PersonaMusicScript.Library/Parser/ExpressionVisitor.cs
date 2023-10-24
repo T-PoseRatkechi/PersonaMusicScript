@@ -1,17 +1,18 @@
 ﻿using Antlr4.Runtime.Misc;
 using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 
 internal class ExpressionVisitor : SourceBaseVisitor<object>
 {
-    private readonly MusicSource source;
+    private readonly ConstantTable constants;
     private readonly FunctionVisitor functionVisitor;
 
-    public ExpressionVisitor(MusicResources resources, MusicSource source)
+    public ExpressionVisitor(ConstantTable constants, FunctionVisitor functionVisitor)
     {
-        this.source = source;
-        this.functionVisitor = new(resources, source, this);
+        this.constants = constants;
+        this.functionVisitor = functionVisitor;
     }
 
     public override object VisitStringExpression([NotNull] SourceParser.StringExpressionContext context)
@@ -28,7 +29,7 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
     public override object VisitIdExpression([NotNull] SourceParser.IdExpressionContext context)
     {
         var id = context.ID().GetText();
-        if (this.source.Constants.TryGetValue(id, out var value))
+        if (this.constants.TryGetValue(id, out var value))
         {
             return value;
         }

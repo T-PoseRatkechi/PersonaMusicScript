@@ -1,16 +1,17 @@
 ﻿using Antlr4.Runtime.Misc;
 using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 
 internal class AssignmentVisitor : SourceBaseVisitor<bool>
 {
-    private readonly MusicSource source;
+    private readonly ConstantTable constants;
     private readonly ExpressionVisitor expressionVisitor;
 
-    public AssignmentVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
+    public AssignmentVisitor(ConstantTable constants, ExpressionVisitor expressionVisitor)
     {
-        this.source = source;
+        this.constants = constants;
         this.expressionVisitor = expressionVisitor;
     }
 
@@ -18,12 +19,12 @@ internal class AssignmentVisitor : SourceBaseVisitor<bool>
     {
         var id = context.ID().GetText();
         var value = this.expressionVisitor.Visit(context.expression());
-        if (this.source.Constants.ContainsKey(id))
+        if (this.constants.ContainsKey(id))
         {
             throw new ParsingException($"Constant with name \"{id}\" already exists.", context);
         }
 
-        if (!this.source.Constants.TryAdd(id, value))
+        if (!this.constants.TryAdd(id, value))
         {
             throw new ParsingException($"Failed to create constant \"{id}\".", context);
         }
