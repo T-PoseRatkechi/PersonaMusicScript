@@ -2,20 +2,11 @@
 
 public class RandomSong : IMusic
 {
-    private readonly MusicSource source;
-
-    public RandomSong(MusicSource source, int min, int max)
+    public RandomSong(int min, int max)
     {
-        this.source = source;
         this.MinSongId = min;
         this.MaxSongId = max + 1;
-        if (!source.RandomSongs.Contains(this))
-        {
-            source.RandomSongs.Add(this);
-        }
     }
-
-    public int Id => this.source.RandomSongs.IndexOf(this);
 
     public MusicType Type { get; } = MusicType.RandomSong;
 

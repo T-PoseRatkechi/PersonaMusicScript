@@ -2,11 +2,7 @@
 
 public class BattleBgm : IMusic
 {
-    private readonly MusicSource source;
-
     public BattleBgm(
-        MusicResources resources,
-        MusicSource source,
         IMusic? normal,
         IMusic? advantage,
         IMusic? disadvantage)
@@ -18,36 +14,69 @@ public class BattleBgm : IMusic
             throw new ArgumentException("Battle BGM can not use Battle BGM.");
         }
 
-        this.source = source;
-        this.NormalBGM = normal ?? resources.Constants.DefaultNormalMusic;
-        this.AdvantageBGM = advantage ?? resources.Constants.DefaultAdvantageMusic;
-        this.DisadvantageBGM = disadvantage ?? resources.Constants.DefaultDisadvantageMusic;
-        if (!source.BattleBgms.Contains(this))
-        {
-            source.BattleBgms.Add(this);
-        }
+        this.NormalMusic = normal;
+        this.AdvantageMusic = advantage;
+        this.DisadvantageMusic = disadvantage;
     }
-
-    public int Id => this.source.BattleBgms.IndexOf(this);
 
     public MusicType Type { get; } = MusicType.BattleBgm;
 
-    public IMusic NormalBGM { get; set; }
+    public IMusic? NormalMusic { get; set; }
 
-    public IMusic AdvantageBGM { get; set; }
+    public IMusic? AdvantageMusic { get; set; }
 
-    public IMusic DisadvantageBGM { get; set; }
+    public IMusic? DisadvantageMusic { get; set; }
 
     public override bool Equals(object? obj)
     {
         if (obj is BattleBgm other)
         {
-            if (this.NormalBGM.Equals(other.NormalBGM)
-                && this.AdvantageBGM.Equals(other.AdvantageBGM)
-                && this.DisadvantageBGM.Equals(other.DisadvantageBGM))
+            // Compare normal music.
+            if (this.NormalMusic is not null
+                && other.NormalMusic is not null)
             {
-                return true;
+                if (!this.NormalMusic.Equals(other.NormalMusic))
+                {
+                    return false;
+                }
             }
+
+            if (this.NormalMusic != other.NormalMusic)
+            {
+                return false;
+            }
+
+            // Compare advantage music.
+            if (this.AdvantageMusic is not null
+                && other.AdvantageMusic is not null)
+            {
+                if (!this.AdvantageMusic.Equals(other.AdvantageMusic))
+                {
+                    return false;
+                }
+            }
+
+            if (this.AdvantageMusic != other.AdvantageMusic)
+            {
+                return false;
+            }
+
+            // Compare disadvantage music.
+            if (this.DisadvantageMusic is not null
+                && other.DisadvantageMusic is not null)
+            {
+                if (!this.DisadvantageMusic.Equals(other.DisadvantageMusic))
+                {
+                    return false;
+                }
+            }
+
+            if (this.DisadvantageMusic != other.DisadvantageMusic)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         return false;

@@ -1,6 +1,6 @@
 ﻿namespace PersonaMusicScript.Library.Models;
 
-internal class Song : IMusic
+public class Song : IMusic
 {
     public Song(int id) => this.Id = id;
 

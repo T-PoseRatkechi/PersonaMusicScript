@@ -2,7 +2,7 @@
 
 public class EventFrameBgm
 {
-    public ushort StartFrame { get; set; }
+    public int StartFrame { get; set; }
 
-    public ushort Bgm { get; set; }
+    public IMusic? Music { get; set; }
 }
