@@ -9,4 +9,6 @@ public class MusicSource
     public Dictionary<int, IMusic> Floors { get; } = new();
 
     public Dictionary<string, EventFrame> Events { get; } = new();
+
+    public Dictionary<int, IMusic> Global { get; } = new();
 }

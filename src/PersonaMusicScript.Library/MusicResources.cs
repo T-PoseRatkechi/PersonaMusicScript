@@ -116,12 +116,15 @@ public class MusicResources
     {
         var encounterMusic = new List<ushort>();
         var encountFile = Path.Join(this.ResourcesDir, "encount.music");
-        using var reader = new BinaryReader(File.OpenRead(encountFile));
-
-        var numEntires = reader.ReadUInt32();
-        for (int i = 0; i < numEntires; i++)
+        if (File.Exists(encountFile))
         {
-            encounterMusic.Add(reader.ReadUInt16());
+            using var reader = new BinaryReader(File.OpenRead(encountFile));
+
+            var numEntires = reader.ReadUInt32();
+            for (int i = 0; i < numEntires; i++)
+            {
+                encounterMusic.Add(reader.ReadUInt16());
+            }
         }
 
         return encounterMusic.ToArray();
