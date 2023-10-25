@@ -5,5 +5,5 @@ public enum CommandBlockType
     Encounter,
     Event,
     Floor,
-    World,
+    Global_Bgm,
 }

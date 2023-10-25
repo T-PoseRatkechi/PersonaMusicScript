@@ -24,6 +24,7 @@ internal class CommandBlockVisitor : SourceBaseVisitor<bool>
         this.AddBlock(new EncounterBlock(resources));
         this.AddBlock(new EventBlock());
         this.AddBlock(new TvFloorBlock(resources));
+        this.AddBlock(new GlobalBgmBlock(resources));
     }
 
     public override bool VisitCommandBlock([NotNull] SourceParser.CommandBlockContext context)
