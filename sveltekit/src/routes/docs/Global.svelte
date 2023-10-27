@@ -7,7 +7,7 @@ end
 </script>
 
 <h2>Global BGM</h2>
-<p>Replace the use of a song across the entire game.</p>
+<p>Override a song across the entire game.</p>
 <p>
 	This can be used to replace normal/advantage BGM easily, randomize a specific song, have a P5R
 	costume-like effect, and who knows what else.

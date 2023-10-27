@@ -38,8 +38,8 @@ end
 <div class="row">
 	<div class="column">
 		<p>
-			Here, instead of copy and pasting <code>random_song(1, 6)</code> over and over again, you can you
-			give it a name to use instead.
+			Here, instead of copy and pasting <code>random_song(1, 6)</code> over and over again, you can give
+			it a name to use instead.
 		</p>
 		<p>
 			This also means you can make changes in one place and have it apply everywhere the constant
