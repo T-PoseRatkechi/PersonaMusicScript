@@ -9,23 +9,41 @@ public class EventBlock : ICommandBlock
 
     public void Process(MusicSource source, CommandBlock block)
     {
-        var eventFile = block.Arg as string
-            ?? throw new ArgumentException($"Invalid event block arg \"{block.Arg}\".");
+        if (block.Arg is EventFrame eventFrame)
+        {
+        }
+        else if (block.Arg is string)
+        {
+            throw new NotImplementedException("Event files not supported.");
+        }
+        else
+        {
+            throw new ArgumentException($"Invalid event block arg \"{block.Arg}\".");
+        }
 
         foreach (var command in block.Commands)
         {
-            var frame = ushort.Parse(command.Name.Split('_')[1]);
-            var musicValue = CommandUtils.GetMusic(command.Value);
+            var frameId = ushort.Parse(command.Name.Split('_')[1]);
+            IMusic? musicValue;
 
-            if (source.Events.TryGetValue(eventFile, out var eventFrame))
+            if (command.Value is string stringValue
+                && stringValue == "disable")
             {
-                eventFrame.FrameBgms.Add(new() { StartFrame = frame, Music = musicValue });
+                musicValue = null;
             }
             else
             {
-                var newEvent = new EventFrame(eventFile);
-                newEvent.FrameBgms.Add(new() { StartFrame = frame, Music = musicValue });
-                source.Events.Add(eventFile, newEvent);
+                musicValue = CommandUtils.GetMusic(command.Value);
+            }
+
+            if (source.Events.TryGetValue(eventFrame.Ids, out var existingFrame))
+            {
+                existingFrame.FrameMusic[frameId] = musicValue;
+            }
+            else
+            {
+                eventFrame.FrameMusic[frameId] = musicValue;
+                source.AddEventFrame(eventFrame);
             }
         }
     }
