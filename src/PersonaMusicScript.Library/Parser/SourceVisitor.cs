@@ -29,6 +29,8 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
         this.functions.Add(new BattleBgmFunction(expressionVisitor));
         this.functions.Add(new SongFunction(this.resources, expressionVisitor));
         this.functions.Add(new RandomSongFunction(expressionVisitor));
+        this.functions.Add(new EventFunction(expressionVisitor));
+        this.functions.Add(new SoundFunction(expressionVisitor));
 
         foreach (var statement in context.statement())
         {
