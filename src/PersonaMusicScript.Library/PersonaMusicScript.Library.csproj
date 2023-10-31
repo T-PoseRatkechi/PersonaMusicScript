@@ -56,9 +56,6 @@
   </ItemGroup>
     
   <ItemGroup>
-    <Reference Include="Libellus Library">
-      <HintPath>Libraries\Libellus Library.dll</HintPath>
-    </Reference>
     <Reference Include="Phos.MusicManager.Library">
       <HintPath>Libraries\Phos.MusicManager.Library.dll</HintPath>
     </Reference>
@@ -68,5 +65,9 @@
     <Content Include="Resources\**">
         <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\submodules\Libellus-Event-Tools\Libellus Library\Libellus Library.csproj" />
   </ItemGroup>
 </Project>
