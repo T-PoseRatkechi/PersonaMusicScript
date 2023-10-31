@@ -1,0 +1,42 @@
+﻿using Antlr4.Runtime.Misc;
+using LibellusLibrary.Event.Types.Frame;
+using PersonaMusicScript.Library.Models;
+using PersonaMusicScript.Library.Parser.Exceptions;
+
+namespace PersonaMusicScript.Library.Parser.Functions;
+
+internal class FrameBgmFunction : IFunction<FrameBgm>
+{
+    private readonly ExpressionVisitor expressionVisitor;
+
+    public FrameBgmFunction(ExpressionVisitor expressionVisitor)
+    {
+        this.expressionVisitor = expressionVisitor;
+    }
+
+    public string Name { get; } = "frame_bgm";
+
+    public FrameBgm Invoke([NotNull] SourceParser.FunctionContext context)
+    {
+        if (context.exprList() == null)
+        {
+            throw new FunctionException(this.Name, 2, 0, context);
+        }
+
+        var argExps = context.exprList().expression();
+        if (argExps.Length != 2)
+        {
+            throw new FunctionException(this.Name, 2, argExps.Length, context);
+        }
+
+        var bgmType = this.expressionVisitor.Visit(argExps[0]) as PmdBgmType?;
+        var music = this.expressionVisitor.Visit(argExps[1]) as IMusic;
+
+        if (bgmType == null || music == null)
+        {
+            throw new ParsingException("Invalid function argument(s).", context);
+        }
+
+        return new FrameBgm { BgmType = (PmdBgmType)bgmType, Music = music };
+    }
+}

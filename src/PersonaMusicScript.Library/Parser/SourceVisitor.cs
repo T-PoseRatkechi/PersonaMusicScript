@@ -31,6 +31,7 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
         this.functions.Add(new RandomSongFunction(expressionVisitor));
         this.functions.Add(new EventFunction(expressionVisitor));
         this.functions.Add(new SoundFunction(expressionVisitor));
+        this.functions.Add(new FrameBgmFunction(expressionVisitor));
 
         foreach (var statement in context.statement())
         {
