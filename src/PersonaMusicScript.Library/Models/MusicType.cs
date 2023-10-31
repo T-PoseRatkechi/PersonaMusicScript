@@ -7,4 +7,5 @@ public enum MusicType : byte
     RandomSong,
     BattleBgm,
     Sound,
+    FrameBgm,
 }
