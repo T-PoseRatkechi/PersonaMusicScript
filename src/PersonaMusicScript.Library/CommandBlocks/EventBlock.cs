@@ -9,7 +9,7 @@ public class EventBlock : ICommandBlock
 
     public void Process(MusicSource source, CommandBlock block)
     {
-        if (block.Arg is EventFrame eventFrame)
+        if (block.Arg is FrameTable eventFrame)
         {
         }
         else if (block.Arg is string)
@@ -38,11 +38,11 @@ public class EventBlock : ICommandBlock
 
             if (source.Events.TryGetValue(eventFrame.Ids, out var existingFrame))
             {
-                existingFrame.FrameMusic[frameId] = musicValue;
+                existingFrame.Frames[frameId] = musicValue;
             }
             else
             {
-                eventFrame.FrameMusic[frameId] = musicValue;
+                eventFrame.Frames[frameId] = musicValue;
                 source.AddEventFrame(eventFrame);
             }
         }
