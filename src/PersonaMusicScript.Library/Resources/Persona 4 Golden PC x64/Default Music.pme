@@ -1,9 +1,0 @@
-const randomBattlesBgm = battle_bgm(song("Time to Make History"), song("Reach Out to the Truth"))
-
-encounter["all"]:
-    music = randomBattlesBgm
-end
-
-encounter["Special Battles"]:
-    music = "default"
-end

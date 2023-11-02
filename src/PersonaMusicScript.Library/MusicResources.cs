@@ -12,13 +12,6 @@ public class MusicResources
         [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), new Song(1), true),
     };
 
-    private static readonly Dictionary<string, string> gamePatchFiles = new()
-    {
-        [Game.P4G_PC] = "BGME_P4G64_Release.expatch",
-        [Game.P3P_PC] = "BGME_P3P_Release.expatch",
-        [Game.P5R_PC] = "BGME_P5R_Release.expatch",
-    };
-
     public MusicResources(string game, string? resourcesDir = null)
     {
         if (string.IsNullOrEmpty(resourcesDir))
@@ -33,41 +26,15 @@ public class MusicResources
         this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
         this.Constants = Games[game];
-        this.PatchFile = Path.Join(this.ResourcesDir, gamePatchFiles[game]);
-        this.TvFloorsMusic = this.GetTvFloorsMusic();
-        this.DefaultEncounterMusic = this.GetEncounterMusic();
     }
 
     public string ResourcesDir { get; }
-
-    public string PatchFile { get; }
 
     public Dictionary<string, int> Songs { get; }
 
     public Dictionary<string, int[]> Collections { get; }
 
     public GameConstants Constants { get; }
-
-    public List<ushort> TvFloorsMusic { get; set; }
-
-    public ushort[] DefaultEncounterMusic { get; set; }
-
-    private List<ushort> GetTvFloorsMusic()
-    {
-        var music = new List<ushort>();
-        var musicFile = Path.Join(this.ResourcesDir, "tv.music");
-        if (File.Exists(musicFile))
-        {
-            using var reader = new BinaryReader(File.OpenRead(musicFile));
-            var numEntries = reader.ReadInt32();
-            for (int i = 0; i < numEntries; i++)
-            {
-                music.Add(reader.ReadUInt16());
-            }
-        }
-
-        return music;
-    }
 
     private Dictionary<string, int> GetSongs()
     {
@@ -109,25 +76,23 @@ public class MusicResources
             }
         }
 
-        return collections;
-    }
-
-    private ushort[] GetEncounterMusic()
-    {
-        var encounterMusic = new List<ushort>();
-        var encountFile = Path.Join(this.ResourcesDir, "encount.music");
-        if (File.Exists(encountFile))
+        // Add normal battles collection
+        // by inversing the Special Battles collection.
+        var normalBattles = new List<int>();
+        if (collections.TryGetValue("Special Battles", out var specialBattles))
         {
-            using var reader = new BinaryReader(File.OpenRead(encountFile));
-
-            var numEntires = reader.ReadUInt32();
-            for (int i = 0; i < numEntires; i++)
+            for (int i = 0; i < this.Constants.TotalEncounters; i++)
             {
-                encounterMusic.Add(reader.ReadUInt16());
+                if (!specialBattles.Contains(i))
+                {
+                    normalBattles.Add(i);
+                }
             }
         }
 
-        return encounterMusic.ToArray();
+        collections.Add("Normal Battles", normalBattles.ToArray());
+
+        return collections;
     }
 }
 
