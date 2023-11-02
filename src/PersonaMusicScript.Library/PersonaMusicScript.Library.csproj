@@ -21,6 +21,7 @@
     <None Remove="Resources\Persona 3 Portable PC\collections\bosses\The Reaper.enc" />
     <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Theodore.enc" />
     <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Velvet Room Attendants.enc" />
+    <None Remove="Resources\Persona 3 Portable PC\collections\Special Battles.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Adachi.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Ameno-sagiri.enc" />
     <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami-no-Okami.enc" />
