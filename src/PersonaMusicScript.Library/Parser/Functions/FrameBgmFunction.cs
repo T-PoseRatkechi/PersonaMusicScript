@@ -1,5 +1,6 @@
 ﻿using Antlr4.Runtime.Misc;
 using LibellusLibrary.Event.Types.Frame;
+using PersonaMusicScript.Library.CommandBlocks;
 using PersonaMusicScript.Library.Models;
 using PersonaMusicScript.Library.Parser.Exceptions;
 
@@ -24,13 +25,19 @@ internal class FrameBgmFunction : IFunction<FrameBgm>
         }
 
         var argExps = context.exprList().expression();
-        if (argExps.Length != 2)
+        if (argExps.Length < 1)
+        {
+            throw new FunctionException(this.Name, 1, argExps.Length, context);
+        }
+
+        if (argExps.Length > 2)
         {
             throw new FunctionException(this.Name, 2, argExps.Length, context);
         }
 
         var bgmType = this.expressionVisitor.Visit(argExps[0]) as PmdBgmType?;
-        var music = this.expressionVisitor.Visit(argExps[1]) as IMusic;
+        var musicValue = argExps.Length == 2 ? this.expressionVisitor.Visit(argExps[1]) : 0;
+        var music = CommandUtils.GetMusic(musicValue);
 
         if (bgmType == null || music == null)
         {
