@@ -31,7 +31,7 @@ public class TvFloorBlock : ICommandBlock
             }
             else if (collectionName.ToLower() == "all")
             {
-                for (int i = 0; i < this.resources.TvFloorsMusic.Count; i++)
+                for (int i = 0; i < this.resources.Constants.TotalFloors; i++)
                 {
                     AddFloorBgm(source, i, block.Commands);
                 }

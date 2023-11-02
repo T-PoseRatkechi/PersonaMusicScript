@@ -5,11 +5,31 @@ namespace PersonaMusicScript.Library;
 
 public class MusicResources
 {
-    private static readonly Dictionary<string, GameConstants> Games = new()
+    private static readonly Dictionary<string, GameConstants> Games1 = new()
     {
         [Game.P4G_PC] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30), new Song(35)),
         [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26), new Song(60)),
         [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), new Song(1), true),
+    };
+
+    public static readonly Dictionary<string, GameProperties> Games = new()
+    {
+        [Game.P4G_PC] = new()
+        {
+            TotalEncounters = 944,
+            TotalFloors = 300,
+        },
+
+        [Game.P3P_PC] = new()
+        {
+            TotalEncounters = 1024,
+            TotalFloors = 264,
+        },
+
+        [Game.P5R_PC] = new()
+        {
+            TotalEncounters = 1000,
+        },
     };
 
     public MusicResources(string game, string? resourcesDir = null)
@@ -23,9 +43,9 @@ public class MusicResources
             this.ResourcesDir = Directory.CreateDirectory(Path.Join(resourcesDir, game)).FullName;
         }
 
+        this.Constants = Games[game];
         this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
-        this.Constants = Games[game];
     }
 
     public string ResourcesDir { get; }
@@ -34,7 +54,7 @@ public class MusicResources
 
     public Dictionary<string, int[]> Collections { get; }
 
-    public GameConstants Constants { get; }
+    public GameProperties Constants { get; }
 
     private Dictionary<string, int> GetSongs()
     {
@@ -94,6 +114,15 @@ public class MusicResources
 
         return collections;
     }
+}
+
+public class GameProperties
+{
+    public int TotalEncounters { get; set; }
+
+    public int TotalFloors { get; set; }
+
+    public int IsBigEndian { get; set; }
 }
 
 public class GameConstants
