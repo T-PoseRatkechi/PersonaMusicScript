@@ -7,11 +7,19 @@
 <div id="nav">
 	<div class="container">
 		<Link url="{base}/" text="Home" />
+		<Link url="{base}/guides" text="Guides" />
 		<Link url="{base}/docs" text="Documentation" />
-		<Link url="{base}/bgme-framework" text="BGME Framework" />
+		<Link url="{base}/docs/collections" text="Collections" />
 	</div>
 </div>
-<slot />
+
+<div class="container">
+	<div class="row">
+		<div class="column">
+			<slot />
+		</div>
+	</div>
+</div>
 
 <style>
 	#nav {
