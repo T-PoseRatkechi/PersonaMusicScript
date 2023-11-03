@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+	import Link from '$lib/Link.svelte';
+
 	const example1 = `
 // Bosses
 // Shadow (spoiler)
@@ -39,9 +42,7 @@ end`.trim();
 		</p>
 		<pre><code>{example2}</code></pre>
 		<p>
-			Available collections can be found in <code
-				>PersonaMusicScript/resources/GAME_NAME/collections</code
-			>.
+			<Link url="{base}/docs/collections">Find all available collections here.</Link>
 		</p>
 	</div>
 </div>
