@@ -37,7 +37,7 @@
 </p>
 <blockquote><b>Tip:</b> Replace and use audio tracks 678 up to 835 for new music.</blockquote>
 <h3>Example</h3>
-<p>Here's an example show how you would add and use BGM ID 678.</p>
+<p>Here's an example showing how you would add and use BGM ID 678.</p>
 <ol>
 	<li>
 		Place a music file at:
