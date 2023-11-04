@@ -2,12 +2,7 @@
 	import { base } from '$app/paths';
 	import Link from '$lib/Link.svelte';
 
-	const lines = [
-		'const period = song("Period")',
-		'global_bgm[period]:',
-		'  music = random_song(1, 10)',
-		'end'
-	];
+	const lines = ['global_bgm["Period"]:', '  music = random_song(1, 10)', 'end'];
 </script>
 
 <h1>Overwrite Game BGM with Global BGM</h1>
