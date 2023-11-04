@@ -1,6 +1,12 @@
 <script>
 	import { base } from '$app/paths';
 	import Link from '$lib/Link.svelte';
+
+	const p5rEncoder = `
+name=ADX (Persona 5 Royal PC)
+out_container_format=adx
+key_code=9923540143823782
+`.trim();
 </script>
 
 <h1>Phos Music Manager</h1>
@@ -31,7 +37,7 @@
 		<b>Music Replacement:</b> Select the game project for your game. Then click the gear icon near
 		the top to open <b>Project Settings</b>.
 	</li>
-	<li><b>(Recommended) BGME Framework:</b> Select <b>New Project</b>.</li>
+	<li><b>BGME Framework:</b> Select <b>New Project</b>.</li>
 	<ul>
 		<li>
 			Use a new project for <em>BGME Framework</em> mods to separate the game's audio tracks from any
@@ -51,6 +57,20 @@
 		</li>
 	</ul>
 	<li>Click <b>Confirm/Create</b> to save changes.</li>
+</ol>
+<h2>Persona 5 Royal PC Support</h2>
+<ol>
+	<li>Near the top, click <b>Tools</b>, then <b>Open</b>, then <b>Encoders Folder</b>.</li>
+	<li>In the folder that opened, right-click, then create a new <b>Text Document</b>.</li>
+	<li>Replace the name, <b>including the .txt</b>, with <code>adx-p5r-pc.ini</code>.</li>
+	<li>Select Yes when it asks about changing the file extension.</li>
+	<li>Double-click and open in a text editor, like Notepad.</li>
+	<li>
+		Copy and paste the following:
+		<pre><code>{p5rEncoder}</code></pre>
+	</li>
+	<li>Save the file.</li>
+	<li>In <em>Phos Music Manager</em>, click <b>Tools</b>, then <b>Reload Files</b>.</li>
 </ol>
 <h2>Music Replacement</h2>
 <ol>
