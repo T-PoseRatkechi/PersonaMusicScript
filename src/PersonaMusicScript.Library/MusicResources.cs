@@ -58,7 +58,7 @@ public class MusicResources
 
     private Dictionary<string, int> GetSongs()
     {
-        var songsFile = Path.Join(this.ResourcesDir, "songs.json");
+        var songsFile = Path.Join(this.ResourcesDir, "songs.data");
         if (File.Exists(songsFile))
         {
             var loadedSongs = JsonSerializer.Deserialize<Dictionary<string, int>>(File.ReadAllText(songsFile))
