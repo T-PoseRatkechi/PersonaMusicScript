@@ -1,5 +1,7 @@
 <script lang="ts">
 	import gameCollections from './collections.json';
+	import { currentGame } from '$lib/Games';
+	$: gameCollection = gameCollections.find((x) => x.Game === $currentGame) ?? gameCollections[0];
 </script>
 
 <h1>Collections</h1>
@@ -11,16 +13,14 @@
 	<li>All - All battles (or floors).</li>
 </ul>
 <blockquote>Spoilers below, obviously.</blockquote>
-{#each gameCollections as gameCollection}
-	<h2>{gameCollection.Game}</h2>
-	<div class="game-collection">
-		<ul>
-			{#each gameCollection.Collections as collection}
-				<li>{collection}</li>
-			{/each}
-		</ul>
-	</div>
-{/each}
+<h2>{gameCollection.Game}</h2>
+<div class="game-collection">
+	<ul>
+		{#each gameCollection.Collections as collection}
+			<li>{collection}</li>
+		{/each}
+	</ul>
+</div>
 
 <style>
 	.game-collection {
