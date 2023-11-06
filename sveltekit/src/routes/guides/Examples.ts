@@ -5,7 +5,7 @@ import { derived, get } from 'svelte/store';
 const randomSettings = new Map<string, RandomSong>();
 randomSettings.set(games.GAME_P5R, { minId: 10000, maxId: 10009 });
 randomSettings.set(games.GAME_P4G, { minId: 700, maxId: 709 });
-randomSettings.set(games.GAME_P3P, { minId: 400, maxId: 409 });
+randomSettings.set(games.GAME_P3P, { minId: 1000, maxId: 1009 });
 
 export const randomSongExample = derived(currentGame, ($currentGame) => {
 	const settings = randomSettings.get($currentGame);
@@ -27,7 +27,7 @@ export const randomSongExample = derived(currentGame, ($currentGame) => {
 const bossSettings = new Map<string, Encounter>();
 bossSettings.set(games.GAME_P5R, { name: 'The Reaper', bgmId: 10100 });
 bossSettings.set(games.GAME_P4G, { name: 'Shadow Yosuke', bgmId: 750 });
-bossSettings.set(games.GAME_P3P, { name: 'The Reaper', bgmId: 500 });
+bossSettings.set(games.GAME_P3P, { name: 'The Reaper', bgmId: 1100 });
 
 export const bossExample = derived(currentGame, ($currentGame) => {
 	const settings = bossSettings.get($currentGame);

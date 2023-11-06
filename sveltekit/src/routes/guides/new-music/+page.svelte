@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { GAME_P4G, GAME_P5R, currentGame } from '$lib/Games';
+	import GameNotice from '../GameNotice.svelte';
 </script>
 
 <h1>Using New Music</h1>
@@ -58,13 +59,14 @@
 		<code>P5REssentials/CPK/BGME/data/sound/bgm/</code>. Max audio track is
 		<code>99999999999.adx</code>, in theory at least.
 	</p>
+	<GameNotice />
 	<h3>Example</h3>
-	<p>Here's an example showing how you would add and use BGM ID 400.</p>
+	<p>Here's an example showing how you would add and use BGM ID 1000.</p>
 	<ol>
 		<li>
 			Place a music file at:
-			<code>P5REssentials/CPK/BGME/data/sound/bgm/400.adx</code>
+			<code>P5REssentials/CPK/BGME/data/sound/bgm/1000.adx</code>
 		</li>
-		<li>Use the new music by using <code>400</code> in your music script.</li>
+		<li>Use the new music by using <code>1000</code> in your music script.</li>
 	</ol>
 {/if}
