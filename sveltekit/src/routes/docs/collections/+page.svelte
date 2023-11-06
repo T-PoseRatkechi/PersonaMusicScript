@@ -1,5 +1,5 @@
 <script lang="ts">
-	import gameCollections from './collections.json';
+	import gameCollections from '$lib/collections.json';
 	import { currentGame } from '$lib/Games';
 	$: gameCollection = gameCollections.find((x) => x.Game === $currentGame) ?? gameCollections[0];
 </script>
