@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Link from '$lib/Link.svelte';
+	import Continue from '../Continue.svelte';
 	import { bossExample } from '../Examples';
 	import GameNotice from '../GameNotice.svelte';
+	import Requirements from '../Requirements.svelte';
 
 	$: code = $bossExample.code;
 	$: settings = $bossExample.settings;
@@ -10,17 +12,7 @@
 
 <h1>Custom Boss Music</h1>
 <p>Another BGM mod often wanted, and also very simple to do.</p>
-<blockquote>
-	This guide builds off the previous one: <Link url="{base}/guides/randomized-bgm"
-		>Adding Randomized BGM</Link
-	>. If you don't want random BGM then you can just read through it and come back.
-</blockquote>
-<h2>Requirements</h2>
-<ul>
-	<li>BGME Framework</li>
-	<li><Link url="{base}/guides/create-mod">Created a Music Mod with BGME Framework</Link></li>
-	<li>Have your music script file opened in a text editor</li>
-</ul>
+<Requirements />
 <h2>The Music Script</h2>
 <pre><code>{code?.join('\n')}</code></pre>
 <p>
@@ -44,15 +36,4 @@
 	Add to your music script and save, add your new audio track for BGM ID {settings?.bgmId}, then
 	test in-game if you want.
 </p>
-<p>
-	<b
-		>Continue: <Link url="{base}/guides/battle-bgm"
-			>Custom Battle BGM (Advantage, Disadvantage, Victory)</Link
-		></b
-	>
-</p>
-<p>
-	For other features, such as <b>Floor BGM</b> and <b>Event BGM</b>, <Link url="{base}/docs"
-		>read the docs.</Link
-	>
-</p>
+<Continue />

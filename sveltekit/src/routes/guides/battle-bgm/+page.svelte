@@ -1,8 +1,8 @@
 <script>
-	import { base } from '$app/paths';
-	import Link from '$lib/Link.svelte';
+	import Continue from '../Continue.svelte';
 	import { battleBgmExample } from '../Examples';
 	import GameNotice from '../GameNotice.svelte';
+	import Requirements from '../Requirements.svelte';
 
 	$: example = $battleBgmExample;
 </script>
@@ -16,17 +16,7 @@
 	This guide will go over how you can add it back, customize the victory screen music, and even add
 	disadvantage music.
 </p>
-<blockquote>
-	This guide builds off the previous one: <Link url="{base}/guides/randomized-bgm"
-		>Adding Randomized BGM</Link
-	>. If you don't want random BGM then you can just read through it and come back.
-</blockquote>
-<h2>Requirements</h2>
-<ul>
-	<li>BGME Framework</li>
-	<li><Link url="{base}/guides/create-mod">Created a Music Mod with BGME Framework</Link></li>
-	<li>Have your music script file opened in a text editor</li>
-</ul>
+<Requirements />
 <h2>Current Music Script</h2>
 <pre><code>{example.currentCode.join('\n')}</code></pre>
 <h2>Battle Context</h2>
@@ -92,11 +82,4 @@
 <h2>Finished</h2>
 <GameNotice />
 <p>Edit your script, save, add music, and test.</p>
-<p>
-	<b>Continue: <Link url="{base}/guides/boss-music">Custom Boss Music</Link></b>
-</p>
-<p>
-	For other features, such as <b>Floor BGM</b> and <b>Event BGM</b>, <Link url="{base}/docs"
-		>read the docs.</Link
-	>
-</p>
+<Continue />

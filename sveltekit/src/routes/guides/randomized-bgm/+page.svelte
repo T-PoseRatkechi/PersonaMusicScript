@@ -1,8 +1,10 @@
 <script lang="ts">
 	import { base } from '$app/paths';
 	import Link from '$lib/Link.svelte';
+	import Continue from '../Continue.svelte';
 	import { randomSongExample } from '../Examples';
 	import GameNotice from '../GameNotice.svelte';
+	import Requirements from '../Requirements.svelte';
 
 	$: example = $randomSongExample;
 </script>
@@ -12,13 +14,7 @@
 	The main feature people usually want from a BGM mod, and one of the easiest things to add in any
 	game.
 </p>
-<h2>Requirements</h2>
-like
-<ul>
-	<li>BGME Framework</li>
-	<li><Link url="{base}/guides/create-mod">Created a Music Mod with BGME Framework</Link></li>
-	<li>Have your music script file opened in a text editor</li>
-</ul>
+<Requirements isInitial={true} />
 <h2>The Music Script</h2>
 <pre><code>{example.code.join('\n')}</code></pre>
 <p>
@@ -83,18 +79,4 @@ like
 		>Using New Music</Link
 	>, then test in-game.
 </p>
-<p>
-	<b>Continue: <Link url="{base}/guides/boss-music">Custom Boss Music</Link></b>
-</p>
-<p>
-	<b
-		>Continue: <Link url="{base}/guides/battle-bgm"
-			>Custom Battle BGM (Advantage, Disadvantage, Victory)</Link
-		></b
-	>
-</p>
-<p>
-	For other features, such as <b>Floor BGM</b> and <b>Event BGM</b>, <Link url="{base}/docs"
-		>read the docs.</Link
-	>
-</p>
+<Continue />
