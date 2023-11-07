@@ -105,6 +105,12 @@ key_code=9923540143823782
 			<b>Persona 5 Royal</b>
 			<div>Output Path: <code>FEmulator/AWB/BGM_42.AWB/BGM_ID.adx</code></div>
 			<div>Encoder: ADX (Persona 5 Royal PC)</div>
+			<blockquote class="warning">
+				<p>
+					Make sure you select <b>ADX (Persona 5 Royal PC)</b> and not the base <b>ADX</b> encoder.
+					If your music in-game sounds like static, you probably selected <b>ADX</b> for the encoder.
+				</p>
+			</blockquote>
 		</li>
 		<li>
 			<b>Persona 3 Portable</b>
