@@ -106,3 +106,18 @@ function getVictorySong(game: string) {
 			return 'specialist';
 	}
 }
+
+const locationSettings = new Map<string, Encounter>();
+locationSettings.set(games.GAME_P5R, { name: 'Mementos', bgmId: 10200 });
+locationSettings.set(games.GAME_P4G, { name: 'Void Quest', bgmId: 790 });
+locationSettings.set(games.GAME_P3P, { name: 'Not Supported', bgmId: 0 });
+
+export const locationExample = derived(currentGame, ($currentGame) => {
+	const settings = locationSettings.get($currentGame);
+	const examples = {
+		code: [`encounter["${settings?.name}"]`, `  music = ${settings?.bgmId}`, 'end'],
+		settings
+	};
+
+	return examples;
+});
