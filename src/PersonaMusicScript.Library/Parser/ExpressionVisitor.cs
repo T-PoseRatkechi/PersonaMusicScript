@@ -39,6 +39,18 @@ internal class ExpressionVisitor : SourceBaseVisitor<object>
         }
     }
 
+    public override object VisitArray([NotNull] SourceParser.ArrayContext context)
+    {
+        var items = new List<object>();
+        foreach (var exp in context.expression())
+        {
+            var item = this.Visit(exp);
+            items.Add(item);
+        }
+
+        return items;
+    }
+
     public override object VisitFunction([NotNull] SourceParser.FunctionContext context)
     {
         return functionVisitor.Visit(context);
