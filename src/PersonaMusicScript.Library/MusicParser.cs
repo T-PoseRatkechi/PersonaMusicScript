@@ -1,15 +1,18 @@
 ﻿using Antlr4.Runtime;
 using PersonaMusicScript.Library.Parser;
+using PersonaMusicScript.Library.Presets;
 
 namespace PersonaMusicScript.Library;
 
 public class MusicParser
 {
     private readonly MusicResources resources;
+    private readonly PresetBuilder presetBuilder;
 
     public MusicParser(string game, string? resourcesDir = null)
     {
         this.resources = new(game, resourcesDir);
+        this.presetBuilder = new(this.resources);
     }
 
     /// <summary>
@@ -29,5 +32,26 @@ public class MusicParser
         var sourceCtx = parser.source();
         var source = visitor.Visit(sourceCtx);
         return source;
+    }
+
+    /// <summary>
+    /// Create a project preset from a music script.
+    /// </summary>
+    /// <param name="inputFile">Input music script file.</param>
+    /// <param name="outputFile">Output preset file.</param>
+    public void CreatePreset(string inputFile, string outputFile)
+    {
+        var source = this.ParseFile(inputFile);
+        this.presetBuilder.Create(source, outputFile);
+    }
+
+    /// <summary>
+    /// Create a project preset from a music source.
+    /// </summary>
+    /// <param name="source">Music source.</param>
+    /// <param name="outputFile">Output preset file.</param>
+    public void CreatePreset(MusicSource source, string outputFile)
+    {
+        this.presetBuilder.Create(source, outputFile);
     }
 }
