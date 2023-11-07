@@ -37,6 +37,11 @@
 			url: `${base}/guides/boss-music`
 		},
 		{
+			name: 'Location-based Battle Music',
+			description: 'Customize the music used in battles depending on where the battle is.',
+			url: `${base}/guides/location-bgm`
+		},
+		{
 			name: 'Custom Battle BGM (Advantage, Disadvantage, Victory)',
 			description:
 				'Customize the music used in battles depending on context: normal, advantage, disadvantage.',
