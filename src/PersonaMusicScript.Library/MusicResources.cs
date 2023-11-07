@@ -1,34 +1,40 @@
-﻿using PersonaMusicScript.Library.Models;
-using System.Text.Json;
+﻿using System.Text.Json;
 
 namespace PersonaMusicScript.Library;
 
 public class MusicResources
 {
-    private static readonly Dictionary<string, GameConstants> Games1 = new()
-    {
-        [Game.P4G_PC] = new GameConstants(24, 944, "HCA", (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca", new Song(77), new Song(30), new Song(30), new Song(35)),
-        [Game.P3P_PC] = new GameConstants(28, 1024, "ADX", (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx", new Song(26), new Song(26), new Song(26), new Song(60)),
-        [Game.P5R_PC] = new GameConstants(44, 1000, "ADX (Persona 5 Royal PC)", (id) => $"FEmulator/AWB/BGM.AWB/{id}.adx", new Song(118), new Song(6), new Song(118), new Song(1), true),
-    };
-
     public static readonly Dictionary<string, GameProperties> Games = new()
     {
         [Game.P4G_PC] = new()
         {
             TotalEncounters = 944,
             TotalFloors = 300,
+            GetOutputPath = (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca",
+            Encoder = "HCA",
         },
 
         [Game.P3P_PC] = new()
         {
             TotalEncounters = 1024,
             TotalFloors = 264,
+            GetOutputPath = (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx",
+            Encoder = "ADX",
         },
 
         [Game.P5R_PC] = new()
         {
             TotalEncounters = 1000,
+            GetOutputPath = (id) =>
+            {
+                if (id >= 10000)
+                {
+                    return $"FEmulator/AWB/BGM_42.AWB/{id - 10000}.adx";
+                }
+
+                return $"FEmulator/AWB/BGM.AWB/{id}.adx";
+            },
+            Encoder = "ADX (Persona 5 Royal PC)",
         },
     };
 
@@ -118,52 +124,17 @@ public class MusicResources
 
 public class GameProperties
 {
-    public int TotalEncounters { get; set; }
+    public int TotalEncounters { get; init; }
 
-    public int TotalFloors { get; set; }
+    public int TotalFloors { get; init; }
 
-    public int IsBigEndian { get; set; }
-}
+    public int IsBigEndian { get; init; }
 
-public class GameConstants
-{
-    public GameConstants(
-        int encounterSize,
-        int totalEncounters,
-        string encoder,
-        Func<int, string> getOutputPath,
-        IMusic defaultNormalMusic,
-        IMusic defaultAdvantageMusic,
-        IMusic defaultDisadvantageMusic,
-        IMusic defaultVictoryMusic,
-        bool isBigEndian = false)
-    {
-        this.EncounterEntrySize = encounterSize;
-        this.TotalEncounters = totalEncounters;
-        this.Encoder = encoder;
-        this.GetOutputPath = getOutputPath;
-        this.BigEndian = isBigEndian;
-        this.DefaultNormalMusic = defaultNormalMusic;
-        this.DefaultAdvantageMusic = defaultAdvantageMusic;
-        this.DefaultDisadvantageMusic = defaultDisadvantageMusic;
-        this.DefaultVictoryMusic = defaultVictoryMusic;
-    }
+    /// <summary>
+    /// TODO: Currently assumes the ID is the AWB index, but music scripts
+    /// use Cue ID for game songs in P4G and P5R. Need to map Cue ID to AWB index.
+    /// </summary>
+    public required Func<int, string> GetOutputPath { get; init; }
 
-    public bool BigEndian { get; }
-
-    public int TotalEncounters { get; }
-
-    public int EncounterEntrySize { get; }
-
-    public string Encoder { get; }
-
-    public Func<int, string> GetOutputPath { get; }
-
-    public IMusic DefaultNormalMusic { get; }
-
-    public IMusic DefaultAdvantageMusic { get; }
-
-    public IMusic DefaultDisadvantageMusic { get; }
-
-    public IMusic DefaultVictoryMusic { get; }
+    public required string Encoder { get; init; }
 }
