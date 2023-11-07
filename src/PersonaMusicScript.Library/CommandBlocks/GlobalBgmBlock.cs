@@ -33,8 +33,10 @@ internal class GlobalBgmBlock : ICommandBlock
                 var song = this.resources.Songs[songName];
                 source.Global.Add(song, musicValue);
             }
-
-            throw new Exception($"Invalid global bgm block arg \"{block.Arg}\".");
+            else
+            {
+                throw new Exception($"Invalid global bgm block arg \"{block.Arg}\".");
+            }
         }
     }
 }
