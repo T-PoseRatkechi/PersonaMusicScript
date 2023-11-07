@@ -15,12 +15,15 @@ command: ID EQUAL expression ;
 
 function: ID '(' exprList ')' ;
 
+array: '[' (expression (',' expression)*)? ']' ;
+
 exprList: (expression (',' expression)*)? ;
 
 expression: INT       #intExpression
           | STRING    #stringExpression
           | ID        #idExpression
           | function  #functionExpression
+          | array     #arrayExpression
           ;
 
 // Lexer Rules
