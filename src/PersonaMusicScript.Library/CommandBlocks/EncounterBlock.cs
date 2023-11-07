@@ -1,5 +1,6 @@
 ﻿using PersonaMusicScript.Library.Models;
 using PersonaMusicScript.Library.Parser.Models;
+
 namespace PersonaMusicScript.Library.CommandBlocks;
 
 public class EncounterBlock : ICommandBlock
@@ -17,7 +18,7 @@ public class EncounterBlock : ICommandBlock
     {
         if (block.Arg is int encounterId)
         {
-            SetEncounterMusic(source, encounterId, block.Commands);
+            SetEncounterMusic(source, encounterId, block.Commands, $"Encounter: {encounterId}");
         }
         else if (block.Arg is string collection)
         {
@@ -25,7 +26,7 @@ public class EncounterBlock : ICommandBlock
             {
                 foreach (var id in ids)
                 {
-                    SetEncounterMusic(source, id, block.Commands);
+                    SetEncounterMusic(source, id, block.Commands, collection);
                 }
             }
             else if (collection.ToLower() == "all")
@@ -46,14 +47,21 @@ public class EncounterBlock : ICommandBlock
         }
     }
 
-    public static void SetEncounterMusic(MusicSource source, int encounterId, IEnumerable<Command> commands)
+    public static void SetEncounterMusic(MusicSource source, int encounterId, IEnumerable<Command> commands, string? name = null)
     {
         // Use existing encounter or create and add new one.
         if (!source.Encounters.TryGetValue(encounterId, out var encounter))
         {
-            encounter = new();
+            encounter = new()
+            {
+                Name = name,
+            };
+
             source.Encounters.Add(encounterId, encounter);
         }
+
+        // Add name if encounter previously added with all.
+        encounter.Name ??= name;
 
         IMusic? normalBgm = null;
         IMusic? advantageBgm = null;
