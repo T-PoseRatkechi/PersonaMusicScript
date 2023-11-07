@@ -52,6 +52,11 @@
 			description:
 				'A powerful feature is the ability to hook and redirect any song. From randomizing a song to adding new music features.',
 			url: `${base}/guides/global-bgm`
+		},
+		{
+			name: 'Other Features',
+			description: 'Advanced features with more niche uses.',
+			url: `${base}/guides/other-features`
 		}
 	];
 </script>
