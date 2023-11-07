@@ -23,7 +23,39 @@ internal class RandomSongFunction : IFunction<RandomSong>
         }
 
         var argExps = context.exprList().expression();
-        if (argExps.Length != 2)
+
+        // Array of BGM IDs.
+        if (argExps.Length == 1)
+        {
+            var bgmArray = this.expressionVisitor.Visit(argExps[0]);
+            if (bgmArray is not IEnumerable<object> array)
+            {
+                throw new ParsingException("Expected array argument.", context);
+            }
+
+            var ids = array.Select(x =>
+            {
+                if (x is Song song)
+                {
+                    return song.Id;
+                }
+                else if (x is int id)
+                {
+                    return id;
+                }
+
+                throw new ParsingException("Invalid array item for random song.", context);
+            }).ToArray();
+
+            if (ids.Length < 1)
+            {
+                throw new ParsingException("At least one BGM ID is required.", context);
+            }
+
+            return new(ids);
+        }
+
+        if (argExps.Length > 2)
         {
             throw new FunctionException(this.Name, 2, argExps.Length, context);
         }
