@@ -81,36 +81,6 @@ key_code=9923540143823782
 </ol>
 <h2>BGME Framework</h2>
 <p>With <em>BGME Framework</em>, it's likely you'll be adding and using new audio tracks.</p>
-<h3>Project Preset</h3>
-<ol>
-	<li>In your music mod's folder, go into the <b>BGME</b> folder.</li>
-	<li>
-		Whenever the game is started, a music manager preset will be created from your music script. The
-		new file will have <b>.project</b> at the end of its name.
-	</li>
-	<li>
-		In <em>Phos Music Manager</em>, near the top, click <b>Tools</b>, then <b>Open</b>, then
-		<b>Presets Folder</b>.
-	</li>
-	<li>Copy and paste your <b>.project</b> file into the folder that opened.</li>
-	<li>In <em>Phos Music Manager</em>, click <b>Tools</b>, then <b>Reload Files</b>.</li>
-	<li>
-		Using the project preset:
-		<ul>
-			<li>Create a new project and change the <b>Preset</b> to yours.</li>
-			<li>
-				Add it to an existing project by opening the <b>Project Settings (gear icon)</b>, changing
-				the <b>Preset</b> to yours, and clicking the <b>Reset</b> button.
-				<b>All existing replacements will have to be re-added (loop data is saved).</b>
-			</li>
-			<li>
-				<b>Planned:</b> Add it to an existing project by opening the
-				<b>Project Settings (gear icon)</b>, changing the <b>Preset</b> to yours, and clicking the
-				<b>Update</b> button.
-			</li>
-		</ul>
-	</li>
-</ol>
 <h3>Manually</h3>
 <ol>
 	<li>In your project, click the <b>+</b> button near the top to add a new track.</li>
@@ -152,6 +122,36 @@ key_code=9923540143823782
 	<li>
 		Once finished, click <b>Add</b>. Now you can select it, set a replacement file and loop, then
 		<b>Build</b> like usual.
+	</li>
+</ol>
+<h3>Project Preset</h3>
+<ol>
+	<li>In your music mod's folder, go into the <b>BGME</b> folder.</li>
+	<li>
+		Whenever the game is started, a music manager preset will be created from your music script. The
+		new file will have <b>.project</b> at the end of its name.
+	</li>
+	<li>
+		In <em>Phos Music Manager</em>, near the top, click <b>Tools</b>, then <b>Open</b>, then
+		<b>Presets Folder</b>.
+	</li>
+	<li>Copy and paste your <b>.project</b> file into the folder that opened.</li>
+	<li>In <em>Phos Music Manager</em>, click <b>Tools</b>, then <b>Reload Files</b>.</li>
+	<li>
+		Using the project preset:
+		<ul>
+			<li>Create a new project and change the <b>Preset</b> to yours.</li>
+			<li>
+				Add it to an existing project by opening the <b>Project Settings (gear icon)</b>, changing
+				the <b>Preset</b> to yours, and clicking the <b>Reset</b> button.
+				<b>All existing replacements will have to be re-added (loop data is saved).</b>
+			</li>
+			<li>
+				<b>Planned:</b> Add it to an existing project by opening the
+				<b>Project Settings (gear icon)</b>, changing the <b>Preset</b> to yours, and clicking the
+				<b>Update</b> button.
+			</li>
+		</ul>
 	</li>
 </ol>
 <p>

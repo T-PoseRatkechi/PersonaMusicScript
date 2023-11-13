@@ -3,7 +3,7 @@
 		'const songs = [698, song("reach out to the truth"), 42]',
 		'',
 		'encounter["Normal Battles"]',
-		'  music = songs',
+		'  music = random_song(songs)',
 		'end'
 	];
 </script>
