@@ -97,6 +97,9 @@ internal class MusicUse : Dictionary<int, HashSet<string>>
         {
             this.AddMusic(name, frameBgm.Music);
         }
+        else if (music is DisableMusic)
+        {
+        }
         else
         {
             throw new Exception("Unknown music type.");

@@ -8,4 +8,5 @@ public enum MusicType : byte
     BattleBgm,
     Sound,
     FrameBgm,
+    DisableMusic,
 }
