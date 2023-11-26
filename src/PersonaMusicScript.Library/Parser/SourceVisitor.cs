@@ -2,6 +2,7 @@
 using PersonaMusicScript.Library.Parser.Exceptions;
 using PersonaMusicScript.Library.Parser.Functions;
 using PersonaMusicScript.Library.Parser.Models;
+using PersonaMusicScript.Types;
 
 namespace PersonaMusicScript.Library.Parser;
 

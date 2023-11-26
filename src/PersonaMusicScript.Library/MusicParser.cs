@@ -1,6 +1,7 @@
 ﻿using Antlr4.Runtime;
 using PersonaMusicScript.Library.Parser;
 using PersonaMusicScript.Library.Presets;
+using PersonaMusicScript.Types;
 
 namespace PersonaMusicScript.Library;
 

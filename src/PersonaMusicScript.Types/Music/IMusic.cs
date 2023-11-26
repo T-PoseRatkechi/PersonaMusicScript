@@ -1,4 +1,4 @@
-﻿namespace PersonaMusicScript.Library.Models;
+﻿namespace PersonaMusicScript.Types.Music;
 
 public interface IMusic
 {

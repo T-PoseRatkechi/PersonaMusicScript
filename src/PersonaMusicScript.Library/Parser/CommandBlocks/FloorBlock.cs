@@ -1,8 +1,8 @@
-﻿using PersonaMusicScript.Library.Models;
-using PersonaMusicScript.Library.Models.Music;
-using PersonaMusicScript.Library.Models.Music.Entries;
-using PersonaMusicScript.Library.Parser.Exceptions;
+﻿using PersonaMusicScript.Library.Parser.Exceptions;
 using PersonaMusicScript.Library.Parser.Models;
+using PersonaMusicScript.Types.Music;
+using PersonaMusicScript.Types.MusicCollections;
+using PersonaMusicScript.Types.MusicCollections.Entries;
 
 namespace PersonaMusicScript.Library.Parser.CommandBlocks;
 

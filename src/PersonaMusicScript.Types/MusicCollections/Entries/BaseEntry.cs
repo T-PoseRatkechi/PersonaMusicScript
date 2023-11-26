@@ -1,4 +1,4 @@
-﻿namespace PersonaMusicScript.Library.Models.Music.Entries;
+﻿namespace PersonaMusicScript.Types.MusicCollections.Entries;
 
 public abstract class BaseEntry
 {

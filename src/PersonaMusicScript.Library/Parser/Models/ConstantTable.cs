@@ -1,5 +1,4 @@
-﻿using LibellusLibrary.Event.Types.Frame;
-using PersonaMusicScript.Library.Models;
+﻿using PersonaMusicScript.Types.Music;
 
 namespace PersonaMusicScript.Library.Parser.Models;
 

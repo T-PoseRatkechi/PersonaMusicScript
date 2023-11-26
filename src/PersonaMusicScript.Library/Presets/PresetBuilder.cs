@@ -1,4 +1,5 @@
-﻿using Phos.MusicManager.Library.Projects;
+﻿using PersonaMusicScript.Types;
+using Phos.MusicManager.Library.Projects;
 using Phos.MusicManager.Library.Serializers;
 
 namespace PersonaMusicScript.Library.Presets;

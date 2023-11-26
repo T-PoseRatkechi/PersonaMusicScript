@@ -1,4 +1,4 @@
-﻿namespace PersonaMusicScript.Library;
+﻿namespace PersonaMusicScript.Types;
 
 public static class Game
 {

@@ -1,4 +1,4 @@
-﻿namespace PersonaMusicScript.Library.Models;
+﻿namespace PersonaMusicScript.Types.Music;
 
 /// <summary>
 /// Instruct to block the music from playing, if possible.

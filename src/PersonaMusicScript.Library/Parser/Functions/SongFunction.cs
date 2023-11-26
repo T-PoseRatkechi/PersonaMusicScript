@@ -1,6 +1,7 @@
 ﻿using Antlr4.Runtime.Misc;
-using PersonaMusicScript.Library.Models;
 using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Types;
+using PersonaMusicScript.Types.Music;
 
 namespace PersonaMusicScript.Library.Parser.Functions;
 

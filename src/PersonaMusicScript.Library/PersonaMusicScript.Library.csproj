@@ -102,6 +102,6 @@
   </ItemGroup>
     
   <ItemGroup>
-    <ProjectReference Include="..\..\..\submodules\Libellus-Event-Tools\Libellus Library\Libellus Library.csproj" />
+    <ProjectReference Include="..\PersonaMusicScript.Types\PersonaMusicScript.Types.csproj" />
   </ItemGroup>
 </Project>

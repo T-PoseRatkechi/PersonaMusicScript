@@ -1,4 +1,6 @@
-﻿namespace PersonaMusicScript.Library.Models.Music.Entries;
+﻿using PersonaMusicScript.Types.Music;
+
+namespace PersonaMusicScript.Types.MusicCollections.Entries;
 
 public class FloorEntry : BaseEntry
 {

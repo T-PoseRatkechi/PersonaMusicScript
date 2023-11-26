@@ -1,6 +1,6 @@
-﻿using PersonaMusicScript.Library.Models.Music.Entries;
+﻿using PersonaMusicScript.Types.MusicCollections.Entries;
 
-namespace PersonaMusicScript.Library.Models.Music;
+namespace PersonaMusicScript.Types.MusicCollections;
 
 public class EncounterMusic : Dictionary<int, EncounterEntry>, IMusicEntries
 {

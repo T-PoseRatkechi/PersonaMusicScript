@@ -1,6 +1,7 @@
-﻿using PersonaMusicScript.Library.Models.Music.Entries;
+﻿using PersonaMusicScript.Types.Music;
+using PersonaMusicScript.Types.MusicCollections.Entries;
 
-namespace PersonaMusicScript.Library.Models.Music;
+namespace PersonaMusicScript.Types.MusicCollections;
 
 public class EventMusic : Dictionary<EventIds, FrameTable>, IMusicEntries
 {

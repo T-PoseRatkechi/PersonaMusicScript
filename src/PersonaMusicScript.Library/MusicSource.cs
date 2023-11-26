@@ -1,5 +1,6 @@
-﻿using PersonaMusicScript.Library.Models.Music;
-using PersonaMusicScript.Library.Models.Music.Entries;
+﻿using PersonaMusicScript.Types;
+using PersonaMusicScript.Types.MusicCollections;
+using PersonaMusicScript.Types.MusicCollections.Entries;
 
 namespace PersonaMusicScript.Library;
 

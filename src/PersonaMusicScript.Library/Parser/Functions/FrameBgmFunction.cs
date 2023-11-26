@@ -1,8 +1,7 @@
 ﻿using Antlr4.Runtime.Misc;
-using LibellusLibrary.Event.Types.Frame;
-using PersonaMusicScript.Library.Models;
-using PersonaMusicScript.Library.Models.Music;
 using PersonaMusicScript.Library.Parser.Exceptions;
+using PersonaMusicScript.Types.Music;
+using PersonaMusicScript.Types.MusicCollections;
 
 namespace PersonaMusicScript.Library.Parser.Functions;
 

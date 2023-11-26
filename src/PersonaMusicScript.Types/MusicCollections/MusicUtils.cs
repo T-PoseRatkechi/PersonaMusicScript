@@ -1,4 +1,6 @@
-﻿namespace PersonaMusicScript.Library.Models.Music;
+﻿using PersonaMusicScript.Types.Music;
+
+namespace PersonaMusicScript.Types.MusicCollections;
 
 public static class MusicUtils
 {

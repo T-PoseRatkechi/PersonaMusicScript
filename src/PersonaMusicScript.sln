@@ -5,7 +5,9 @@ VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonaMusicScript.Library", "PersonaMusicScript.Library\PersonaMusicScript.Library.csproj", "{851C2471-017C-415F-91FA-CD24A74237EF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaMusicScript.CLI", "PersonaMusicScript.CLI\PersonaMusicScript.CLI.csproj", "{479637AA-3932-402D-84B0-E42F9D50EBE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PersonaMusicScript.CLI", "PersonaMusicScript.CLI\PersonaMusicScript.CLI.csproj", "{479637AA-3932-402D-84B0-E42F9D50EBE4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PersonaMusicScript.Types", "PersonaMusicScript.Types\PersonaMusicScript.Types.csproj", "{71F2BF3B-1DCA-40D9-9869-AEE6E24581CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{479637AA-3932-402D-84B0-E42F9D50EBE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{479637AA-3932-402D-84B0-E42F9D50EBE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{479637AA-3932-402D-84B0-E42F9D50EBE4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F2BF3B-1DCA-40D9-9869-AEE6E24581CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F2BF3B-1DCA-40D9-9869-AEE6E24581CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F2BF3B-1DCA-40D9-9869-AEE6E24581CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71F2BF3B-1DCA-40D9-9869-AEE6E24581CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
