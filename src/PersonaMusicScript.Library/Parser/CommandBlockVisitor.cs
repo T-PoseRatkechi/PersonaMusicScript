@@ -1,30 +1,29 @@
 ﻿using Antlr4.Runtime.Misc;
-using PersonaMusicScript.Library.CommandBlocks;
+using PersonaMusicScript.Library.Parser.CommandBlocks;
+using PersonaMusicScript.Library.Parser.Exceptions;
 using PersonaMusicScript.Library.Parser.Models;
 
 namespace PersonaMusicScript.Library.Parser;
 
 internal class CommandBlockVisitor : SourceBaseVisitor<bool>
 {
-    private readonly Dictionary<CommandBlockType, ICommandBlock> commandBlocks = new();
+    private readonly Dictionary<CommandBlockType, ICommandBlock> commandBlocks = new()
+    {
+        [CommandBlockType.Global_Bgm] = new GlobalBgmBlock(),
+        [CommandBlockType.Encounter] = new EncounterBlock(),
+        [CommandBlockType.Event] = new EventBlock(),
+        [CommandBlockType.Floor] = new FloorBlock(),
+    };
 
     private readonly MusicSource source;
     private readonly ExpressionVisitor expressionVisitor;
     private readonly CommandVisitor commandVisitor;
 
-    public CommandBlockVisitor(
-        MusicResources resources,
-        MusicSource source,
-        ExpressionVisitor expressionVisitor)
+    public CommandBlockVisitor(MusicSource source, ExpressionVisitor expressionVisitor)
     {
         this.source = source;
         this.expressionVisitor = expressionVisitor;
         this.commandVisitor = new(expressionVisitor);
-
-        this.AddBlock(new EncounterBlock(resources));
-        this.AddBlock(new EventBlock());
-        this.AddBlock(new TvFloorBlock(resources));
-        this.AddBlock(new GlobalBgmBlock(resources));
     }
 
     public override bool VisitCommandBlock([NotNull] SourceParser.CommandBlockContext context)
@@ -40,17 +39,14 @@ internal class CommandBlockVisitor : SourceBaseVisitor<bool>
             commands.Add(command);
         }
 
-        if (commandBlocks.TryGetValue(type, out var commandBlock))
+        if (this.commandBlocks.TryGetValue(type, out var commandBlock))
         {
-            commandBlock.Process(this.source, new(type, arg, commands.ToArray()));
+            var result = commandBlock.GetResult(arg, commands.ToArray());
+            this.source.AddEntry(result);
             return true;
         }
 
-        return false;
-    }
 
-    private void AddBlock(ICommandBlock block)
-    {
-        this.commandBlocks.Add(block.Type, block);
+        throw new ParsingException($"Unknown command block type: {typeString}", context);
     }
 }

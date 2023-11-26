@@ -14,7 +14,7 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
 
     public SourceVisitor(MusicResources resources, MusicSource? source = null)
     {
-        this.source = source ?? new();
+        this.source = source ?? new(resources);
         this.resources = resources;
     }
 
@@ -23,7 +23,7 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
         var functionVisitor = new FunctionVisitor(this.functions);
         var expressionVisitor = new ExpressionVisitor(this.constants, functionVisitor);
         var assignmentVisitor = new AssignmentVisitor(this.constants, expressionVisitor);
-        var commandBlockVisitor = new CommandBlockVisitor(this.resources, this.source, expressionVisitor);
+        var commandBlockVisitor = new CommandBlockVisitor(this.source, expressionVisitor);
         var statementVisitor = new StatementVisitor(assignmentVisitor, commandBlockVisitor);
 
         this.functions.Add(new BattleBgmFunction(expressionVisitor));
