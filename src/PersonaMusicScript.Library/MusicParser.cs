@@ -9,6 +9,12 @@ public class MusicParser
     private readonly MusicResources resources;
     private readonly PresetBuilder presetBuilder;
 
+    public MusicParser(MusicResources resources)
+    {
+        this.resources = resources;
+        this.presetBuilder = new(resources);
+    }
+
     public MusicParser(string game, string? resourcesDir = null)
     {
         this.resources = new(game, resourcesDir);

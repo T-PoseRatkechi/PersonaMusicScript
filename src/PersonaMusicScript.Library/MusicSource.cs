@@ -1,39 +1,43 @@
-﻿using PersonaMusicScript.Library.Models;
+﻿using PersonaMusicScript.Library.Models.Music;
+using PersonaMusicScript.Library.Models.Music.Entries;
 
 namespace PersonaMusicScript.Library;
 
 public class MusicSource
 {
-    public Dictionary<int, Encounter> Encounters { get; } = new();
-
-    public Dictionary<int, IMusic> Floors { get; } = new();
-
-    public Dictionary<EventIds, FrameTable> Events { get; } = new();
-
-    public Dictionary<int, IMusic> Global { get; } = new();
-
-    public void AddEventFrame(FrameTable frame)
+    public MusicSource(MusicResources resources)
     {
-        this.Events.Add(frame.Ids, frame);
+        this.Encounters = new(resources);
+        this.Floors = new(resources);
+        this.Global = new(resources);
+        this.Events = new();
     }
 
-    public FrameTable? GetEventFrame(int majorId, int minorId, PmdType pmdType)
+    public EncounterMusic Encounters { get; }
+
+    public FloorMusic Floors { get; }
+
+    public GlobalMusic Global { get; }
+
+    public EventMusic Events { get; }
+
+    public void AddEntry(BaseEntry entry)
     {
-        if (this.Events.TryGetValue(new(majorId, minorId, pmdType), out var frame))
+        if (entry is EncounterEntry encounter)
         {
-            return frame;
+            this.Encounters.Add(encounter);
         }
-
-        return null;
-    }
-
-    public FrameTable? GetEventFrame(EventIds ids)
-    {
-        if (this.Events.TryGetValue(ids, out var frame))
+        else if (entry is FloorEntry floor)
         {
-            return frame;
+            this.Floors.Add(floor);
         }
-
-        return null;
+        else if (entry is GlobalBgmEntry global)
+        {
+            this.Global.Add(global);
+        }
+        else if (entry is EventEntry eventEntry)
+        {
+            this.Events.Add(eventEntry);
+        }
     }
 }
