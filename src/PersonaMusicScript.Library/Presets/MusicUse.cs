@@ -1,4 +1,5 @@
 ﻿using PersonaMusicScript.Library.Models;
+using PersonaMusicScript.Library.Models.Music.Entries;
 
 namespace PersonaMusicScript.Library.Presets;
 
@@ -33,7 +34,7 @@ internal class MusicUse : Dictionary<int, HashSet<string>>
         }
     }
 
-    public void AddEncounterMusic(Encounter encounter)
+    public void AddEncounterMusic(EncounterEntry encounter)
     {
         var name = encounter.Name != null ? $"{encounter.Name} | " : string.Empty;
         if (encounter.BattleMusic != null)

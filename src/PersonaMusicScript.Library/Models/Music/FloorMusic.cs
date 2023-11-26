@@ -2,7 +2,7 @@
 
 namespace PersonaMusicScript.Library.Models.Music;
 
-public class FloorMusic : Dictionary<int, IMusic?>, IMusicEntries
+public class FloorMusic : Dictionary<int, IMusic>, IMusicEntries
 {
     private readonly MusicResources resources;
     private readonly List<BaseEntry> entries = new();
