@@ -7,75 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Chidori.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Elizabeth.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Full Moon Bosses.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Jin.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Margaret.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Minibosses.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Nyx Avatar.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Nyx.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Strega.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Takaya and Jin.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Takaya.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\The Reaper.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Theodore.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\bosses\Velvet Room Attendants.enc" />
-    <None Remove="Resources\Persona 3 Portable PC\collections\Special Battles.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Adachi.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Ameno-sagiri.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami-no-Okami.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Izanami.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Kusumi-no-Okami.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Margaret.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Marie.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Namatame.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Chie.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Kanji.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Mitsuo.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Naoto.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Rise.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Teddie.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yosuke.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Bosses\Shadow Yukiko.enc" />
-    <None Remove="Resources\Persona 4 Golden PC x64\collections\Special Battles.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Ann.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Futaba.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Makoto.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Ren.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Ryuji.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Sumire.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\awakenings\Awakening Yusuke.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\Boss Battles.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Akechi.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Awakening Haru.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Caroline and Justine.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Holy Grail.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Jose.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Kamoshida.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Kaneshiro.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Kasumi.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Lavenza.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Madarame.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Maruiki.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Maruki Phase 1.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Maruki Phase 2.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Maruki Phase 3.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Sae.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Shido.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Sumire.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\The Reaper.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Treasure of Mementos.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Wakaba Phase 1.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Wakaba Phase 2.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Wakaba.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Yaldabaoth Phase 1.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Yaldabaoth Phase 2.enc" />
-    <None Remove="Resources\Persona 5 Royal PC\collections\bosses\Yaldabaoth.enc" />
-    <None Remove="Source.g4" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Antlr4 Include="Source.g4" />
   </ItemGroup>
     
@@ -96,9 +27,17 @@
   </ItemGroup>
     
   <ItemGroup>
-    <Content Include="Resources\**">
-        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+	<Content Include="..\..\submodules\PersonaModdingMetadata\Persona.Encounters.Metadata\**">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+	<Content Include="..\..\submodules\PersonaModdingMetadata\Persona.Music.Metadata\**">
+		<CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+	</Content>
+  </ItemGroup>
+    
+  <ItemGroup>
+    <Content Remove="..\..\submodules\PersonaModdingMetadata\Persona.Encounters.Metadata\Persona.Encounters.Metadata.csproj" />
+    <Content Remove="..\..\submodules\PersonaModdingMetadata\Persona.Music.Metadata\Persona.Music.Metadata.csproj" />
   </ItemGroup>
     
   <ItemGroup>
