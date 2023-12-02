@@ -1,0 +1,3 @@
+[submodule "submodules/PersonaModdingMetadata"]
+	path = submodules/PersonaModdingMetadata
+	url = https://github.com/T-PoseRatkechi/PersonaModdingMetadata.git
