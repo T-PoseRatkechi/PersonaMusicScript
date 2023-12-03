@@ -12,36 +12,27 @@ public class MusicResources
         {
             TotalEncounters = 944,
             TotalFloors = 300,
-            GetOutputPath = (id) => $"FEmulator/AWB/snd00_bgm.awb/{id}.hca",
-            Encoder = "HCA",
         },
 
         [Game.P3P_PC] = new()
         {
             TotalEncounters = 1024,
             TotalFloors = 264,
-            GetOutputPath = (id) => $"P5REssentials/CPK/BGME/data/sound/bgm/{id}.adx",
-            Encoder = "ADX",
         },
 
         [Game.P5R_PC] = new()
         {
             TotalEncounters = 1000,
-            GetOutputPath = (id) =>
-            {
-                if (id >= 10000)
-                {
-                    return $"FEmulator/AWB/BGM_42.AWB/{id - 10000}.adx";
-                }
-
-                return $"FEmulator/AWB/BGM.AWB/{id}.adx";
-            },
-            Encoder = "ADX (Persona 5 Royal PC)",
         },
     };
 
+    private readonly Game game;
+    private readonly GameMusic gameMusic;
+    private readonly Dictionary<int, int> cueAwbSet;
+
     public MusicResources(Game game, string? resourcesDir = null)
     {
+        this.game = game;
         if (string.IsNullOrEmpty(resourcesDir))
         {
             this.ResourcesDir = Directory.CreateDirectory(game.GameFolder(AppDomain.CurrentDomain.BaseDirectory)).FullName;
@@ -52,8 +43,15 @@ public class MusicResources
         }
 
         this.Constants = Games[game];
-        this.Songs = this.GetSongs();
         this.Collections = this.GetCollections();
+
+        this.gameMusic = this.GetGameMusic();
+        this.cueAwbSet = this.gameMusic.Songs
+            .Where(x => x.CueId != 0)
+            .ToDictionary(x => x.CueId, x => int.Parse(Path.GetFileNameWithoutExtension(x.ReplacementPath)!));
+
+        var songCueIdData = this.gameMusic.Songs.ToDictionary(x => x.Name, y => y.CueId);
+        this.Songs = new(songCueIdData, StringComparer.OrdinalIgnoreCase);
     }
 
     public string ResourcesDir { get; }
@@ -64,19 +62,31 @@ public class MusicResources
 
     public GameProperties Constants { get; }
 
-    private Dictionary<string, int> GetSongs()
+    public string? GetDefaultEncoder()
+        => this.gameMusic.DefaultEncoder;
+
+    public string GetReplacementPath(int bgmId)
     {
-        var deserializer = new YamlDotNet.Serialization.Deserializer();
-        var musicFile = Path.Join(this.ResourcesDir, "music.yaml");
-
-        if (File.Exists(musicFile))
+        var awbIndex = this.GetAwbIndex(bgmId);
+        return this.game switch
         {
-            var music = deserializer.Deserialize<GameMusic>(File.ReadAllText(musicFile));
-            var songCueIdData = music.Songs.ToDictionary(x => x.Name, y => y.CueId);
-            return new(songCueIdData, StringComparer.OrdinalIgnoreCase);
-        }
+            Game.P5R_PC => (bgmId >= 10000)
+            ? $"FEmulator/AWB/BGM_42.AWB/{awbIndex}.adx"
+            : $"{this.gameMusic.DefaultBaseReplacementPath}/{awbIndex}.adx",
 
-        return new();
+            Game.P4G_PC => $"{this.gameMusic.DefaultBaseReplacementPath}/{awbIndex}.hca",
+
+            Game.P3P_PC => $"{this.gameMusic.DefaultBaseReplacementPath}/{awbIndex}.adx",
+            _ => throw new Exception("Unknown game."),
+        };
+    }
+
+    private GameMusic GetGameMusic()
+    {
+        var musicFile = Path.Join(this.ResourcesDir, "music.yaml");
+        var deserializer = new YamlDotNet.Serialization.Deserializer();
+        var gameMusic = deserializer.Deserialize<GameMusic>(File.ReadAllText(musicFile));
+        return gameMusic;
     }
 
     private Dictionary<string, int[]> GetCollections()
@@ -110,6 +120,21 @@ public class MusicResources
         collections.Add("Normal Battles", normalBattles.ToArray());
         return collections;
     }
+
+    private int GetAwbIndex(int bgmId)
+    {
+        // BGM ID is a Cue ID, get Cue AWB index.
+        if (this.cueAwbSet.TryGetValue(bgmId, out var cueAwbIndex))
+        {
+            return cueAwbIndex;
+        }
+
+        return this.game switch
+        {
+            Game.P5R_PC => (bgmId >= 10000) ? bgmId - 10000 : bgmId,
+            _ => bgmId,
+        };
+    }
 }
 
 public class GameProperties
@@ -117,14 +142,6 @@ public class GameProperties
     public int TotalEncounters { get; init; }
 
     public int TotalFloors { get; init; }
-
-    public int IsBigEndian { get; init; }
-
-    /// <summary>
-    /// TODO: Currently assumes the ID is the AWB index, but music scripts
-    /// use Cue ID for game songs in P4G and P5R. Need to map Cue ID to AWB index.
-    /// </summary>
-    public required Func<int, string> GetOutputPath { get; init; }
-
-    public required string Encoder { get; init; }
 }
+
+internal record SongCueAwb(int CueId, int AwbIndex);

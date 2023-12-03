@@ -21,8 +21,8 @@ internal class PresetBuilder
             Name = $"BGM ID: {x.Key}",
             Category = "BGME Framework",
             Tags = x.Value.ToArray(),
-            OutputPath = this.resources.Constants.GetOutputPath(x.Key),
-            Encoder = this.resources.Constants.Encoder,
+            OutputPath = this.resources.GetReplacementPath(x.Key),
+            Encoder = this.resources.GetDefaultEncoder(),
         }).ToArray();
 
         var name = Path.GetFileNameWithoutExtension(outputFile);
