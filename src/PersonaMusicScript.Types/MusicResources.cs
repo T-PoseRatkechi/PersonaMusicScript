@@ -1,10 +1,12 @@
-﻿using System.Text.Json;
+﻿using Persona.Music.Types.Common;
+using PersonaModdingMetadata.Shared.Games;
+using PersonaModdingMetadata.Shared.Serializers;
 
 namespace PersonaMusicScript.Types;
 
 public class MusicResources
 {
-    public static readonly Dictionary<string, GameProperties> Games = new()
+    public static readonly Dictionary<Game, GameProperties> Games = new()
     {
         [Game.P4G_PC] = new()
         {
@@ -38,15 +40,15 @@ public class MusicResources
         },
     };
 
-    public MusicResources(string game, string? resourcesDir = null)
+    public MusicResources(Game game, string? resourcesDir = null)
     {
         if (string.IsNullOrEmpty(resourcesDir))
         {
-            this.ResourcesDir = Directory.CreateDirectory(Path.Join(AppDomain.CurrentDomain.BaseDirectory, "resources", game)).FullName;
+            this.ResourcesDir = Directory.CreateDirectory(game.GameFolder(AppDomain.CurrentDomain.BaseDirectory)).FullName;
         }
         else
         {
-            this.ResourcesDir = Directory.CreateDirectory(Path.Join(resourcesDir, game)).FullName;
+            this.ResourcesDir = Directory.CreateDirectory(game.GameFolder(resourcesDir)).FullName;
         }
 
         this.Constants = Games[game];
@@ -64,13 +66,14 @@ public class MusicResources
 
     private Dictionary<string, int> GetSongs()
     {
-        var songsFile = Path.Join(this.ResourcesDir, "songs.data");
-        if (File.Exists(songsFile))
-        {
-            var loadedSongs = JsonSerializer.Deserialize<Dictionary<string, int>>(File.ReadAllText(songsFile))
-                ?? throw new Exception();
+        var deserializer = new YamlDotNet.Serialization.Deserializer();
+        var musicFile = Path.Join(this.ResourcesDir, "music.yaml");
 
-            return new(loadedSongs, StringComparer.OrdinalIgnoreCase);
+        if (File.Exists(musicFile))
+        {
+            var music = deserializer.Deserialize<GameMusic>(File.ReadAllText(musicFile));
+            var songCueIdData = music.Songs.ToDictionary(x => x.Name, y => y.CueId);
+            return new(songCueIdData, StringComparer.OrdinalIgnoreCase);
         }
 
         return new();
@@ -78,27 +81,15 @@ public class MusicResources
 
     private Dictionary<string, int[]> GetCollections()
     {
-        var collectionsDir = Directory.CreateDirectory(Path.Join(this.ResourcesDir, "collections")).FullName;
+        var collectionsDir = Path.Join(this.ResourcesDir, "collections");
         var collections = new Dictionary<string, int[]>(StringComparer.OrdinalIgnoreCase);
 
         if (Directory.Exists(collectionsDir))
         {
             foreach (var file in Directory.EnumerateFiles(collectionsDir, "*.enc", SearchOption.AllDirectories))
             {
-                var collectionName = Path.GetFileNameWithoutExtension(file);
-                var ids = new List<int>();
-                foreach (var line in File.ReadLines(file))
-                {
-                    if (int.TryParse(line, out var id))
-                    {
-                        ids.Add(id);
-                    }
-                }
-
-                if (ids.Count > 0)
-                {
-                    collections.Add(collectionName, ids.ToArray());
-                }
+                var collection = CollectionSerializer.DeserializeFile(file);
+                collections.Add(Path.GetFileNameWithoutExtension(file), collection);
             }
         }
 
@@ -117,7 +108,6 @@ public class MusicResources
         }
 
         collections.Add("Normal Battles", normalBattles.ToArray());
-
         return collections;
     }
 }

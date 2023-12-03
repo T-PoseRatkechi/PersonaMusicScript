@@ -41,6 +41,7 @@
   </ItemGroup>
     
   <ItemGroup>
+    <ProjectReference Include="..\..\submodules\PersonaModdingMetadata\PersonaModdingMetadata.Shared\PersonaModdingMetadata.Shared.csproj" />
     <ProjectReference Include="..\PersonaMusicScript.Types\PersonaMusicScript.Types.csproj" />
   </ItemGroup>
 </Project>

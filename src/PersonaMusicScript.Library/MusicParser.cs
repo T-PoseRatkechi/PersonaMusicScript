@@ -1,4 +1,5 @@
 ﻿using Antlr4.Runtime;
+using PersonaModdingMetadata.Shared.Games;
 using PersonaMusicScript.Library.Parser;
 using PersonaMusicScript.Library.Presets;
 using PersonaMusicScript.Types;
@@ -16,7 +17,7 @@ public class MusicParser
         this.presetBuilder = new(resources);
     }
 
-    public MusicParser(string game, string? resourcesDir = null)
+    public MusicParser(Game game, string? resourcesDir = null)
     {
         this.resources = new(game, resourcesDir);
         this.presetBuilder = new(this.resources);
@@ -29,8 +30,17 @@ public class MusicParser
     /// <param name="existingSource">Existing music source to apply script to.</param>
     /// <returns>Music source.</returns>
     public MusicSource ParseFile(string inputFile, MusicSource? existingSource = null)
+        => this.Parse(File.ReadAllText(inputFile), existingSource);
+
+    /// <summary>
+    /// Parse music script.
+    /// </summary>
+    /// <param name="musicScript">Music script text.</param>
+    /// <param name="existingSource">Existing music source to apply script to.</param>
+    /// <returns>Music source.</returns>
+    public MusicSource Parse(string musicScript, MusicSource? existingSource = null)
     {
-        var inputStream = new AntlrInputStream(File.ReadAllText(inputFile));
+        var inputStream = new AntlrInputStream(musicScript);
         var lexer = new SourceLexer(inputStream);
         var tokens = new CommonTokenStream(lexer);
         var parser = new SourceParser(tokens);
