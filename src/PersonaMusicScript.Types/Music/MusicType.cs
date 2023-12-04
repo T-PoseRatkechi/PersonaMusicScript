@@ -9,4 +9,6 @@ public enum MusicType : byte
     Sound,
     FrameBgm,
     DisableMusic,
+    BattleVictorySet,
+    RandomMusic,
 }
