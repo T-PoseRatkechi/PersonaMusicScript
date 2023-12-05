@@ -6,7 +6,7 @@ using PersonaMusicScript.Types;
 
 namespace PersonaMusicScript.Library.Parser;
 
-internal class SourceVisitor : SourceBaseVisitor<MusicSource>
+internal class SourceVisitor : SourceBaseVisitor<MusicScript>
 {
     private readonly FunctionTable functions = new();
     private readonly ConstantTable constants = new();
@@ -19,7 +19,7 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
         this.resources = resources;
     }
 
-    public override MusicSource VisitSource([NotNull] SourceParser.SourceContext context)
+    public override MusicScript VisitSource([NotNull] SourceParser.SourceContext context)
     {
         var functionVisitor = new FunctionVisitor(this.functions);
         var expressionVisitor = new ExpressionVisitor(this.constants, functionVisitor);
@@ -44,6 +44,6 @@ internal class SourceVisitor : SourceBaseVisitor<MusicSource>
             }
         }
 
-        return this.source;
+        return new(this.resources, this.constants, this.source);
     }
 }

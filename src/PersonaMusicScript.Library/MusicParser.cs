@@ -29,26 +29,26 @@ public class MusicParser
     /// <param name="inputFile">Input file path.</param>
     /// <param name="existingSource">Existing music source to apply script to.</param>
     /// <returns>Music source.</returns>
-    public MusicSource ParseFile(string inputFile, MusicSource? existingSource = null)
+    public MusicScript ParseFile(string inputFile, MusicSource? existingSource = null)
         => this.Parse(File.ReadAllText(inputFile), existingSource);
 
     /// <summary>
     /// Parse music script.
     /// </summary>
-    /// <param name="musicScript">Music script text.</param>
+    /// <param name="musicScriptText">Music script text.</param>
     /// <param name="existingSource">Existing music source to apply script to.</param>
     /// <returns>Music source.</returns>
-    public MusicSource Parse(string musicScript, MusicSource? existingSource = null)
+    public MusicScript Parse(string musicScriptText, MusicSource? existingSource = null)
     {
-        var inputStream = new AntlrInputStream(musicScript);
+        var inputStream = new AntlrInputStream(musicScriptText);
         var lexer = new SourceLexer(inputStream);
         var tokens = new CommonTokenStream(lexer);
         var parser = new SourceParser(tokens);
         var visitor = new SourceVisitor(this.resources, existingSource);
 
         var sourceCtx = parser.source();
-        var source = visitor.Visit(sourceCtx);
-        return source;
+        var musicScript = visitor.Visit(sourceCtx);
+        return musicScript;
     }
 
     /// <summary>
@@ -58,8 +58,8 @@ public class MusicParser
     /// <param name="outputFile">Output preset file.</param>
     public void CreatePreset(string inputFile, string outputFile)
     {
-        var source = this.ParseFile(inputFile);
-        this.presetBuilder.Create(source, outputFile);
+        var music = this.ParseFile(inputFile);
+        this.presetBuilder.Create(music.Source, outputFile);
     }
 
     /// <summary>
