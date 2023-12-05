@@ -2,10 +2,12 @@
 
 public class BattleBgm : IMusic
 {
+    private IMusic? disadvantageMusic;
+
     public BattleBgm(
         IMusic? normal,
         IMusic? advantage,
-        IMusic? disadvantage)
+        IMusic? disadvantage = null)
     {
         if (normal is BattleBgm
             || advantage is BattleBgm
@@ -25,7 +27,20 @@ public class BattleBgm : IMusic
 
     public IMusic? AdvantageMusic { get; set; }
 
-    public IMusic? DisadvantageMusic { get; set; }
+    public IMusic? DisadvantageMusic
+    {
+        get
+        {
+            if (this.disadvantageMusic != null)
+            {
+                return this.disadvantageMusic;
+            }
+
+            return this.NormalMusic;
+        }
+
+        set => this.disadvantageMusic = value;
+    }
 
     public override bool Equals(object? obj)
     {
