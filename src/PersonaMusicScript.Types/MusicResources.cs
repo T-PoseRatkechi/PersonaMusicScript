@@ -42,7 +42,7 @@ public class MusicResources
             this.ResourcesDir = Directory.CreateDirectory(game.GameFolder(resourcesDir)).FullName;
         }
 
-        this.Constants = Games[game];
+        this.Constants = Games.ContainsKey(game) ? Games[game] : new();
         this.Collections = this.GetCollections();
 
         this.gameMusic = this.GetGameMusic();
