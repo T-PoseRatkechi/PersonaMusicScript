@@ -24,6 +24,11 @@ public class MusicResources
         {
             TotalEncounters = 1000,
         },
+
+        [Game.P3R_PC] = new()
+        {
+            TotalEncounters = 1200,
+        },
     };
 
     private readonly Game game;
