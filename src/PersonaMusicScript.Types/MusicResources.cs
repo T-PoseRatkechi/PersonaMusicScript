@@ -33,7 +33,7 @@ public class MusicResources
 
     private readonly Game game;
     private readonly GameMusic gameMusic;
-    private readonly Dictionary<int, int> cueAwbSet;
+    private readonly Dictionary<int, int> cueAwbSet = new();
 
     public MusicResources(Game game, string? resourcesDir = null)
     {
@@ -51,9 +51,13 @@ public class MusicResources
         this.Collections = this.GetCollections();
 
         this.gameMusic = this.GetGameMusic();
-        this.cueAwbSet = this.gameMusic.Songs
-            .Where(x => x.CueId != 0)
-            .ToDictionary(x => x.CueId, x => int.Parse(Path.GetFileNameWithoutExtension(x.ReplacementPath)!));
+
+        if (game != Game.P3R_PC)
+        {
+            this.cueAwbSet = this.gameMusic.Songs
+                .Where(x => x.CueId != 0)
+                .ToDictionary(x => x.CueId, x => int.Parse(Path.GetFileNameWithoutExtension(x.ReplacementPath)!));
+        }
 
         var songCueIdData = this.gameMusic.Songs.ToDictionary(x => x.Name, y => y.CueId);
         this.Songs = new(songCueIdData, StringComparer.OrdinalIgnoreCase);
